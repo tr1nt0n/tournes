@@ -1,0 +1,2 @@
+Frequency 1	Frequency 2	Partial 1	Partial 2	Combination Tone
+	 587.993153972624 	 636.9925834703427 	 12 	 13 	 48.999429497718666
