@@ -5,6 +5,43 @@ import trinton
 import itertools
 import tournes
 
+# score
+
+
+def tournes_score(time_signatures):
+    score = trinton.make_empty_score(
+        instruments=[
+            abjad.Flute(),
+            abjad.BassClarinet(),
+            abjad.Accordion(),
+            abjad.Accordion(),
+            abjad.Accordion(),
+            abjad.Violin(),
+            abjad.Cello(),
+        ],
+        groups=[
+            2,
+            3,
+            2,
+        ],
+        staff_types=[
+            [
+                "Staff",
+                "Staff",
+            ],
+            [
+                "Staff",
+                "timeSignatureStaff",
+                "Staff",
+            ],
+            ["Staff", "Staff"],
+        ],
+        time_signatures=time_signatures,
+        filler=abjad.Skip,
+    )
+
+    return score
+
 
 # immutables
 
@@ -36,6 +73,16 @@ final_sieve = eval(
     """sieve_1 | sieve_2 | sieve_3 | sieve_4 | sieve_5 | sieve_6 | sieve_7"""
 )
 
+first_voice_names = eval(
+    """[
+        "flute voice",
+        "bassclarinet voice",
+        "accordion 1 voice",
+        "violin voice",
+        "cello voice"
+    ]"""
+)
+
 # selectors
 
 
@@ -65,6 +112,94 @@ def sieve_selector(
         return out
 
     return selector
+
+
+# markups
+
+all_instrument_names = [
+    abjad.InstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { Flute }'
+        ),
+    ),
+    abjad.InstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { Clarinet }'
+        ),
+    ),
+    abjad.InstrumentName(
+        context="GrandStaff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { Accordion }'
+        ),
+    ),
+    abjad.InstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { Violin }'
+        ),
+    ),
+    abjad.InstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { Violoncello }'
+        ),
+    ),
+]
+
+all_short_instrument_names = [
+    abjad.ShortInstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { fl. }'
+        ),
+    ),
+    abjad.ShortInstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ cl. }'
+        ),
+    ),
+    abjad.ShortInstrumentName(
+        context="GrandStaff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ acc. }'
+        ),
+    ),
+    abjad.ShortInstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ vln }'
+        ),
+    ),
+    abjad.ShortInstrumentName(
+        context="Staff",
+        markup=abjad.Markup(
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ vc }'
+        ),
+    ),
+]
+
+
+def write_instrument_names(score):
+    for voice_name, markup in zip(first_voice_names, all_instrument_names):
+        trinton.attach(
+            voice=score[voice_name],
+            leaves=[0],
+            attachment=markup,
+        )
+
+
+def write_short_instrument_names(score):
+    for voice_name, markup in zip(first_voice_names, all_short_instrument_names):
+        trinton.attach(
+            voice=score[voice_name],
+            leaves=[0],
+            attachment=markup,
+            tag=abjad.Tag("+SCORE"),
+        )
 
 
 # record keeping
@@ -131,3 +266,25 @@ def write_harmonic_map_txt(
 
         print("\t)", file=text_record)
     print("map written")
+
+
+# beautification
+
+
+def clean_time_signatures(score):
+    for leaf in abjad.select.leaves(score["Global Context"]):
+        if abjad.get.has_indicator(leaf, abjad.TimeSignature):
+            time_signature = abjad.get.indicator(leaf, abjad.TimeSignature)
+            numerator = time_signature.numerator
+            denominator = time_signature.denominator
+
+            if numerator > 9 or denominator > 9:
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        [
+                            r"\once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)"
+                        ],
+                        site="before",
+                    ),
+                    leaf,
+                )

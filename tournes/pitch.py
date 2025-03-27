@@ -9,7 +9,14 @@ from tournes import library
 
 
 def return_interval_list_from_sieve(sieve=library.final_sieve):
-    vectors = sieve.get_boolean_vector(total_length=len(sieve))
+    if isinstance(sieve, list):
+        vectors = []
+        for subsieve in sieve:
+            subvectors = subsieve.get_boolean_vector(total_length=len(subsieve))
+            for vector in subvectors:
+                vectors.append(vector)
+    else:
+        vectors = sieve.get_boolean_vector(total_length=len(sieve))
 
     interval_list_1 = []
 
