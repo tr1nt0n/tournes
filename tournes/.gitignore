@@ -12,6 +12,7 @@ __pycache__/
 *.aiff
 *.png
 *.jpeg
+*.bin
 # C extensions
 *.so
 .DS_Store
