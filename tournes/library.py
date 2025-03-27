@@ -3,6 +3,7 @@ import baca
 import evans
 import trinton
 import itertools
+import tournes
 
 
 # immutables
@@ -64,3 +65,69 @@ def sieve_selector(
         return out
 
     return selector
+
+
+# record keeping
+
+sieve_groupings = [
+    [
+        sieve_1a,
+        sieve_1b,
+    ],
+    [
+        sieve_2b,
+        sieve_1,
+    ],
+    [
+        sieve_2,
+        sieve_2a,
+    ],
+    [sieve_3],
+    [sieve_4],
+    [
+        sieve_5a,
+        sieve_5,
+    ],
+    [
+        sieve_5b,
+        [sieve_6, sieve_6a, sieve_6b],
+    ],
+    [
+        sieve_6,
+        [sieve_7, sieve_7a, sieve_7b],
+    ],
+    [final_sieve],
+]
+
+
+def write_harmonic_map_txt(
+    sieves=sieve_groupings,
+):
+    print("writing map . . .")
+    text_record = open("harmonic_map.txt", "w")
+
+    group_counter = 1
+
+    for grouping in sieve_groupings:
+        print(f"Section {group_counter} (", file=text_record)
+        group_counter += 1
+        for group in grouping:
+            if not isinstance(group, list):
+                intervals = tournes.pitch.return_interval_list_from_sieve(sieve=group)
+                print(
+                    f"\t{group}:\t{intervals}\t|\ttotal length:\t{len(intervals) + 1}",
+                    file=text_record,
+                )
+            else:
+                total_length = 0
+                print(f"\t Nested Grouping (", file=text_record)
+                for subgroup in group:
+                    intervals = tournes.pitch.return_interval_list_from_sieve(
+                        sieve=subgroup
+                    )
+                    print(f"\t{subgroup}:\t{intervals}", file=text_record)
+                    total_length += len(intervals)
+                print(f"\ttotal length:\t{total_length})", file=text_record)
+
+        print("\t)", file=text_record)
+    print("map written")
