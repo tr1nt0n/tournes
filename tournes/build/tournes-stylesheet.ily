@@ -317,7 +317,7 @@ afterGraceFraction = #(cons 15 16)
         \fill-line {
             \concat {
                 \override #'(font-name . "Bodoni72 Book Italic")
-                "herbe des tournes"
+                ". . . so fließt den auch mit ihm davon"
                 \override #'(font-name . "Bodoni72 Book")
                 " - Trinity Hlynn Prater"
             }
@@ -337,7 +337,7 @@ afterGraceFraction = #(cons 15 16)
                 }
                 \concat {
                     \override #'(font-name . "Bodoni72 Book Italic")
-                    "herbe des tournes"
+                    ". . . so fließt den auch mit ihm davon"
                     \override #'(font-name . "Bodoni72 Book")
                     " - Trinity Hlynn Prater"
                 }
