@@ -1,0 +1,16 @@
+"The instrument overblown a twelfth in its fundamental register . . . The clarinet, therefore, produces every other partial, the odd partials, of the normal overtone series."
+
+- This means that microtones based on the 3rd, 5th, 7th, and 9th partials of the clarinet's fundamental should be relatively easy to accomplish in the combination tone sections. 
+
+- Use of only fragile/noisy multiphonics ( beating in low register, or shrill presence in high partials )
+
+- timbre trills + pitch bends ( good for beginning ) 
+
+- interfere with accordion in all ways, especially to dirty more pitch-centric materials
+
+- tone -> air transitions good for adding instability 
+
+- gradations of teeth on reed ( use the graphic pressure ramps for this one, with the vibrato glissandi for teeth-position )
+
+- throat growling / shouting into the instrument 
+
