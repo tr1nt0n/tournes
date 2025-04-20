@@ -12,7 +12,7 @@
 
 \header {
     dedication = \markup \column {\line \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #2 { "to" \override #'(font-name . "Bodoni72 Book") "Patrik Kako"  } } \line { \fontsize #0.01 \with-color #white "."} }
-    title = \markup \override #'(font-name . "Bodoni72 Book Italic") \center-column { \line \fontsize #10 { "h e r b e" \hspace #7 "d e s" \hspace #7 "t o u r n e s" } \fontsize #0.01 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72 Book Italic") \center-column { \line \fontsize #10 { ". . ." \hspace #7 "so fließt den auch mit ihm davon" } \fontsize #0.01 \with-color #white "."}
     subtitle = \markup \fontsize #0 \center-column { \line { \override #'(font-name . "Bodoni72 Book Italic") { "for" \override #'(font-name . "Bodoni72 Book") "quintet and electronics" } } \fontsize #0.01 \with-color #white "."}
     composer = \markup \column { \override #'(font-name . "Bodoni72") \fontsize #0 {"Trinity Hlynn Prater (*2000)"} \fontsize #25 \with-color #white "."}
 }
