@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=11in,paperheight=17in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begingroup
+\begin{center}
+\end{center}
+\endgroup
+
+\vspace{15\baselineskip}
+
+\begingroup
+\begin{center}
+\huge F O R E W O R D
+\end{center}
+\endgroup
+
+\vspace{3\baselineskip}
+
+\begingroup
+``The world of humankind divides itself into you and I, \\
+``Saying, `I think differently from you, and you think differently from me.' \\
+``But do they not know that the people in their dreams also think differently from them, and they differently from me? \\
+``What is, `I?' \\
+``What is a human being?"
+\phantom{text} \hfill - \textbf{Yinxi} ( English approximation ) \\
+\endgroup
+
+\end{document}
