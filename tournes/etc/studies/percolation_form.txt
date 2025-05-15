@@ -1,0 +1,432 @@
+Frame 0
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+0
+Material 4
+1
+_______________________________
+Frame 1
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 2
+Material 0
+1
+Material 1
+1
+Material 2
+1
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 3
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 4
+Material 0
+1
+Material 1
+1
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 5
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 6
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 7
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 8
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 9
+Material 0
+0
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 10
+Material 0
+0
+Material 1
+1
+Material 2
+1
+Material 3
+0
+Material 4
+1
+_______________________________
+Frame 11
+Material 0
+0
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 12
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+0
+Material 4
+1
+_______________________________
+Frame 13
+Material 0
+0
+Material 1
+0
+Material 2
+1
+Material 3
+0
+Material 4
+1
+_______________________________
+Frame 14
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 15
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 16
+Material 0
+1
+Material 1
+1
+Material 2
+1
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 17
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 18
+Material 0
+0
+Material 1
+0
+Material 2
+0
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 19
+Material 0
+0
+Material 1
+0
+Material 2
+1
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 20
+Material 0
+0
+Material 1
+1
+Material 2
+1
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 21
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+0
+Material 4
+1
+_______________________________
+Frame 22
+Material 0
+1
+Material 1
+0
+Material 2
+1
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 23
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 24
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 25
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 26
+Material 0
+0
+Material 1
+0
+Material 2
+1
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 27
+Material 0
+0
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+0
+_______________________________
+Frame 28
+Material 0
+1
+Material 1
+1
+Material 2
+0
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 29
+Material 0
+0
+Material 1
+0
+Material 2
+0
+Material 3
+0
+Material 4
+1
+_______________________________
+Frame 30
+Material 0
+0
+Material 1
+1
+Material 2
+0
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 31
+Material 0
+0
+Material 1
+0
+Material 2
+0
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 32
+Material 0
+0
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 33
+Material 0
+1
+Material 1
+0
+Material 2
+0
+Material 3
+1
+Material 4
+1
+_______________________________
+Frame 34
+Material 0
+1
+Material 1
+1
+Material 2
+0
+Material 3
+0
+Material 4
+0
+_______________________________
+Frame 35
+Material 0
+0
+Material 1
+0
+Material 2
+1
+Material 3
+0
+Material 4
+0
+_______________________________
