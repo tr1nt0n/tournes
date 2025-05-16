@@ -240,7 +240,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override InstrumentName.self-alignment-X = #CENTER
         % \RemoveAllEmptyStaves
-        \RemoveEmptyStaves
+        % \RemoveEmptyStaves
     }
 
     \context {

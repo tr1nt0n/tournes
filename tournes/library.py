@@ -153,19 +153,19 @@ all_short_instrument_names = [
     abjad.ShortInstrumentName(
         context="Staff",
         markup=abjad.Markup(
-            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { fl. }'
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic") { fl }'
         ),
     ),
     abjad.ShortInstrumentName(
         context="Staff",
         markup=abjad.Markup(
-            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ cl. }'
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ cl }'
         ),
     ),
     abjad.ShortInstrumentName(
         context="GrandStaff",
         markup=abjad.Markup(
-            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ acc. }'
+            '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book Italic"){ acc }'
         ),
     ),
     abjad.ShortInstrumentName(

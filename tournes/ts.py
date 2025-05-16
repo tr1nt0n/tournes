@@ -71,3 +71,49 @@ def return_system_2_ts(measure_amount, index=0):
     )
 
     return rotated_sequence[0:measure_amount]
+
+
+# Time Signature System 5
+
+root_numerators = [
+    # Roopak Taal
+    2,
+    2,
+    3,
+    # Jhap Taal
+    2,
+    3,
+    2,
+    3,
+    # Deepchandi Taal
+    3,
+    4,
+    3,
+    4,
+    # Ek Taal
+    12,
+]
+
+partitioned_numerators = abjad.sequence.partition_by_counts(
+    sequence=root_numerators,
+    counts=[
+        3,
+        4,
+        5,
+    ],
+    overhang=True,
+)
+
+helianthated_numerators = baca.sequence.helianthate(partitioned_numerators, n=-1, m=1)
+
+taal_numerator_sequence = evans.Sequence(helianthated_numerators).flatten()
+
+taal_ts_sequence = []
+
+for numerator in taal_numerator_sequence:
+    if numerator == 12:
+        pair = (numerator, 8)
+    else:
+        pair = (numerator, 4)
+
+    taal_ts_sequence.append(pair)

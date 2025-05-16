@@ -11,23 +11,171 @@ from tournes import ts
 
 # score
 
-section_ts = ts.return_system_1_ts(index=0, measure_amount=9)
+section_ts = [(6, 4) for _ in range(0, 9)]
 
-section_ts.extend([(3, 4) for _ in range(0, 8)])
-
-section_ts.extend(ts.return_system_1_ts(index=9, measure_amount=1))
+section_ts.extend(ts.return_system_1_ts(measure_amount=9, index=9))
 
 score = library.tournes_score(section_ts)
 
 # flute music
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1, 9)),
-#     evans.RhythmHandler(
-#         rhythm.rhythm_1(stage=1, map_rotation=0)
-#     ),
-#     voice=score["flute voice"]
-# )
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    evans.RhythmHandler(evans.talea([1, 1, -100], 8)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.OnBeatGraceHandler(
+        number_of_attacks=[
+            5,
+        ],
+        durations=[
+            1,
+        ],
+        attack_number_forget=False,
+        durations_forget=False,
+        font_size=(-4),
+        forced_multiplier=None,
+        leaf_duration=(1, 64),
+        boolean_vector=[1, 0],
+        vector_forget=False,
+        attack_count=-1,
+        durations_count=-1,
+        vector_count=-1,
+        name="flute graces 1",
+    ),
+    voice=score["flute voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (6, 8)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=1, map_rotation=3)),
+    voice=score["flute voice"],
+    preprocessor=trinton.fuse_quarters_preprocessor(
+        (
+            2,
+            2,
+            3,
+            2,
+            3,
+            2,
+            3,
+            1,
+        )
+    ),
+)
+
+### TESTING ###
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (11,)),
+    evans.RhythmHandler(rhythm.rhythm_4()),
+    voice=score["flute voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15,)),
+    evans.RhythmHandler(rhythm.rhythm_4()),
+    voice=score["flute voice"],
+)
+
+### TESTING ###
+
+# clarinet music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 2)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=3, map_rotation=0)),
+    voice=score["bassclarinet voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=1, map_rotation=1)),
+    voice=score["bassclarinet voice"],
+)
+
+# accordion music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 3)),
+    evans.RhythmHandler(evans.talea([-2, 34, 1, -100], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["accordion 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5,)),
+    evans.RhythmHandler(evans.talea([23, 1], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["accordion 1 voice"],
+    beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    evans.RhythmHandler(evans.talea([71, 1], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["accordion 1 voice"],
+    beam_meter=True,
+)
+
+# violin music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (2, 3)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=1, map_rotation=0)),
+    voice=score["violin voice"],
+    preprocessor=trinton.fuse_eighths_preprocessor((5, 6, 6, 7)),
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 6)),
+    evans.RhythmHandler(evans.talea([-11, 1, 1, -11, -1, 1, -9, 1, -1000], 8)),
+    trinton.rewrite_meter_command(boundary_depth=-2),
+    voice=score["violin voice"],
+)
+
+# cello music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3, 5)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=1, map_rotation=3)),
+    voice=score["cello voice"],
+    preprocessor=trinton.fuse_eighths_preprocessor((6, 5, 6, 4, 6, 7, 8)),
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 9)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=3, map_rotation=5)),
+    voice=score["cello voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (6,)),
+    evans.RhythmHandler(evans.talea([1, -100], 8)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.OnBeatGraceHandler(
+        number_of_attacks=[
+            5,
+        ],
+        durations=[
+            1,
+        ],
+        attack_number_forget=False,
+        durations_forget=False,
+        font_size=(-4),
+        forced_multiplier=None,
+        leaf_duration=(1, 64),
+        boolean_vector=[
+            1,
+        ],
+        vector_forget=False,
+        attack_count=-1,
+        durations_count=-1,
+        vector_count=-1,
+        name="cello graces 1",
+    ),
+    voice=score["cello voice"],
+)
 
 # globals
 
@@ -37,7 +185,7 @@ trinton.make_music(
         attachments=[
             trinton.return_metronome_markup(
                 note_value="quarter",
-                tempo=108,
+                tempo=90,
                 padding=11,
                 metric_modulation=None,
                 site="after",
@@ -47,6 +195,37 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=60,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Note("c'4."),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                site="after",
+                hspace=None,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=10,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        command="",
+        tag=None,
     ),
     voice=score["Global Context"],
 )
