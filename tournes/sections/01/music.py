@@ -63,6 +63,12 @@ trinton.make_music(
     ),
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 10)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=1)),
+    voice=score["flute voice"],
+)
+
 # flute music
 
 trinton.make_music(
@@ -144,6 +150,61 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (7, 9)),
     evans.RhythmHandler(rhythm.rhythm_3(stage=2, p=0.50, seed=5, tuplet_index=4)),
+    trinton.OnBeatGraceHandler(
+        number_of_attacks=[
+            5,
+        ],
+        durations=[
+            1,
+        ],
+        attack_number_forget=False,
+        durations_forget=False,
+        font_size=(-4),
+        forced_multiplier=None,
+        leaf_duration=(1, 64),
+        boolean_vector=[
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+        ],
+        vector_forget=False,
+        attack_count=-1,
+        durations_count=-1,
+        vector_count=-1,
+        name="violin graces 1",
+    ),
     voice=score["violin voice"],
     preprocessor=trinton.fuse_quarters_preprocessor(
         (
@@ -163,12 +224,6 @@ trinton.make_music(
     evans.RhythmHandler(rhythm.rhythm_1(stage=1, map_rotation=3)),
     voice=score["cello voice"],
     preprocessor=trinton.fuse_eighths_preprocessor((6, 5, 6, 4, 6, 7, 8)),
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (8, 9)),
-    evans.RhythmHandler(rhythm.rhythm_1(stage=3, map_rotation=5)),
-    voice=score["cello voice"],
 )
 
 trinton.make_music(
@@ -196,6 +251,18 @@ trinton.make_music(
         vector_count=-1,
         name="cello graces 1",
     ),
+    voice=score["cello voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=3, font_size=-3)),
+    voice=score["cello voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 9)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=3, map_rotation=5)),
     voice=score["cello voice"],
 )
 
