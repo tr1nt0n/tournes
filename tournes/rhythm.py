@@ -2,6 +2,7 @@ import abjad
 import baca
 import evans
 import trinton
+import random
 import math
 from abjadext import rmakers
 from itertools import cycle
@@ -85,6 +86,118 @@ def rhythm_1(stage=1, map_rotation=0):
     return return_rhythm_1
 
 
+def rhythm_3(stage=1, p=0.5, seed=1, tuplet_index=0):
+    def return_rhythm_3(durations):
+        beat_regions = []
+        for duration in durations:
+            numerator = int(duration.numerator)
+            denominator = int(duration.denominator)
+            meter = abjad.Meter(duration)
+
+            if numerator % 3 == 0 and numerator != 15:
+                regions = []
+                if meter.is_compound is True:
+                    range_limit = int(numerator / 3)
+                    for _ in range(0, range_limit):
+                        regions.append(abjad.Duration((3, denominator)))
+
+                else:
+                    for _ in range(0, numerator):
+                        regions.append(abjad.Duration((1, denominator)))
+
+                beat_regions.append(regions)
+
+            if numerator % 2 == 0 and numerator % 3 != 0:
+                regions = []
+                for _ in range(0, numerator):
+                    regions.append(abjad.Duration((1, denominator)))
+
+                beat_regions.append(regions)
+
+            def is_prime(n):
+                for i in range(2, n):
+                    if (n % i) == 0:
+                        return False
+                    else:
+                        return True
+
+            if is_prime(numerator) is True and numerator > 3 and numerator % 9 != 0:
+                regions = []
+                regions.append(abjad.Duration((3, denominator)))
+
+                for _ in range(0, numerator):
+                    if sum(regions) == numerator / denominator:
+                        pass
+                    else:
+                        regions.append(abjad.Duration((2, denominator)))
+
+                regions = trinton.rotated_sequence(regions, 1)
+
+                beat_regions.append(regions)
+
+        container = abjad.Container()
+
+        beat_regions = abjad.sequence.flatten(beat_regions)
+
+        music = rmakers.tuplet(beat_regions, [(1,)])
+        container.extend(music)
+
+        if stage > 1:
+            random_walk = trinton.random_walk(
+                chord=[2, 2, 3, 2, 3, 2, 3, 3, 4, 3, 4, 6], seed=seed
+            )
+
+            secondary_tuplet_ratios = []
+            new_ratio = []
+            for i, step in enumerate(random_walk):
+                if len(new_ratio) != 5:
+                    new_ratio.append(step)
+                else:
+                    new_tuplet_ratio = tuple(new_ratio)
+                    secondary_tuplet_ratios.append(new_tuplet_ratio)
+                    new_ratio.clear()
+
+            if stage == 2:
+                relevant_tuplets = []
+                tuplets = abjad.select.tuplets(container)
+
+                random.seed(seed)
+                random_floats = [random.random() for _ in range(0, len(tuplets))]
+
+                for float, tuplet in zip(random_floats, tuplets):
+                    if float <= p:
+                        relevant_tuplets.append(tuplet)
+
+            if stage == 3:
+                relevant_tuplets = abjad.select.tuplets(container)
+
+            secondary_tuplet_ratios = trinton.rotated_sequence(
+                secondary_tuplet_ratios, tuplet_index % len(secondary_tuplet_ratios)
+            )
+
+            for tuplet, secondary_tuplet_ratio in zip(
+                relevant_tuplets, secondary_tuplet_ratios
+            ):
+                new_tuplet = rmakers.tuplet(
+                    [abjad.get.duration(tuplet)], [secondary_tuplet_ratio]
+                )
+                abjad.mutate.replace(tuplet, new_tuplet)
+
+        rmakers.rewrite_dots(container)
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        rmakers.trivialize(container)
+        for tuplet in abjad.select.tuplets(container):
+            abjad.beam(tuplet, beam_rests=True)
+        rmakers.rewrite_rest_filled(container)
+        rmakers.rewrite_sustained(container)
+        rmakers.extract_trivial(container)
+
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        return rhythm_selections
+
+    return return_rhythm_3
+
+
 def rhythm_4(stage=1, rest_size=1):
     def return_rhythm_4(durations):
         talea_numerators = []
@@ -142,9 +255,9 @@ def rhythm_4(stage=1, rest_size=1):
 
             if is_prime(numerator) is True and numerator > 3 and numerator % 9 != 0:
                 new_numerator = numerator / 2
-                numerator_1 = new_numerator + 0.5
+                numerator_1 = new_numerator - 0.5
                 numerator_1 = int(numerator_1)
-                numerator_2 = new_numerator - 0.5
+                numerator_2 = new_numerator + 0.5
                 numerator_2 = int(numerator_2)
                 new_durations = [
                     abjad.Duration(numerator_1, denominator),
@@ -157,33 +270,45 @@ def rhythm_4(stage=1, rest_size=1):
 
                     if duration_numerator % 2 == 0 or duration_numerator == 1:
                         ratio = [3, 1]
-                        if duration_denominator != 16:
-                            if duration_denominator < 16:
-                                multiplier = 16 / duration_denominator
-                            if duration_denominator > 16:
-                                multiplier = duration_denominator / 16
+                        if new_duration >= abjad.Duration((1, 4)):
+                            multiplier = 4 / duration_denominator
                             new_ratio = []
                             for _ in ratio:
                                 new_ = _ * multiplier
                                 new_ratio.append(int(new_))
                             ratio = new_ratio
-                        for _ in ratio:
-                            talea_numerators.append(_)
+                        else:
+                            raise Exception(
+                                rf"{new_duration}: This ratio does not scale smaller than a total duration of 1/4"
+                            )
 
                     if duration_numerator % 3 == 0:
                         ratio = [2, 1]
-                        if duration_denominator != 16:
-                            if duration_denominator < 16:
+                        if new_duration >= abjad.Duration((3, 16)):
+                            if duration_denominator != 16:
                                 multiplier = 16 / duration_denominator
-                            if duration_denominator > 16:
-                                multiplier = duration_denominator / 16
-                            new_ratio = []
-                            for _ in ratio:
-                                new_ = _ * multiplier
-                                new_ratio.append(int(new_))
-                            ratio = new_ratio
-                        for _ in ratio:
-                            talea_numerators.append(_)
+                                new_ratio = []
+                                for _ in ratio:
+                                    new_ = _ * multiplier
+                                    new_ratio.append(int(new_))
+                                ratio = new_ratio
+                        else:
+                            raise Exception(
+                                rf"{new_duration}: This ratio does not scale smaller than a total duration of 3/16"
+                            )
+
+                    for _ in ratio:
+                        talea_numerators.append(_)
+
+        if stage > 1:
+            new_numerators = []
+            rest_numerator = rest_size * -1
+
+            for _ in talea_numerators:
+                new_numerators.append(_)
+                new_numerators.append(rest_numerator)
+
+            talea_numerators = new_numerators
 
         container = abjad.Container()
         talea = rmakers.talea(durations, talea_numerators, 16)

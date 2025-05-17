@@ -63,21 +63,15 @@ trinton.make_music(
     ),
 )
 
-### TESTING ###
+# flute music
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (11,)),
-    evans.RhythmHandler(rhythm.rhythm_4()),
+    lambda _: trinton.select_target(_, (3, 4)),
+    evans.RhythmHandler(rhythm.rhythm_4(stage=2, rest_size=3)),
+    trinton.force_rest(selector=trinton.select_leaves_by_index([-1], pitched=True)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
     voice=score["flute voice"],
 )
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (15,)),
-    evans.RhythmHandler(rhythm.rhythm_4()),
-    voice=score["flute voice"],
-)
-
-### TESTING ###
 
 # clarinet music
 
@@ -88,8 +82,21 @@ trinton.make_music(
 )
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (3,)),
+    evans.RhythmHandler(evans.talea([-12, 1, -100], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["bassclarinet voice"],
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (5, 6)),
-    evans.RhythmHandler(rhythm.rhythm_1(stage=1, map_rotation=1)),
+    evans.RhythmHandler(rhythm.rhythm_1(stage=3, map_rotation=1)),
+    voice=score["bassclarinet voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    evans.RhythmHandler(rhythm.rhythm_3(stage=2, p=0.45, seed=1, tuplet_index=0)),
     voice=score["bassclarinet voice"],
 )
 
@@ -97,7 +104,7 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (1, 3)),
-    evans.RhythmHandler(evans.talea([-2, 34, 1, -100], 16)),
+    evans.RhythmHandler(evans.talea([-2, 58, 1, -100], 16)),
     trinton.rewrite_meter_command(boundary_depth=-1),
     voice=score["accordion 1 voice"],
 )
@@ -132,6 +139,21 @@ trinton.make_music(
     evans.RhythmHandler(evans.talea([-11, 1, 1, -11, -1, 1, -9, 1, -1000], 8)),
     trinton.rewrite_meter_command(boundary_depth=-2),
     voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    evans.RhythmHandler(rhythm.rhythm_3(stage=2, p=0.50, seed=5, tuplet_index=4)),
+    voice=score["violin voice"],
+    preprocessor=trinton.fuse_quarters_preprocessor(
+        (
+            6,
+            3,
+            3,
+            3,
+            3,
+        )
+    ),
 )
 
 # cello music
@@ -205,12 +227,12 @@ trinton.make_music(
         strings=[
             r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
             trinton.return_metronome_markup(
-                note_value="quarter",
+                note_value="eighth",
                 tempo=60,
                 padding=0,
                 metric_modulation=abjad.MetricModulation(
                     left_rhythm=abjad.Note("c'4."),
-                    right_rhythm=abjad.Note("c'4"),
+                    right_rhythm=abjad.Note("c'8"),
                 ),
                 site="after",
                 hspace=None,
@@ -226,6 +248,29 @@ trinton.make_music(
         full_string=True,
         command="",
         tag=None,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=90,
+                padding=17,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'2"),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                site="after",
+                hspace=0.5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
     ),
     voice=score["Global Context"],
 )

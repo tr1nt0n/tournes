@@ -37,9 +37,9 @@
               \raise #0 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-              [\abjad-metric-modulation #2 #1 #2 #0 #'(1 . 1)]
+              [\abjad-metric-modulation #2 #1 #3 #0 #'(1 . 1)]
                   \hspace #1
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 60 " 
+                  \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
               }
             }
             \startTextSpan
@@ -66,6 +66,16 @@
             s1 * 3/4
             \time 7/8
             s1 * 7/8
+            ^ \markup {
+              \hspace #-9
+              \raise #17 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+              [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]
+                  \hspace #1
+                  \abjad-metronome-mark-markup #2 #0 #2 #" 90 " 
+              }
+            }
             \time 4/4
             s1 * 1
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
@@ -122,8 +132,26 @@
                         r2
                         r2.
                         s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        c'2
+                        r8.
+                        c'16
+                        ~
+                        c'8.
+                        r16
+                        r8
+                        c'8
+                        ~
+                        c'4
+                        ~
+                        c'8
+                        r8
+                        r16
+                        c'8.
+                        ~
+                        c'16
+                        r8.
+                        c'2
+                        r4
                         s1 * 3/2
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -528,16 +556,11 @@
                         \revert TupletNumber.text
                         s1 * 3/2
                         s1 * 7/12
-                        c'4
-                        c'8
-                        c'4
+                        s1 * 5/8
                         s1 * 2/3
                         s1 * 1/2
                         s1 * 3/4
-                        c'4.
-                        c'8
-                        c'4
-                        c'8
+                        s1 * 7/8
                         s1 * 1
                         s1 * 5/12
                         s1 * 7/12
@@ -762,7 +785,10 @@
                             ]
                         }
                         \revert TupletNumber.text
-                        s1 * 3/2
+                        r2.
+                        c'16
+                        r8.
+                        r2
                         s1 * 3/2
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -803,16 +829,16 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #left
-                            r32 * 51/32
+                            c'32 * 51/32
                             [
-                            r32 * 51/32
-                            r32 * 27/16
-                            r32 * 29/16
+                            c'32 * 51/32
+                            c'32 * 27/16
+                            c'32 * 29/16
                             c'32 * 65/32
                             c'32 * 73/32
                             c'32 * 21/8
                             c'32 * 97/32
-                            r32 * 111/32
+                            c'32 * 111/32
                             c'32 * 31/8
                             ]
                         }
@@ -856,16 +882,16 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            r32 * 15/4
+                            c'32 * 15/4
                             [
-                            r32 * 115/32
-                            r32 * 103/32
-                            r32 * 11/4
+                            c'32 * 115/32
+                            c'32 * 103/32
+                            c'32 * 11/4
                             c'32 * 37/16
                             c'32 * 2
                             c'32 * 7/4
                             c'32 * 13/8
-                            r32 * 49/32
+                            c'32 * 49/32
                             c'32 * 47/32
                             ]
                         }
@@ -909,16 +935,16 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #left
-                            r32 * 51/32
+                            c'32 * 51/32
                             [
-                            r32 * 51/32
-                            r32 * 27/16
-                            r32 * 29/16
+                            c'32 * 51/32
+                            c'32 * 27/16
+                            c'32 * 29/16
                             c'32 * 65/32
                             c'32 * 73/32
                             c'32 * 21/8
                             c'32 * 97/32
-                            r32 * 111/32
+                            c'32 * 111/32
                             c'32 * 31/8
                             ]
                         }
@@ -962,23 +988,52 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            r32 * 15/4
+                            c'32 * 15/4
                             [
-                            r32 * 115/32
-                            r32 * 103/32
-                            r32 * 11/4
+                            c'32 * 115/32
+                            c'32 * 103/32
+                            c'32 * 11/4
                             c'32 * 37/16
                             c'32 * 2
                             c'32 * 7/4
                             c'32 * 13/8
-                            r32 * 49/32
+                            c'32 * 49/32
                             c'32 * 47/32
                             ]
                         }
                         \revert TupletNumber.text
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 6/5
+                        {
+                            c'8
+                            [
+                            c'8
+                            c'8
+                            c'8
+                            c'8
+                            ]
+                        }
+                        c'2.
+                        c'2.
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 12/11
+                        {
+                            c'8
+                            [
+                            c'8
+                            c'8
+                            c'8.
+                            c'8
+                            ]
+                        }
+                        c'2.
+                        c'8
+                        [
+                        c'8.
+                        c'8
+                        c'8.
+                        c'8
+                        ]
                         s1 * 7/12
                         s1 * 5/8
                         s1 * 2/3
@@ -1007,11 +1062,12 @@
                         ~
                         c'2.
                         ~
+                        c'1.
+                        ~
                         c'2.
                         c'16
                         r8.
                         r2
-                        r1.
                         s1 * 3/2
                         c'2.
                         ~
@@ -1421,9 +1477,68 @@
                         r2
                         r8
                         c'8
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        c'2
+                        c'2
+                        c'2
+                        c'4
+                        c'4
+                        c'4
+                        \times 2/3
+                        {
+                            c'16
+                            [
+                            c'16.
+                            c'16
+                            c'16.
+                            c'16
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            c'16
+                            [
+                            c'16.
+                            c'16
+                            c'16.
+                            c'16
+                            ]
+                        }
+                        c'4
+                        c'4
+                        c'4
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 16/15
+                        {
+                            c'32
+                            [
+                            c'32.
+                            c'32.
+                            c'16
+                            c'32.
+                            ]
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 16/13
+                        {
+                            c'32.
+                            [
+                            c'32.
+                            c'32
+                            c'32.
+                            c'32
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            c'16
+                            [
+                            c'16.
+                            c'16
+                            c'16.
+                            c'16
+                            ]
+                        }
+                        c'4
                         s1 * 7/12
                         s1 * 5/8
                         s1 * 2/3
