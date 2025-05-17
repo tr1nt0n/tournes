@@ -71,3 +71,32 @@ def return_sieve_transposition_pitch_list(
         previous_pitch = new_pitch
 
     return pitch_list
+
+
+def clarinet_pitching_1(index=0, selector=trinton.pleaves()):
+    def return_clarinet_pitching_1(selections):
+        selections = selector(selections)
+
+        sieve = library.final_sieve
+        vectors = sieve.get_boolean_vector(total_length=len(sieve))
+        vectors = trinton.rotated_sequence(vectors, index % len(vectors))
+
+        pitch_list = []
+
+        random_walk = trinton.random_walk(chord=["a", "ds'", "gs'", "b"], seed=6)
+
+        counter = 0
+
+        for vector in vectors:
+            if vector == 1:
+                counter += 1
+            random_walk = trinton.rotated_sequence(random_walk, counter)
+
+            relevant_pitch = random_walk[0]
+
+            pitch_list.append(relevant_pitch)
+
+        handler = evans.PitchHandler(pitch_list=pitch_list)
+        handler(selections)
+
+    return return_clarinet_pitching_1

@@ -77,6 +77,15 @@ def rhythm_1(stage=1, map_rotation=0):
             )
             notes = note_selector(abjad.select.leaves(container))
             rmakers.force_note(notes)
+            contiguous_groups = abjad.select.group_by_contiguity(
+                abjad.select.leaves(container, pitched=True)
+            )
+            for group in contiguous_groups:
+                if len(group) > 1:
+                    abjad.slur(group)
+        else:
+            for tuplet in abjad.select.tuplets(container):
+                abjad.slur(tuplet)
 
         rmakers.duration_bracket(container)
         rmakers.feather_beam(container, beam_rests=True)

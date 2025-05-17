@@ -84,6 +84,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (1, 2)),
     evans.RhythmHandler(rhythm.rhythm_1(stage=3, map_rotation=0)),
+    pitch.clarinet_pitching_1(index=0),
     voice=score["bassclarinet voice"],
 )
 

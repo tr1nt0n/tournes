@@ -212,6 +212,7 @@
                             r32 * 91/32
                             r32 * 35/16
                             c'32 * 29/16
+                            (
                             c'32 * 13/8
                             ]
                         }
@@ -258,9 +259,12 @@
                             c'32 * 63/16
                             [
                             c'32 * 115/32
+                            )
                             r32 * 91/32
                             c'32 * 35/16
+                            (
                             c'32 * 29/16
+                            )
                             r32 * 13/8
                             ]
                         }
@@ -308,12 +312,16 @@
                             [
                             r32 * 51/32
                             c'32 * 27/16
+                            (
                             c'32 * 29/16
                             c'32 * 65/32
                             c'32 * 73/32
+                            )
                             r32 * 21/8
                             c'32 * 97/32
+                            (
                             c'32 * 111/32
+                            )
                             r32 * 31/8
                             ]
                         }
@@ -361,9 +369,11 @@
                             [
                             r32 * 115/32
                             c'32 * 91/32
+                            (
                             c'32 * 35/16
                             c'32 * 29/16
                             c'32 * 13/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -409,14 +419,18 @@
                             r32 * 51/32
                             [
                             c'32 * 51/32
+                            (
                             c'32 * 27/16
+                            )
                             r32 * 29/16
                             r32 * 65/32
                             r32 * 73/32
                             c'32 * 21/8
+                            (
                             c'32 * 97/32
                             c'32 * 111/32
                             c'32 * 31/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -462,7 +476,9 @@
                             r32 * 63/16
                             [
                             c'32 * 115/32
+                            (
                             c'32 * 91/32
+                            )
                             r32 * 35/16
                             r32 * 29/16
                             r32 * 13/8
@@ -510,12 +526,16 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            (
                             c'32 * 51/32
                             c'32 * 27/16
                             c'32 * 29/16
+                            )
                             r32 * 65/32
                             c'32 * 73/32
+                            (
                             c'32 * 21/8
+                            )
                             r32 * 97/32
                             r32 * 111/32
                             r32 * 31/8
@@ -563,8 +583,10 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 15/4
                             [
+                            (
                             c'32 * 21/8
                             c'32 * 13/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1078,17 +1100,19 @@
                               %! +SCORE
                             \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic"){ cl }
                             \once \override Beam.grow-direction = #left
-                            c'32 * 51/32
+                            gs'32 * 51/32
                             [
-                            c'32 * 51/32
-                            c'32 * 27/16
-                            c'32 * 29/16
-                            c'32 * 65/32
-                            c'32 * 73/32
-                            c'32 * 21/8
-                            c'32 * 97/32
-                            c'32 * 111/32
-                            c'32 * 31/8
+                            (
+                            a32 * 51/32
+                            a32 * 27/16
+                            ds'32 * 29/16
+                            ds'32 * 65/32
+                            ds'32 * 73/32
+                            b32 * 21/8
+                            b32 * 97/32
+                            gs'32 * 111/32
+                            b32 * 31/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1131,17 +1155,19 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 15/4
+                            b32 * 15/4
                             [
-                            c'32 * 115/32
-                            c'32 * 103/32
-                            c'32 * 11/4
-                            c'32 * 37/16
-                            c'32 * 2
-                            c'32 * 7/4
-                            c'32 * 13/8
-                            c'32 * 49/32
-                            c'32 * 47/32
+                            (
+                            a32 * 115/32
+                            a32 * 103/32
+                            ds'32 * 11/4
+                            ds'32 * 37/16
+                            b32 * 2
+                            a32 * 7/4
+                            a32 * 13/8
+                            gs'32 * 49/32
+                            ds'32 * 47/32
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1184,17 +1210,19 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #left
-                            c'32 * 51/32
+                            ds'32 * 51/32
                             [
-                            c'32 * 51/32
-                            c'32 * 27/16
-                            c'32 * 29/16
-                            c'32 * 65/32
-                            c'32 * 73/32
-                            c'32 * 21/8
-                            c'32 * 97/32
-                            c'32 * 111/32
-                            c'32 * 31/8
+                            (
+                            b32 * 51/32
+                            a32 * 27/16
+                            a32 * 29/16
+                            a32 * 65/32
+                            ds'32 * 73/32
+                            gs'32 * 21/8
+                            gs'32 * 97/32
+                            ds'32 * 111/32
+                            ds'32 * 31/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1237,17 +1265,19 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 15/4
+                            b32 * 15/4
                             [
-                            c'32 * 115/32
-                            c'32 * 103/32
-                            c'32 * 11/4
-                            c'32 * 37/16
-                            c'32 * 2
-                            c'32 * 7/4
-                            c'32 * 13/8
-                            c'32 * 49/32
-                            c'32 * 47/32
+                            (
+                            gs'32 * 115/32
+                            ds'32 * 103/32
+                            ds'32 * 11/4
+                            ds'32 * 37/16
+                            a32 * 2
+                            gs'32 * 7/4
+                            b32 * 13/8
+                            ds'32 * 49/32
+                            ds'32 * 47/32
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1297,6 +1327,7 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            (
                             c'32 * 51/32
                             c'32 * 27/16
                             c'32 * 29/16
@@ -1306,6 +1337,7 @@
                             c'32 * 97/32
                             c'32 * 111/32
                             c'32 * 31/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1350,6 +1382,7 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 15/4
                             [
+                            (
                             c'32 * 115/32
                             c'32 * 103/32
                             c'32 * 11/4
@@ -1359,6 +1392,7 @@
                             c'32 * 13/8
                             c'32 * 49/32
                             c'32 * 47/32
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1403,6 +1437,7 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            (
                             c'32 * 51/32
                             c'32 * 27/16
                             c'32 * 29/16
@@ -1412,6 +1447,7 @@
                             c'32 * 97/32
                             c'32 * 111/32
                             c'32 * 31/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1456,6 +1492,7 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 15/4
                             [
+                            (
                             c'32 * 115/32
                             c'32 * 103/32
                             c'32 * 11/4
@@ -1465,6 +1502,7 @@
                             c'32 * 13/8
                             c'32 * 49/32
                             c'32 * 47/32
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -1720,7 +1758,9 @@
                             r32 * 43/32
                             [
                             c'32 * 49/32
+                            (
                             c'32 * 17/8
+                            )
                             r32 * 3
                             ]
                         }
@@ -1773,7 +1813,9 @@
                             c'32 * 73/32
                             r32 * 21/8
                             c'32 * 97/32
+                            (
                             c'32 * 111/32
+                            )
                             r32 * 31/8
                             ]
                         }
@@ -1826,7 +1868,9 @@
                             c'32 * 73/32
                             r32 * 21/8
                             c'32 * 97/32
+                            (
                             c'32 * 111/32
+                            )
                             r32 * 31/8
                             ]
                         }
@@ -1922,7 +1966,9 @@
                             r32 * 5/4
                             [
                             c'32 * 43/32
+                            (
                             c'32 * 51/32
+                            )
                             r32 * 65/32
                             c'32 * 85/32
                             r32 * 25/8
@@ -2099,12 +2145,15 @@
                             r32 * 27/16
                             r32 * 29/16
                             c'32 * 65/32
+                            (
                             c'32 * 73/32
                             c'32 * 21/8
                             c'32 * 97/32
+                            )
                             r32 * 111/32
                             c'32 * 31/8
                             ]
+                            (
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -2147,12 +2196,14 @@
                         {
                             \once \override Beam.grow-direction = #right
                             c'32 * 117/32
+                            )
                             [
                             r32 * 99/32
                             r32 * 69/32
                             r32 * 13/8
                             c'32 * 47/32
                             ]
+                            (
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -2198,6 +2249,7 @@
                             [
                             c'32 * 49/32
                             c'32 * 17/8
+                            )
                             r32 * 3
                             ]
                         }
@@ -2243,14 +2295,18 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            (
                             c'32 * 51/32
+                            )
                             r32 * 27/16
                             r32 * 29/16
                             r32 * 65/32
                             c'32 * 73/32
+                            (
                             c'32 * 21/8
                             c'32 * 97/32
                             c'32 * 111/32
+                            )
                             r32 * 31/8
                             ]
                         }
@@ -2296,12 +2352,15 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 63/16
                             [
+                            (
                             c'32 * 115/32
+                            )
                             r32 * 91/32
                             r32 * 35/16
                             r32 * 29/16
                             c'32 * 13/8
                             ]
+                            (
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -2347,14 +2406,18 @@
                             [
                             c'32 * 51/32
                             c'32 * 27/16
+                            )
                             r32 * 29/16
                             c'32 * 65/32
+                            (
                             c'32 * 73/32
+                            )
                             r32 * 21/8
                             r32 * 97/32
                             r32 * 111/32
                             c'32 * 31/8
                             ]
+                            (
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -2400,9 +2463,12 @@
                             [
                             c'32 * 115/32
                             c'32 * 91/32
+                            )
                             r32 * 35/16
                             c'32 * 29/16
+                            (
                             c'32 * 13/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -2450,6 +2516,7 @@
                             r32 * 43/32
                             r32 * 51/32
                             c'32 * 65/32
+                            (
                             c'32 * 85/32
                             c'32 * 25/8
                             ]
@@ -2495,6 +2562,7 @@
                         {
                             \once \override Beam.grow-direction = #right
                             c'32 * 15/4
+                            )
                             [
                             r32 * 21/8
                             c'32 * 13/8
@@ -2999,6 +3067,7 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            (
                             c'32 * 51/32
                             c'32 * 27/16
                             c'32 * 29/16
@@ -3008,6 +3077,7 @@
                             c'32 * 97/32
                             c'32 * 111/32
                             c'32 * 31/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -3052,6 +3122,7 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 15/4
                             [
+                            (
                             c'32 * 115/32
                             c'32 * 103/32
                             c'32 * 11/4
@@ -3061,6 +3132,7 @@
                             c'32 * 13/8
                             c'32 * 49/32
                             c'32 * 47/32
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -3105,6 +3177,7 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            (
                             c'32 * 51/32
                             c'32 * 27/16
                             c'32 * 29/16
@@ -3114,6 +3187,7 @@
                             c'32 * 97/32
                             c'32 * 111/32
                             c'32 * 31/8
+                            )
                             ]
                         }
                         \revert TupletNumber.text
@@ -3158,6 +3232,7 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 15/4
                             [
+                            (
                             c'32 * 115/32
                             c'32 * 103/32
                             c'32 * 11/4
@@ -3167,6 +3242,7 @@
                             c'32 * 13/8
                             c'32 * 49/32
                             c'32 * 47/32
+                            )
                             ]
                         }
                         \revert TupletNumber.text
