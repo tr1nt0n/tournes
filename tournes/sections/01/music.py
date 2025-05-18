@@ -84,7 +84,11 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (1, 2)),
     evans.RhythmHandler(rhythm.rhythm_1(stage=3, map_rotation=0)),
-    pitch.clarinet_pitching_1(index=0),
+    pitch.clarinet_pitching_1(index=5),
+    trinton.vertical_accidentals(selector=trinton.select_leaves_by_index([16, 23, 38])),
+    library.clarinet_articulations_1(
+        finger_number_index=0, selector=trinton.logical_ties(first=True, pitched=True)
+    ),
     voice=score["bassclarinet voice"],
 )
 

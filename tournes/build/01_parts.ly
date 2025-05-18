@@ -1086,18 +1086,27 @@
                               %! +SCORE
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic"){ cl }
                             \once \override Beam.grow-direction = #left
-                            gs'32 * 51/32
+                            b32 * 51/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             [
                             (
-                            a32 * 51/32
-                            a32 * 27/16
-                            ds'32 * 29/16
-                            ds'32 * 65/32
-                            ds'32 * 73/32
-                            b32 * 21/8
-                            b32 * 97/32
-                            gs'32 * 111/32
+                            b32 * 51/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
+                            b32 * 27/16
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            a32 * 29/16
+                            b32 * 65/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            b32 * 73/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            gs32 * 21/8
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            gs32 * 97/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            b32 * 111/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             b32 * 31/8
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
                             )
                             ]
                         }
@@ -1141,18 +1150,28 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            b32 * 15/4
+                            ds'32 * 15/4
                             [
                             (
                             a32 * 115/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
                             a32 * 103/32
-                            ds'32 * 11/4
-                            ds'32 * 37/16
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            a32 * 11/4
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            b32 * 37/16
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             b32 * 2
-                            a32 * 7/4
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
+                            \once \override Staff.Accidental.stencil = ##f
+                            ds'32 * 7/4
+                            - \sharp-articulation
                             a32 * 13/8
-                            gs'32 * 49/32
-                            ds'32 * 47/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
+                            a32 * 49/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            a32 * 47/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
                             )
                             ]
                         }
@@ -1196,17 +1215,25 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #left
-                            ds'32 * 51/32
+                            b32 * 51/32
                             [
                             (
-                            b32 * 51/32
+                            a32 * 51/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
                             a32 * 27/16
-                            a32 * 29/16
-                            a32 * 65/32
-                            ds'32 * 73/32
-                            gs'32 * 21/8
-                            gs'32 * 97/32
-                            ds'32 * 111/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            \once \override Staff.Accidental.stencil = ##f
+                            ds'32 * 29/16
+                            - \sharp-articulation
+                            b32 * 65/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            b32 * 73/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            gs32 * 21/8
+                            b32 * 97/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            b32 * 111/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             ds'32 * 31/8
                             )
                             ]
@@ -1251,18 +1278,26 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            b32 * 15/4
+                            a32 * 15/4
                             [
                             (
-                            gs'32 * 115/32
+                            gs32 * 115/32
                             ds'32 * 103/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             ds'32 * 11/4
-                            ds'32 * 37/16
-                            a32 * 2
-                            gs'32 * 7/4
-                            b32 * 13/8
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            b32 * 37/16
+                            gs32 * 2
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            gs32 * 7/4
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            a32 * 13/8
+                            \once \override Staff.Accidental.stencil = ##f
                             ds'32 * 49/32
+                            - \sharp-articulation
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             ds'32 * 47/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
                             )
                             ]
                         }

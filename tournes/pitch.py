@@ -74,7 +74,7 @@ def return_sieve_transposition_pitch_list(
 
 
 def clarinet_pitching_1(index=0, selector=trinton.pleaves()):
-    def return_clarinet_pitching_1(selections):
+    def do_clarinet_pitching_1(selections):
         selections = selector(selections)
 
         sieve = library.final_sieve
@@ -83,7 +83,17 @@ def clarinet_pitching_1(index=0, selector=trinton.pleaves()):
 
         pitch_list = []
 
-        random_walk = trinton.random_walk(chord=["a", "ds'", "gs'", "b"], seed=6)
+        random_walk = trinton.random_walk(
+            chord=[
+                "gs",
+                "b",
+                "a",
+                "ds'",
+                "a",
+                "b",
+            ],
+            seed=6,
+        )
 
         counter = 0
 
@@ -99,4 +109,4 @@ def clarinet_pitching_1(index=0, selector=trinton.pleaves()):
         handler = evans.PitchHandler(pitch_list=pitch_list)
         handler(selections)
 
-    return return_clarinet_pitching_1
+    return do_clarinet_pitching_1

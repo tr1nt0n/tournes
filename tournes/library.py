@@ -83,6 +83,40 @@ first_voice_names = eval(
     ]"""
 )
 
+# notation tools
+
+
+def clarinet_articulations_1(
+    finger_number_index=0, selector=trinton.logical_ties(first=True, pitched=True)
+):
+    def do_clarinet_articulations_1(selections):
+        selections = selector(selections)
+
+        finger_numbers = trinton.random_walk(chord=[1, 3, 2, 3], seed=6)
+
+        finger_numbers = trinton.rotated_sequence(
+            finger_numbers, finger_number_index % len(finger_numbers)
+        )
+
+        finger_number_counter = 0
+
+        for i, leaf in enumerate(selections):
+            previous_leaf = selections[i - 1]
+            next_leaf = selections[(i + 1) % len(selections)]
+
+            if (
+                previous_leaf.written_pitch == leaf.written_pitch
+                or leaf.written_pitch == next_leaf.written_pitch
+            ):
+                color_fingering = abjad.Markup(
+                    rf"""\markup {{ \override #'(font-size . 0.75) {{ \circle {{ {finger_numbers[i % len(finger_numbers)]} }} }} }}"""
+                )
+                finger_number_counter += 1
+                abjad.attach(color_fingering, leaf, direction=abjad.UP)
+
+    return do_clarinet_articulations_1
+
+
 # selectors
 
 
