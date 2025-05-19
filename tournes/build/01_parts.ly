@@ -12,15 +12,18 @@
                   \abjad-metronome-mark-markup #2 #0 #2 #" 90 " 
               }
             }
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+            \pageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -102,9 +105,9 @@
                                 \set fontSize = #-4
                                   %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
-                                \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Flute }
+                                \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Alto Flute }
                                   %! +SCORE
-                            %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { fl }
+                            %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { a fl }
                                   %! trinton.on_beat_grace_container(3)
                                 \voiceOne
                                 <
@@ -1087,14 +1090,27 @@
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic"){ cl }
                             \once \override Beam.grow-direction = #left
                             b32 * 51/32
+                            - \tweak padding 14
+                            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Bass }
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             [
                             (
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-three-quarters-closed \hspace #0.5 }
+                            \startTextSpanOne
+                            - \tweak padding 11
+                            \startBowSpan #'((0 . 4) (0.07142857142857142 . 0.2) (0.10714285714285714 . 2) (0.17857142857142855 . 1) (0.1964285714285714 . 4) (0.2321428571428571 . 3) (0.24642857142857139 . 2) (0.27499999999999997 . 1) (0.3464285714285714 . 0.5) (0.4178571428571428 . 0.6) (0.4535714285714285 . 0.7) (0.4821428571428571 . 0.5) (0.4964285714285714 . 3) (0.5464285714285714 . 0.2) (0.6178571428571428 . 4) (0.6535714285714285 . 0.2) (0.7249999999999999 . 4) (0.7428571428571428 . 0.2) (0.7785714285714285 . 2) (0.7928571428571427 . 1) (0.8214285714285713 . 4) (0.8928571428571427 . 3) (0.9642857142857141 . 2) (0.9999999999999998 . 1))
                             b32 * 51/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
                             b32 * 27/16
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             a32 * 29/16
+                            \stopTextSpanOne
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-open \hspace #0.5 }
+                            \startTextSpanOne
                             b32 * 65/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             b32 * 73/32
@@ -1151,16 +1167,31 @@
                         {
                             \once \override Beam.grow-direction = #right
                             ds'32 * 15/4
+                            \stopTextSpanOne
                             [
                             (
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-closed \hspace #0.5 }
+                            \startTextSpanOne
                             a32 * 115/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-half-closed \hspace #0.5 }
+                            \startTextSpanOne
                             a32 * 103/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             a32 * 11/4
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
                             b32 * 37/16
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-closed \hspace #0.5 }
+                            \startTextSpanOne
                             b32 * 2
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
                             \once \override Staff.Accidental.stencil = ##f
@@ -1229,11 +1260,21 @@
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             b32 * 73/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-open \hspace #0.5 }
+                            \startTextSpanOne
                             gs32 * 21/8
                             b32 * 97/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
                             b32 * 111/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-three-quarters-closed \hspace #0.5 }
+                            \startTextSpanOne
                             ds'32 * 31/8
                             )
                             ]
@@ -1286,6 +1327,12 @@
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             ds'32 * 11/4
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #11.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-closed \hspace #0.5 }
+                            - \tweak bound-details.right.text \woodwind-half-closed
+                            \startTextSpanOne
                             b32 * 37/16
                             gs32 * 2
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
@@ -1299,6 +1346,8 @@
                             ds'32 * 47/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
                             )
+                            \stopBowSpan
+                            \stopTextSpanOne
                             ]
                         }
                         \revert TupletNumber.text
