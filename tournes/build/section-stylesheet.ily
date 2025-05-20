@@ -76,8 +76,8 @@ afterGraceFraction = #(cons 15 16)
         proportionalNotationDuration = #(ly:make-moment 1 20)
         pedalSustainStyle = #'mixed
 
-        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 5) (minimum distance . 5) (padding . 1) (stretchability . 0))
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 0) (padding . 3) (stretchability . 0))
+        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
         \override Accidental.layer = 3
@@ -299,7 +299,7 @@ afterGraceFraction = #(cons 15 16)
 	        #:music "haydn"
 	        #:brace "haydn"
 	))
-    min-systems-per-page = 3
+    min-systems-per-page = 2
     max-systems-per-page = 3
     system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
     system-system-spacing = #'((basic-distance . 30) (minimum-distance . 30) (padding . 0) (stretchability . 30))

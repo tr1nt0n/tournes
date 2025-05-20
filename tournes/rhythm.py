@@ -83,6 +83,25 @@ def rhythm_1(stage=1, map_rotation=0):
             for group in contiguous_groups:
                 if len(group) > 1:
                     abjad.slur(group)
+
+            contiguous_rests = abjad.select.group_by_contiguity(
+                abjad.select.rests(container)
+            )
+
+            for rest_group in contiguous_rests:
+                counter = 1
+                for rest in rest_group:
+                    abjad.attach(
+                        abjad.LilyPondLiteral(
+                            [
+                                r"""\once \override Rest.stencil = #ly:text-interface::print""",
+                                rf"""\once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") {{ {counter} }}""",
+                            ],
+                            site="before",
+                        ),
+                        rest,
+                    )
+                    counter += 1
         else:
             for tuplet in abjad.select.tuplets(container):
                 abjad.slur(tuplet)

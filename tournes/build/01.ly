@@ -5,8 +5,8 @@
             \time 6/4
             s1 * 3/2
             ^ \markup {
-            \hspace #0.5
-              \raise #11 \with-dimensions-from \null
+            \hspace #1
+              \raise #15 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #" 90 " 
@@ -23,10 +23,12 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
             \pageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -45,10 +47,14 @@
                   \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
               }
             }
+            - \tweak bound-details.right.padding 6
             \startTextSpan
+              %! +SCORE
+            \pageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -103,57 +109,102 @@
                             {
                                   %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-4
-                                  %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
+                                \once \override Accidental.stencil = ##f
                                 \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Alto Flute }
                                   %! +SCORE
                                 \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { a fl }
-                                  %! trinton.on_beat_grace_container(3)
                                 \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 1/4
+                                dqf'16 * 1/4
+                                \mf
                                 [
                                 (
-                                c'16 * 1/4
-                                c'16 * 1/4
-                                c'16 * 1/4
-                                c'16 * 1/4
+                                - \tweak font-name "Bodoni72 Book Italic" 
+                                - \tweak font-size 0
+                                - \tweak padding #8.5
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \hspace #1 { "loud key clicks + pitch" } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -15
+                                \startTextSpan
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                \once \override Staff.Accidental.stencil = ##f
+                                ef'16 * 1/4
+                                - \flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                d'16 * 1/4
+                                - \natural-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                cs'16 * 1/4
+                                - \sharp-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqs'16 * 1/4
+                                - \quarter-sharp-articulation
+                                \!
                                 )
+                                \stopTextSpan
                                 ]
                             }
                             \context Voice = "flute voice Anchor"
                             {
-                                  %! trinton.on_beat_grace_container(4)
                                 \voiceTwo
-                                c'8
+                                dqf'8
                             }
                         >>
-                        c'8
+                        \once \override Staff.DynamicLineSpanner.padding = #4.5
+                        d'8
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                        - \staccatissimo
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
                         r2
                         r2.
                         s1 * 3/2
-                        c'2
+                        <gqf' af''>2
+                        :32
+                        - \tenuto
+                        \mp
+                        - \tweak padding #12.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \override #'(layer . 20) {
+                                \hspace #-4 {
+                                \general-align #Y #DOWN {
+                                    \epsfile #Y #16 #"flute_multiphonic.eps"
+                                }
+                            }
+                        } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -5
+                        \startTextSpan
                         r8.
-                        c'16
+                        <gqf' af''>16
+                        :128
+                        - \tenuto
                         ~
-                        c'8.
+                        <gqf' af''>8.
+                        :64
                         r16
                         r8
-                        c'8
+                        <gqf' af''>8
+                        :64
+                        - \tenuto
                         ~
-                        c'4
+                        <gqf' af''>4
+                        :32
                         ~
-                        c'8
+                        <gqf' af''>8
+                        :64
                         r8
                         r16
-                        c'8.
+                        <gqf' af''>8.
+                        :64
+                        - \tenuto
                         ~
-                        c'16
+                        <gqf' af''>16
+                        :128
                         r8.
-                        c'2
+                        <gqf' af''>2
+                        :32
+                        - \tenuto
+                        \stopTextSpan
                         r4
                         s1 * 3/2
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -197,8 +248,14 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 63/16
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 115/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 91/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 35/16
                             c'32 * 29/16
                             (
@@ -249,11 +306,15 @@
                             [
                             c'32 * 115/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 91/32
                             c'32 * 35/16
                             (
                             c'32 * 29/16
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 13/8
                             ]
                         }
@@ -296,9 +357,13 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             \once \override Beam.grow-direction = #left
                             r32 * 51/32
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 51/32
                             c'32 * 27/16
                             (
@@ -306,11 +371,15 @@
                             c'32 * 65/32
                             c'32 * 73/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
                             c'32 * 97/32
                             (
                             c'32 * 111/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 31/8
                             ]
                         }
@@ -353,9 +422,13 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             \once \override Beam.grow-direction = #right
                             r32 * 63/16
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 115/32
                             c'32 * 91/32
                             (
@@ -404,6 +477,8 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             \once \override Beam.grow-direction = #left
                             r32 * 51/32
                             [
@@ -411,8 +486,14 @@
                             (
                             c'32 * 27/16
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 29/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 65/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 73/32
                             c'32 * 21/8
                             (
@@ -461,6 +542,8 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             \once \override Beam.grow-direction = #right
                             r32 * 63/16
                             [
@@ -468,8 +551,14 @@
                             (
                             c'32 * 91/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 35/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 29/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 13/8
                             ]
                         }
@@ -520,13 +609,21 @@
                             c'32 * 27/16
                             c'32 * 29/16
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 65/32
                             c'32 * 73/32
                             (
                             c'32 * 21/8
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 97/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 111/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 31/8
                             ]
                         }
@@ -1352,7 +1449,11 @@
                         }
                         \revert TupletNumber.text
                         r2.
-                        c'16
+                        \slapped
+                        ds16
+                        \ff
+                        \laissezVibrer
+                        \revert-noteheads
                         r8.
                         r2
                         s1 * 3/2
@@ -1395,18 +1496,41 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #left
-                            c'32 * 51/32
+                            b32 * 51/32
                             [
                             (
-                            c'32 * 51/32
-                            c'32 * 27/16
-                            c'32 * 29/16
-                            c'32 * 65/32
-                            c'32 * 73/32
-                            c'32 * 21/8
-                            c'32 * 97/32
-                            c'32 * 111/32
-                            c'32 * 31/8
+                            - \tweak padding #10.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-open \hspace #0.5 }
+                            \startTextSpanOne
+                            - \tweak padding 10
+                            \startBowSpan #'((0 . 0) (0.055944055944055944 . 0.5) (0.11888111888111888 . 1.5) (0.1888111888111888 . 5) (0.20279720279720279 . 0.2) (0.25874125874125875 . 0.4) (0.32167832167832167 . 0.6) (0.39160839160839156 . 5) (0.40559440559440557 . 3) (0.4615384615384615 . 2) (0.5244755244755245 . 3) (0.5944055944055944 . 1) (0.6083916083916083 . 3) (0.6643356643356643 . 4) (0.7272727272727272 . 0) (0.7972027972027971 . 0.5) (0.811188811188811 . 1.5) (0.867132867132867 . 5) (0.9300699300699299 . 0.2) (0.9999999999999998 . 0.4))
+                            a32 * 51/32
+                            b32 * 27/16
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            b32 * 29/16
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            gs32 * 65/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            gs32 * 73/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            a32 * 21/8
+                            ds'32 * 97/32
+                            \stopTextSpanOne
+                            - \tweak padding #10.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-half-closed \hspace #0.5 }
+                            \startTextSpanOne
+                            a32 * 111/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-closed \hspace #0.5 }
+                            - \tweak bound-details.right.padding 1
+                            \startTextSpanOne
+                            a32 * 31/8
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             )
                             ]
                         }
@@ -1450,18 +1574,35 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 15/4
+                            a32 * 15/4
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
                             [
                             (
-                            c'32 * 115/32
-                            c'32 * 103/32
-                            c'32 * 11/4
-                            c'32 * 37/16
-                            c'32 * 2
-                            c'32 * 7/4
-                            c'32 * 13/8
-                            c'32 * 49/32
-                            c'32 * 47/32
+                            ds'32 * 115/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #10.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-open \hspace #0.5 }
+                            \startTextSpanOne
+                            ds'32 * 103/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
+                            a32 * 11/4
+                            gs32 * 37/16
+                            a32 * 2
+                            ds'32 * 7/4
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            ds'32 * 13/8
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            b32 * 49/32
+                            \stopTextSpanOne
+                            - \tweak padding #10.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-half-closed \hspace #0.5 }
+                            \startTextSpanOne
+                            \once \override Staff.Accidental.stencil = ##f
+                            gs32 * 47/32
+                            - \sharp-articulation
                             )
                             ]
                         }
@@ -1505,18 +1646,44 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #left
-                            c'32 * 51/32
+                            a32 * 51/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            \stopTextSpanOne
                             [
                             (
-                            c'32 * 51/32
-                            c'32 * 27/16
-                            c'32 * 29/16
-                            c'32 * 65/32
-                            c'32 * 73/32
-                            c'32 * 21/8
-                            c'32 * 97/32
-                            c'32 * 111/32
-                            c'32 * 31/8
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-closed \hspace #0.5 }
+                            \startTextSpanOne
+                            a32 * 51/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            a32 * 27/16
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            \once \override Staff.Accidental.stencil = ##f
+                            gs32 * 29/16
+                            - \sharp-articulation
+                            \stopTextSpanOne
+                            - \tweak padding #10.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { {} \hspace #0.5 }
+                            \startTextSpanOne
+                            \once \override Staff.Accidental.stencil = ##f
+                            ds'32 * 65/32
+                            - \sharp-articulation
+                            a32 * 73/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            a32 * 21/8
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
+                            b32 * 97/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-three-quarters-closed \hspace #0.5 }
+                            \startTextSpanOne
+                            b32 * 111/32
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            a32 * 31/8
                             )
                             ]
                         }
@@ -1560,53 +1727,176 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 15/4
+                            gs32 * 15/4
+                            \stopTextSpanOne
                             [
                             (
-                            c'32 * 115/32
-                            c'32 * 103/32
-                            c'32 * 11/4
-                            c'32 * 37/16
-                            c'32 * 2
-                            c'32 * 7/4
-                            c'32 * 13/8
-                            c'32 * 49/32
-                            c'32 * 47/32
+                            - \tweak padding #10.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { {} \hspace #0.5 }
+                            \startTextSpanOne
+                            a32 * 115/32
+                            ds'32 * 103/32
+                            b32 * 11/4
+                            ds'32 * 37/16
+                            a32 * 2
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            \stopTextSpanOne
+                            - \tweak padding #10.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \woodwind-half-closed \hspace #0.5 }
+                            - \tweak bound-details.right.text \woodwind-open
+                            \startTextSpanOne
+                            a32 * 7/4
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 1 } } }
+                            a32 * 13/8
+                            ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
+                            b32 * 49/32
+                            \once \override Staff.Accidental.stencil = ##f
+                            ds'32 * 47/32
+                            - \sharp-articulation
                             )
+                            \stopBowSpan
+                            \stopTextSpanOne
                             ]
                         }
                         \revert TupletNumber.text
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
-                            c'8
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            - \staccato
+                            ^ \markup \center-align { \concat { -14 } }
                             [
-                            c'8
-                            c'8
-                            c'8
-                            c'8
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "5°/sounding B-flat ( with violin )" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpan
+                            - \tweak padding 10
+                            \startBowSpan #'((0 . 5) (0.044444444444444446 . 4) (0.1111111111111111 . 5) (0.15555555555555556 . 3) (0.24444444444444446 . 5) (0.2888888888888889 . 3.5) (0.3777777777777778 . 4.5) (0.4222222222222223 . 2) (0.4444444444444445 . 5) (0.6666666666666667 . 0.2) (1.0 . 5))
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            ^ \markup \center-align { \concat { -14 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            ^ \markup \center-align { \concat { -14 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            - \staccato
+                            ^ \markup \center-align { \concat { -14 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            ^ \markup \center-align { \concat { -14 } }
                             ]
                         }
-                        c'2.
-                        c'2.
+                        \afterGrace
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                        e'''!2.
+                        - \tenuto
+                        ^ \markup \center-align { \concat { -14 } }
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                            \stopBowSpan
+                        }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                        e'''!2.
+                        - \tenuto
+                        ^ \markup \center-align { \concat { -14 } }
+                        - \tweak padding 10
+                        \startBowSpan #'((0 . 5) (0.08333333333333334 . 0.2) (0.20833333333333337 . 5) (0.29166666666666674 . 5) (0.3083333333333334 . 4) (0.3333333333333334 . 5) (0.3500000000000001 . 3) (0.3833333333333334 . 5) (0.4000000000000001 . 3.5) (0.4333333333333334 . 4.5) (0.45000000000000007 . 2) (0.4583333333333334 . 5) (0.5416666666666667 . 0.2) (0.6666666666666667 . 5) (0.7500000000000001 . 5) (0.7666666666666668 . 4) (0.7916666666666669 . 5) (0.8083333333333336 . 3) (0.8416666666666669 . 5) (0.8583333333333336 . 3.5) (0.8916666666666669 . 4.5) (0.9083333333333337 . 2) (0.916666666666667 . 5) (1.0000000000000002 . 0.2))
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 12/11
                         {
-                            c'8
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            ^ \markup \center-align { \concat { -14 } }
                             [
-                            c'8
-                            c'8
-                            c'8.
-                            c'8
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            ^ \markup \center-align { \concat { -14 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            - \staccato
+                            ^ \markup \center-align { \concat { -14 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8.
+                            - \marcato
+                            - \staccato
+                            ^ \markup \center-align { \concat { -14 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            e'''!8
+                            - \marcato
+                            ^ \markup \center-align { \concat { -14 } }
+                            \stopTextSpan
                             ]
                         }
-                        c'2.
-                        c'8
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-sharp  }
+                        gs'''!2.
+                        - \tenuto
+                        ^ \markup \center-align { \concat { +2 } }
+                        - \tweak padding #11
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "6°/sounding B ( with violin )" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-sharp  }
+                        gs'''!8
+                        - \marcato
+                        - \staccato
+                        ^ \markup \center-align { \concat { +2 } }
                         [
-                        c'8.
-                        c'8
-                        c'8.
-                        c'8
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-sharp  }
+                        gs'''!8.
+                        - \marcato
+                        ^ \markup \center-align { \concat { +2 } }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-sharp  }
+                        gs'''!8
+                        - \marcato
+                        ^ \markup \center-align { \concat { +2 } }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-sharp  }
+                        gs'''!8.
+                        - \marcato
+                        - \staccato
+                        ^ \markup \center-align { \concat { +2 } }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-sharp  }
+                        gs'''!8
+                        - \marcato
+                        ^ \markup \center-align { \concat { +2 } }
+                        \stopBowSpan
+                        \stopTextSpan
                         ]
                         s1 * 7/12
                         s1 * 5/8
@@ -1629,44 +1919,152 @@
                         \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic") { Accordion }
                           %! +SCORE
                         \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book Italic"){ acc }
+                        \clef "bass"
                         r8
-                        c'8
+                        \override Dots.staff-position = #2
+                        d,8
+                        \f
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
                         ~
-                        c'2
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        d,2
                         ~
-                        c'2.
+                        d,2.
                         ~
-                        c'1.
+                        d,1.
                         ~
-                        c'2.
-                        c'16
+                        d,2.
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 \override #'(font-size . 5) {.} )
+                                            }
+                                        }
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        cs,16
+                        \pp
+                        )
                         r8.
                         r2
                         s1 * 3/2
-                        c'2.
+                        \override Dots.staff-position = #2
+                        df,2.
+                        \mp
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        \<
                         ~
-                        c'2
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        df,2
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 )
+                                            }
+                                        }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8.
+                        df,8.
                         [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
                         \revert Staff.Stem.stemlet-length
-                        c'16
+                        cqs,16
+                        \f
+                        )
                         ]
                         s1 * 3/2
-                        c'1.
+                        \override Dots.staff-position = #2
+                        ef,1.
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "pf"))
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        \>
                         ~
-                        c'1.
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        ef,1.
                         ~
-                        c'2.
+                        ef,2.
+                        \mp
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 \override #'(font-size . 5) {.} )
+                                            }
+                                        }
+                        \<
                         ~
-                        c'2
+                        ef,2
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 )
+                                            }
+                                        }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8.
+                        ef,8.
+                        \mf
                         [
+                        - \tweak circled-tip ##t
+                        \>
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
                         \revert Staff.Stem.stemlet-length
-                        c'16
+                        d,16
+                        \!
+                        )
                         ]
                         s1 * 7/12
                         s1 * 5/8
@@ -1707,15 +2105,114 @@
                 {
                     \context Voice = "accordion 3 voice"
                     {
+                        \clef "bass"
+                        r1
+                        d,4
+                        r4
+                        r2
+                        cs,4
+                        ~
+                        cs,8
+                        r8
+                        r2
+                        r4
+                        r8
+                        cs,8
+                        ~
+                        cs,8
+                        r8
+                        r2.
                         s1 * 3/2
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "no air" } \hspace #0.5 }
+                        \startTextSpan
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2.
+                        \stopTextSpan
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "3/4 air" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "1/4 air" }
+                        \startTextSpan
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4
+                        \stopTextSpan
                         s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        r4
+                        r8
+                        ef,8
+                        ~
+                        ef,4
+                        ~
+                        ef,8
+                        r8
+                        r8
+                        ef,8
+                        (
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        ef,8
+                        [
+                        \revert Staff.Stem.stemlet-length
+                        e,8
+                        )
+                        ]
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2.
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/4 air" } \hspace #0.5 }
+                        \startTextSpan
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r2
+                        \stopTextSpan
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "3/4 air" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "no air" }
+                        \startTextSpan
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4
+                        \stopTextSpan
+                        \times 4/5
+                        {
+                            \override Staff.Stem.stemlet-length = 0.75
+                            ef,8
+                            - \staccato
+                            [
+                            (
+                            ef,8
+                            - \staccato
+                            ef,8
+                            - \staccato
+                            \revert Staff.Stem.stemlet-length
+                            f,8
+                            )
+                            ]
+                            r8
+                        }
+                        r4
+                        r8
+                        e,8
+                        ~
+                        e,2
                         s1 * 7/12
                         s1 * 5/8
                         s1 * 2/3
@@ -1776,11 +2273,19 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             \once \override Beam.grow-direction = #right
                             r32 * 117/32
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 99/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 69/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 13/8
                             c'32 * 47/32
                             ]
@@ -1824,6 +2329,8 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             \once \override Beam.grow-direction = #left
                             r32 * 43/32
                             [
@@ -1831,6 +2338,8 @@
                             (
                             c'32 * 17/8
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 3
                             ]
                         }
@@ -1876,16 +2385,28 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 51/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 29/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 65/32
                             c'32 * 73/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
                             c'32 * 97/32
                             (
                             c'32 * 111/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 31/8
                             ]
                         }
@@ -1931,16 +2452,28 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 51/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 29/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 65/32
                             c'32 * 73/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
                             c'32 * 97/32
                             (
                             c'32 * 111/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 31/8
                             ]
                         }
@@ -1986,9 +2519,17 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 63/16
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 115/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 91/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 35/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 29/16
                             c'32 * 13/8
                             ]
@@ -2032,6 +2573,8 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             \once \override Beam.grow-direction = #left
                             r32 * 5/4
                             [
@@ -2039,8 +2582,12 @@
                             (
                             c'32 * 51/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 65/32
                             c'32 * 85/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 25/8
                             ]
                         }
@@ -2211,8 +2758,14 @@
                             \once \override Beam.grow-direction = #left
                             c'32 * 51/32
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 51/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 29/16
                             c'32 * 65/32
                             (
@@ -2220,6 +2773,8 @@
                             c'32 * 21/8
                             c'32 * 97/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 111/32
                             c'32 * 31/8
                             ]
@@ -2268,8 +2823,14 @@
                             c'32 * 117/32
                             )
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 99/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 69/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 13/8
                             c'32 * 47/32
                             ]
@@ -2320,6 +2881,8 @@
                             c'32 * 49/32
                             c'32 * 17/8
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 3
                             ]
                         }
@@ -2368,8 +2931,14 @@
                             (
                             c'32 * 51/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 29/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 65/32
                             c'32 * 73/32
                             (
@@ -2377,6 +2946,8 @@
                             c'32 * 97/32
                             c'32 * 111/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 31/8
                             ]
                         }
@@ -2425,8 +2996,14 @@
                             (
                             c'32 * 115/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 91/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 35/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 29/16
                             c'32 * 13/8
                             ]
@@ -2477,13 +3054,21 @@
                             c'32 * 51/32
                             c'32 * 27/16
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 29/16
                             c'32 * 65/32
                             (
                             c'32 * 73/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 97/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 111/32
                             c'32 * 31/8
                             ]
@@ -2534,6 +3119,8 @@
                             c'32 * 115/32
                             c'32 * 91/32
                             )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 35/16
                             c'32 * 29/16
                             (
@@ -2580,10 +3167,16 @@
                             }
                         \times 1/1
                         {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             \once \override Beam.grow-direction = #left
                             r32 * 5/4
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
                             r32 * 43/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 51/32
                             c'32 * 65/32
                             (
@@ -2634,6 +3227,8 @@
                             c'32 * 15/4
                             )
                             [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
                             c'32 * 13/8
                             ]

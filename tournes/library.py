@@ -83,6 +83,15 @@ first_voice_names = eval(
     ]"""
 )
 
+flute_multiphonic = r"""\markup
+    \override #'(layer . 20) {
+        \hspace #-4 {
+        \general-align #Y #DOWN {
+            \epsfile #Y #16 #"flute_multiphonic.eps"
+        }
+    }
+}"""
+
 # notation tools
 
 
