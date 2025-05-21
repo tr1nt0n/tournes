@@ -221,12 +221,6 @@ def rhythm_2(stage=1, font_size=-3):
                     rmakers.force_rest(relevant_leaves)
                     trinton.fuse_tuplet_rests(container)
 
-                transparent_noteheads_ = trinton.transparent_noteheads(
-                    selector=trinton.pleaves()
-                )
-
-                transparent_noteheads_(tuplet)
-
                 abjad.beam(tuplet)
 
                 abjad.slur(abjad.select.leaves(tuplet, pitched=True))
@@ -235,7 +229,9 @@ def rhythm_2(stage=1, font_size=-3):
                     abjad.LilyPondLiteral(
                         [
                             rf"\set fontSize = #{font_size}",
+                            r"\highest",
                             r"\override Staff.Dots.stencil = ##f",
+                            r"\override Staff.Accidental.stencil = ##f",
                             r"\my-hack-slash",
                         ],
                         site="before",
@@ -246,8 +242,10 @@ def rhythm_2(stage=1, font_size=-3):
                 abjad.attach(
                     abjad.LilyPondLiteral(
                         [
+                            r"\revert-noteheads",
                             r"\set fontSize = #-1",
                             r"\revert Staff.Dots.stencil",
+                            r"\revert Staff.Accidental.stencil",
                         ],
                         site="absolute_after",
                     ),

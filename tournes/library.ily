@@ -520,3 +520,52 @@ left-down-arrow = {
         }
     }
 }
+
+% flute articulations
+
+flute-parallel = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    \rotate #90
+    {
+        \char ##xe661
+    }
+}
+
+flute-forty-five-degrees = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    \rotate #45
+    {
+        \char ##xe661
+    }
+}
+
+flute-ninety-degrees = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    {
+        \char ##xe661
+    }
+}
+
+flute-one-hundred-thirty-five-degrees = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    \rotate #-45
+    {
+        \char ##xe661
+    }
+}

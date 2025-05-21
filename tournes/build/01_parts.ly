@@ -35,7 +35,7 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
-            - \tweak padding #10
+            - \tweak padding #13.5
             - \abjad-solid-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
             - \tweak bound-details.right.text \markup {
@@ -47,7 +47,7 @@
                   \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
               }
             }
-            - \tweak bound-details.right.padding 6
+            - \tweak bound-details.right.padding 7.5
             \startTextSpan
               %! +SCORE
         %%% \pageBreak
@@ -161,9 +161,9 @@
                         s1 * 3/2
                         <gqf' af''>2
                         :32
-                        - \tenuto
+                        - \espressivo
                         \mp
-                        - \tweak padding #12.5
+                        - \tweak padding #13.5
                         - \abjad-dashed-line-with-hook
                         - \tweak bound-details.left.text \markup \concat { \override #'(layer . 20) {
                                 \hspace #-4 {
@@ -177,7 +177,7 @@
                         r8.
                         <gqf' af''>16
                         :128
-                        - \tenuto
+                        - \espressivo
                         ~
                         <gqf' af''>8.
                         :64
@@ -185,7 +185,7 @@
                         r8
                         <gqf' af''>8
                         :64
-                        - \tenuto
+                        - \espressivo
                         ~
                         <gqf' af''>4
                         :32
@@ -196,14 +196,14 @@
                         r16
                         <gqf' af''>8.
                         :64
-                        - \tenuto
+                        - \espressivo
                         ~
                         <gqf' af''>16
                         :128
                         r8.
                         <gqf' af''>2
                         :32
-                        - \tenuto
+                        - \espressivo
                         \stopTextSpan
                         r4
                         s1 * 3/2
@@ -246,7 +246,21 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 63/16
+                            cs'32 * 63/16
+                            - \tenuto
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ^ \flute-one-hundred-thirty-five-degrees
                             [
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
@@ -257,9 +271,19 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 35/16
-                            c'32 * 29/16
+                            ef'32 * 29/16
                             (
-                            c'32 * 13/8
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            - \tweak padding #8.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \flute-one-hundred-thirty-five-degrees \hspace #0.5 }
+                            - \tweak bound-details.right.text \flute-forty-five-degrees
+                            \startTextSpanOne
+                            \once \override Staff.Accidental.stencil = ##f
+                            cs'32 * 13/8
+                            - \sharp-articulation
                             ]
                         }
                         \revert TupletNumber.text
@@ -302,17 +326,38 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 63/16
+                            ef'32 * 63/16
                             [
                             c'32 * 115/32
+                            \mf
                             )
+                            \stopTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 91/32
-                            c'32 * 35/16
+                            e'32 * 35/16
                             (
-                            c'32 * 29/16
+                            - \tweak padding #9
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \flute-parallel \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpan
+                            b'32 * 29/16
+                            - \staccato
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             )
+                            \stopTextSpan
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 13/8
@@ -365,19 +410,58 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 51/32
-                            c'32 * 27/16
+                            f'32 * 27/16
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             (
-                            c'32 * 29/16
-                            c'32 * 65/32
-                            c'32 * 73/32
+                            - \tweak padding #9.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \flute-parallel \hspace #0.5 }
+                            \startTextSpanOne
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            \once \override Staff.Accidental.stencil = ##f
+                            bf'32 * 29/16
+                            - \flat-articulation
+                            f'32 * 65/32
+                            ef'32 * 73/32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "pp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             )
+                            \stopTextSpanOne
+                            - \tweak padding #9.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \flute-ninety-degrees \hspace #0.5 }
+                            - \tweak bound-details.right.text \flute-forty-five-degrees
+                            \startTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
-                            c'32 * 97/32
+                            fs'32 * 97/32
                             (
-                            c'32 * 111/32
+                            d'32 * 111/32
                             )
+                            \stopTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 31/8
@@ -430,13 +514,37 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 115/32
-                            c'32 * 91/32
+                            g'32 * 91/32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "ff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             (
-                            c'32 * 35/16
-                            c'32 * 29/16
+                            - \tweak padding #9.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \flute-ninety-degrees \hspace #0.5 }
+                            \startTextSpanOne
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            cs'32 * 35/16
+                            af'32 * 29/16
                             c'32 * 13/8
                             )
+                            \stopTextSpanOne
                             ]
+                            - \tweak padding #9.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \flute-parallel \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpanOne
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -482,10 +590,12 @@
                             \once \override Beam.grow-direction = #left
                             r32 * 51/32
                             [
-                            c'32 * 51/32
+                            af'32 * 51/32
                             (
-                            c'32 * 27/16
+                            fs'32 * 27/16
+                            \!
                             )
+                            \stopTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 29/16
@@ -495,12 +605,50 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
                             r32 * 73/32
-                            c'32 * 21/8
+                            a'32 * 21/8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             (
-                            c'32 * 97/32
-                            c'32 * 111/32
-                            c'32 * 31/8
+                            - \tweak padding #9.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \flute-parallel \hspace #0.5 }
+                            \startTextSpan
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            f'32 * 97/32
+                            bf'32 * 111/32
+                            \stopTextSpan
+                            - \tweak padding #9.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { {} \hspace #0.5 }
+                            - \tweak bound-details.right.text \flute-one-hundred-thirty-five-degrees
+                            \startTextSpanOne
+                            \>
+                            e'32 * 31/8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             )
+                            \stopTextSpanOne
                             ]
                         }
                         \revert TupletNumber.text
@@ -547,10 +695,29 @@
                             \once \override Beam.grow-direction = #right
                             r32 * 63/16
                             [
-                            c'32 * 115/32
+                            b'32 * 115/32
                             (
-                            c'32 * 91/32
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \flute-one-hundred-thirty-five-degrees \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpan
+                            \>
+                            e'32 * 91/32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "p"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             )
+                            \stopTextSpan
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 35/16
@@ -602,20 +769,46 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #left
-                            c'32 * 51/32
+                            fs'32 * 51/32
                             [
                             (
-                            c'32 * 51/32
-                            c'32 * 27/16
-                            c'32 * 29/16
+                            - \tweak padding #9.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \flute-ninety-degrees \hspace #0.5 }
+                            \startTextSpanOne
+                            \<
+                            \once \override Staff.Accidental.stencil = ##f
+                            ef'32 * 51/32
+                            - \flat-articulation
+                            g'32 * 27/16
+                            \stopTextSpanOne
+                            - \tweak padding #9.5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \flute-one-hundred-thirty-five-degrees \hspace #0.5 }
+                            - \tweak bound-details.right.text \flute-forty-five-degrees
+                            \startTextSpanOne
+                            d'32 * 29/16
                             )
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 65/32
-                            c'32 * 73/32
+                            af'32 * 73/32
                             (
-                            c'32 * 21/8
+                            cs'32 * 21/8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             )
+                            \stopTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 97/32
@@ -667,12 +860,19 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 15/4
+                            a'32 * 15/4
                             [
                             (
-                            c'32 * 21/8
-                            c'32 * 13/8
+                            - \tweak padding #9
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \flute-forty-five-degrees \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpan
+                            \<
+                            cs'32 * 21/8
+                            ef'32 * 13/8
                             )
+                            \stopTextSpan
                             ]
                         }
                         \revert TupletNumber.text
@@ -714,223 +914,90 @@
                             }
                         \times 12/13
                         {
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
                             \set fontSize = #-3
+                            \highest
                             \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            \once \override NoteHead.transparent = ##t
-                            c'32
+                            c'''32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "ffff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             [
                             (
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #8.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -1
+                            \startTextSpan
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
                             )
                             ]
+                            \revert-noteheads
                             \set fontSize = #-1
                             \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -976,99 +1043,35 @@
                         \tweak edge-height #'(0.7 . 0)
                         \times 14/17
                         {
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
                             \set fontSize = #-3
+                            \highest
                             \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            \once \override NoteHead.transparent = ##t
-                            c'32
+                            c'''32
                             [
                             (
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
-                            c'32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
+                            b''32
+                            e'''32
+                            c'''32
+                            d'''32
+                            c'''32
+                            e'''32
                             \once \override TupletBracket.stencil = ##f
                             \once \override TupletNumber.stencil = ##f
                             \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1117,14 +1120,14 @@
                                 \tweak edge-height #'(0.7 . 0)
                                 \times 32/51
                                 {
-                                    \once \override Accidental.stencil = ##f
-                                    \once \override NoteHead.no-ledgers = ##t
-                                    \once \override NoteHead.transparent = ##t
-                                    c'64..
+                                    b''64..
                                     )
+                                    \stopTextSpan
                                     ]
+                                    \revert-noteheads
                                     \set fontSize = #-1
                                     \revert Staff.Dots.stencil
+                                    \revert Staff.Accidental.stencil
                                 }
                             }
                             \revert TupletNumber.text
@@ -3305,72 +3308,34 @@
                             }
                         \times 1/1
                         {
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
                             \set fontSize = #-3
+                            \highest
                             \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             [
                             (
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             )
                             r32.
                             ]
+                            \revert-noteheads
                             \set fontSize = #-1
                             \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -3411,72 +3376,34 @@
                             }
                         \times 1/1
                         {
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
                             \set fontSize = #-3
+                            \highest
                             \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             [
                             (
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             )
                             r32.
                             ]
+                            \revert-noteheads
                             \set fontSize = #-1
                             \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -3517,72 +3444,34 @@
                             }
                         \times 1/1
                         {
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
                             \set fontSize = #-3
+                            \highest
                             \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             [
                             (
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             )
                             r32.
                             ]
+                            \revert-noteheads
                             \set fontSize = #-1
                             \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -3623,72 +3512,34 @@
                             }
                         \times 1/1
                         {
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
                             \set fontSize = #-3
+                            \highest
                             \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             [
                             (
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override NoteHead.transparent = ##t
                             c'64.
                             )
                             r32.
                             ]
+                            \revert-noteheads
                             \set fontSize = #-1
                             \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
