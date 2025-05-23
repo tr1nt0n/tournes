@@ -104,7 +104,9 @@ def string_finger_pressures_1(index=0, seed=3, p=0.5, selector=trinton.pleaves()
         for leaf, num in zip(
             selections, [random.random() for _ in range(0, len(selections))]
         ):
-            if leaf.written_pitch == abjad.NamedPitch("g"):
+            if leaf.written_pitch == abjad.NamedPitch(
+                "g"
+            ) or leaf.written_pitch == abjad.NamedPitch("c,"):
                 pass
             else:
                 if num > p:
