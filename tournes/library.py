@@ -3,6 +3,7 @@ import baca
 import evans
 import trinton
 import itertools
+import random
 import tournes
 
 # score
@@ -93,6 +94,31 @@ flute_multiphonic = r"""\markup
 }"""
 
 # notation tools
+
+
+def string_finger_pressures_1(index=0, seed=3, p=0.5, selector=trinton.pleaves()):
+    def return_string_finger_pressures_1(selections):
+        selections = selector(selections)
+        random.seed(seed)
+
+        for leaf, num in zip(
+            selections, [random.random() for _ in range(0, len(selections))]
+        ):
+            if leaf.written_pitch == abjad.NamedPitch("g"):
+                pass
+            else:
+                if num > p:
+                    abjad.attach(
+                        abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+                        leaf,
+                    )
+                else:
+                    if p - num >= 0.3:
+                        pass
+                    else:
+                        abjad.tweak(leaf.note_head, r"\tweak style #'harmonic")
+
+    return return_string_finger_pressures_1
 
 
 def clarinet_articulations_1(

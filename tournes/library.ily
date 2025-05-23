@@ -569,3 +569,53 @@ flute-one-hundred-thirty-five-degrees = \markup {
         \char ##xe661
     }
 }
+
+% string articulations
+
+bow-tip-up = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    \rotate #135
+    {
+        \char ##xe7F1
+    }
+}
+
+bow-tip-half-up = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    \rotate #-180
+    {
+        \char ##xe7F1
+    }
+}
+
+normale-bow-rotation = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    \rotate #-135
+    {
+        \char ##xe7F1
+    }
+}
+
+bow-tip-half-down = \markup {
+    \fontsize #4.5
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \override #'(layer . 27)
+    \rotate #-90
+    {
+        \char ##xe7F1
+    }
+}

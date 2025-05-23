@@ -110,3 +110,33 @@ def clarinet_pitching_1(index=0, selector=trinton.pleaves()):
         handler(selections)
 
     return do_clarinet_pitching_1
+
+
+def string_pitching_1(
+    fundamental, sieve=library.final_sieve, index=0, selector=trinton.pleaves()
+):
+    def return_string_pitching_1(selections):
+        selections = selector(selections)
+
+        pitch_list = [
+            evans.ETPitch(
+                fundamental=fundamental,
+                repeating_ratio="2/1",
+                number_of_divisions=24,
+                scale_degree=_.number,
+                with_quarter_tones=True,
+            )
+            for _ in return_sieve_transposition_pitch_list(
+                first_pitch=abjad.NamedPitch(fundamental),
+                interval_list=return_interval_list_from_sieve(
+                    sieve=sieve,
+                ),
+                index=index,
+            )
+        ]
+
+        handler = evans.PitchHandler(pitch_list)
+
+        handler(selections)
+
+    return return_string_pitching_1

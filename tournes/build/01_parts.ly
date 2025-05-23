@@ -2290,8 +2290,33 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 13/8
-                            c'32 * 47/32
+                            \tweak style #'harmonic
+                            gqs32 * 47/32
+                            - \staccato
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "p"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             ]
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            - \tweak padding #9
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "3/4 spz." } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \upright { "1/2 spz." }
+                            \startTextSpanTwo
+                            - \tweak padding #7.2
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
+                            \startTextSpanOne
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -2337,10 +2362,34 @@
                             \once \override Beam.grow-direction = #left
                             r32 * 43/32
                             [
-                            c'32 * 49/32
+                            \big-half-harmonic
+                            \once \override Staff.Accidental.stencil = ##f
+                            af32 * 49/32
+                            - \flat-articulation
                             (
-                            c'32 * 17/8
+                            \once \override Staff.Accidental.stencil = ##f
+                            \tweak style #'harmonic
+                            gqs32 * 17/8
+                            - \quarter-sharp-articulation
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             )
+                            \stopTextSpanOne
+                            - \tweak padding #7.2
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 3
@@ -2385,8 +2434,24 @@
                             }
                         \times 1/1
                         {
+                            \big-half-harmonic
                             \once \override Beam.grow-direction = #left
-                            c'32 * 51/32
+                            aqf32 * 51/32
+                            - \tenuto
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \stopTextSpanOne
+                            \stopTextSpanTwo
                             [
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
@@ -2400,14 +2465,53 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 65/32
-                            c'32 * 73/32
+                            g32 * 73/32
+                            - \tenuto
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "p"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            - \tweak padding #10
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "norm." } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \upright { "spz." }
+                            \startTextSpanTwo
+                            - \tweak padding #8.2
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
+                            - \tweak bound-details.right.text \bow-tip-half-down
+                            \startTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
-                            c'32 * 97/32
+                            ef'32 * 97/32
                             (
-                            c'32 * 111/32
+                            \>
+                            gqf'32 * 111/32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "pp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             )
+                            \stopTextSpanOne
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 31/8
@@ -2452,8 +2556,23 @@
                             }
                         \times 1/1
                         {
+                            \big-half-harmonic
                             \once \override Beam.grow-direction = #left
-                            c'32 * 51/32
+                            eqf'32 * 51/32
+                            - \tenuto
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \stopTextSpanTwo
                             [
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
@@ -2467,14 +2586,65 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 65/32
-                            c'32 * 73/32
+                            \tweak style #'harmonic
+                            gqf'32 * 73/32
+                            - \tenuto
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ^ \bow-tip-half-up
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            - \tweak padding #11.2
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "spz." } \hspace #0.5 }
+                            \startTextSpanTwo
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 21/8
-                            c'32 * 97/32
+                            \tweak style #'harmonic
+                            gqs32 * 97/32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
                             (
-                            c'32 * 111/32
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            - \tweak padding #9
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
+                            - \tweak bound-details.right.text \bow-tip-half-up
+                            \startTextSpanOne
+                            \big-half-harmonic
+                            af32 * 111/32
+                            \!
                             )
+                            \stopTextSpanTwo
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            - \tweak padding #11.2
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "1/6 spz." } \hspace #0.5 }
+                            \startTextSpanTwo
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 31/8
@@ -2520,7 +2690,22 @@
                         \times 1/1
                         {
                             \once \override Beam.grow-direction = #right
-                            c'32 * 63/16
+                            \tweak style #'harmonic
+                            gqs32 * 63/16
+                            - \tenuto
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \stopTextSpanOne
                             [
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
@@ -2534,8 +2719,35 @@
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
                             r32 * 29/16
-                            c'32 * 13/8
+                            \big-half-harmonic
+                            aqf32 * 13/8
+                            - \staccato
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \stopTextSpanTwo
                             ]
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            - \tweak padding #11.2
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
+                            \startTextSpanTwo
+                            - \tweak padding #9
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
+                            - \tweak bound-details.right.text \bow-tip-up
+                            \startTextSpanOne
+                            \>
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -2581,14 +2793,42 @@
                             \once \override Beam.grow-direction = #left
                             r32 * 5/4
                             [
-                            c'32 * 43/32
+                            \once \override Staff.Accidental.stencil = ##f
+                            g32 * 43/32
+                            - \natural-articulation
+                            \stopTextSpanTwo
                             (
-                            c'32 * 51/32
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            - \tweak padding #11.2
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "spz." } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \upright { "norm." }
+                            \startTextSpanTwo
+                            \big-half-harmonic
+                            \once \override Staff.Accidental.stencil = ##f
+                            ef'32 * 51/32
+                            - \flat-articulation
                             )
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 65/32
-                            c'32 * 85/32
+                            gqf'32 * 85/32
+                            - \tenuto
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "pp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \stopTextSpanOne
+                            \stopTextSpanTwo
                             \once \override Rest.stencil = #ly:text-interface::print
                             \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                             r32 * 25/8
@@ -2598,76 +2838,244 @@
                         r2.
                         r2
                         r8
-                        c'8
-                        c'8
+                        \big-half-harmonic
+                        a8
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        \ff
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #5.3
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \hspace #-7 { "ponticello possibile" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        \big-half-harmonic
+                        gqs8
+                        - \tweak font-size #3
+                        - \snappizzicato
                         r8
                         r2
                         r2.
                         r8
-                        c'8
+                        \big-half-harmonic
+                        gqs8
+                        - \tweak font-size #3
+                        - \snappizzicato
                         r2
                         r2
                         r8
-                        c'8
-                        c'2
-                        c'2
-                        c'2
-                        c'4
-                        c'4
-                        c'4
+                        \big-half-harmonic
+                        a8
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        \stopTextSpan
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-natural  }
+                        f''2
+                        - \accent
+                        ^ \markup \center-align { \concat { +2 } }
+                        - \tweak padding #6.4
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "6°/sounding B-flat ( with clarinet )" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        - \tweak padding 5.3
+                        \startBowSpan #'((0 . 4) (0.16666666666666666 . 0.2) (0.3333333333333333 . 4) (0.5 . 2.75) (0.6666666666666666 . 4.5) (0.8333333333333333 . 0.2) (0.9999999999999999 . 3))
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-natural  }
+                        f''2
+                        - \accent
+                        ^ \markup \center-align { \concat { +2 } }
+                        \afterGrace
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-natural  }
+                        f''2
+                        - \accent
+                        ^ \markup \center-align { \concat { +2 } }
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                            \stopBowSpan
+                        }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-natural  }
+                        f''4
+                        - \accent
+                        ^ \markup \center-align { \concat { +2 } }
+                        - \tweak padding 6.7
+                        \startBowSpan #'((0 . 0.1) (0.030030030030030033 . 3) (0.060060060060060066 . 1) (0.0900900900900901 . 2) (0.12012012012012013 . 1) (0.13513513513513514 . 4) (0.15015015015015015 . 3) (0.16516516516516516 . 4) (0.17717717717717718 . 2) (0.1831831831831832 . 3) (0.1951951951951952 . 2) (0.20720720720720723 . 4) (0.22522522522522526 . 2) (0.2852852852852853 . 0.1) (0.3153153153153153 . 3) (0.35735735735735735 . 1) (0.41741741741741745 . 2) (0.44744744744744747 . 1) (0.4774774774774775 . 4) (0.5075075075075075 . 3) (0.5375375375375375 . 4) (0.5525525525525525 . 2) (0.5675675675675675 . 3) (0.5825825825825826 . 2) (0.5945945945945945 . 4) (0.6006006006006005 . 2) (0.6126126126126125 . 0.1) (0.6246246246246244 . 3) (0.6426426426426425 . 1) (0.7027027027027025 . 2) (0.7327327327327325 . 1) (0.7747747747747746 . 4) (0.8348348348348347 . 3) (0.8648648648648647 . 4) (0.8948948948948947 . 2) (0.9249249249249247 . 3) (0.9549549549549547 . 2) (0.9699699699699698 . 4) (0.9849849849849848 . 2) (0.9999999999999998 . 0.1))
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-natural  }
+                        f''4
+                        - \accent
+                        ^ \markup \center-align { \concat { +2 } }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-natural  }
+                        f''4
+                        - \accent
+                        ^ \markup \center-align { \concat { +2 } }
                         \times 2/3
                         {
-                            c'16
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
                             [
-                            c'16.
-                            c'16
-                            c'16.
-                            c'16
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16.
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16.
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
                             ]
                         }
                         \times 2/3
                         {
-                            c'16
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
                             [
-                            c'16.
-                            c'16
-                            c'16.
-                            c'16
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16.
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16.
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            f''16
+                            - \accent
+                            ^ \markup \center-align { \concat { +2 } }
                             ]
                         }
-                        c'4
-                        c'4
-                        c'4
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \abjad-natural  }
+                        f''4
+                        - \accent
+                        ^ \markup \center-align { \concat { +2 } }
+                        \stopTextSpan
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                        a''!4
+                        - \accent
+                        ^ \markup \center-align { \concat { -31 } }
+                        - \tweak padding #7.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "7°/sounding B ( with clarinet )" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -1
+                        \startTextSpan
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                        a''4
+                        - \accent
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 16/15
                         {
-                            c'32
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32
+                            - \accent
                             [
-                            c'32.
-                            c'32.
-                            c'16
-                            c'32.
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32.
+                            - \accent
                             ]
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 16/13
                         {
-                            c'32.
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32.
+                            - \accent
                             [
-                            c'32.
-                            c'32
-                            c'32.
-                            c'32
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''32
+                            - \accent
                             ]
                         }
                         \times 2/3
                         {
-                            c'16
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''16
+                            - \accent
                             [
-                            c'16.
-                            c'16
-                            c'16.
-                            c'16
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            a''16
+                            - \accent
+                            \stopBowSpan
+                            \stopTextSpan
                             ]
                         }
                         <<
@@ -2675,21 +3083,36 @@
                             {
                                   %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-4
-                                  %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
-                                  %! trinton.on_beat_grace_container(3)
+                                \once \override Accidental.stencil = ##f
                                 \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 1/4
+                                \tweak style #'harmonic-mixed
+                                cs'16 * 1/4
+                                \f
+                                ^ \downbow
                                 [
                                 (
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                \big-half-harmonic
+                                b16 * 1/4
+                                _ \staccato
+                                \big-half-harmonic
+                                \once \override Staff.Accidental.stencil = ##f
                                 c'16 * 1/4
-                                c'16 * 1/4
-                                c'16 * 1/4
-                                c'16 * 1/4
+                                - \natural-articulation
+                                _ \staccato
+                                \once \override Staff.Accidental.stencil = ##f
+                                \tweak style #'harmonic
+                                ef'16 * 1/4
+                                - \flat-articulation
+                                _ \staccato
+                                \big-half-harmonic
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqs'16 * 1/4
+                                - \quarter-sharp-articulation
+                                \p
+                                _ \staccato
                                 )
                                 ]
                             }
@@ -2697,7 +3120,9 @@
                             {
                                   %! trinton.on_beat_grace_container(4)
                                 \voiceTwo
-                                c'4
+                                \tweak style #'harmonic-mixed
+                                cs'4
+                                - \accent
                             }
                         >>
                         s1 * 7/12
