@@ -4,6 +4,7 @@ import evans
 import trinton
 import random
 import math
+import fractions
 from abjadext import rmakers
 from itertools import cycle
 
@@ -126,7 +127,7 @@ def rhythm_2(stage=1, font_size=-3):
                 meter = abjad.Meter(duration)
                 if stage == 2:
                     duration_modifier = abjad.Duration((1, denominator * 4))
-                    half_duration = duration / 2
+                    half_duration = abjad.Duration((numerator, denominator)) / 2
                     new_durations.append(half_duration + duration_modifier)
                     new_durations.append(half_duration - duration_modifier)
 
@@ -176,7 +177,7 @@ def rhythm_2(stage=1, font_size=-3):
                     ):
                         prototype_durations = []
 
-                        prototype_durations.append(abjad.Duration((3, denominator * 2)))
+                        prototype_durations.append(abjad.Duration((3, denominator)))
 
                         for _ in range(0, numerator):
                             if sum(prototype_durations) == abjad.Duration(
@@ -185,7 +186,7 @@ def rhythm_2(stage=1, font_size=-3):
                                 pass
                             else:
                                 prototype_durations.append(
-                                    abjad.Duration((1, denominator))
+                                    abjad.Duration((2, denominator))
                                 )
 
                         for duration in prototype_durations:
@@ -194,7 +195,22 @@ def rhythm_2(stage=1, font_size=-3):
 
         container = abjad.Container()
 
-        rhythm_selections = rmakers.talea(durations, [1], 32, extra_counts=[4])
+        tuplet_ratios = []
+
+        for duration in durations:
+            thirty_second_amount = fractions.Fraction(
+                duration.numerator, duration.denominator
+            ) / fractions.Fraction(1, 32)
+            thirty_second_amount = int(thirty_second_amount)
+            attack_amount = thirty_second_amount + 4
+            tuplet = []
+            for _ in range(0, attack_amount):
+                tuplet.append(1)
+            tuplet = tuple(tuplet)
+
+            tuplet_ratios.append(tuplet)
+
+        rhythm_selections = rmakers.tuplet(durations, tuplet_ratios)
 
         container.extend(rhythm_selections)
         rmakers.rewrite_dots(container)
@@ -213,7 +229,7 @@ def rhythm_2(stage=1, font_size=-3):
                     tuplet,
                 )
             else:
-                if stage == 3:
+                if stage > 1:
                     relevant_leaves = [
                         abjad.select.leaf(tuplet, -2),
                         abjad.select.leaf(tuplet, -1),
