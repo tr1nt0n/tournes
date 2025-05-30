@@ -103,9 +103,23 @@ def rhythm_1(stage=1, map_rotation=0):
                         rest,
                     )
                     counter += 1
-        else:
+        if stage == 2:
             for tuplet in abjad.select.tuplets(container):
                 abjad.slur(tuplet)
+        if stage == 3:
+            for tuplet in abjad.select.tuplets(container):
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        r"\override Voice.Stem.direction = #DOWN", site="before"
+                    ),
+                    abjad.select.leaf(tuplet, 0),
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        r"\revert Voice.Stem.direction", site="absolute_after"
+                    ),
+                    abjad.select.leaf(tuplet, -1),
+                )
 
         rmakers.duration_bracket(container)
         rmakers.feather_beam(container, beam_rests=True)

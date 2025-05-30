@@ -73,7 +73,7 @@ def return_sieve_transposition_pitch_list(
     return pitch_list
 
 
-def clarinet_pitching_1(index=0, selector=trinton.pleaves()):
+def clarinet_pitching_1(index=0, selector=trinton.pleaves(), clarinet="bass"):
     def do_clarinet_pitching_1(selections):
         selections = selector(selections)
 
@@ -83,15 +83,19 @@ def clarinet_pitching_1(index=0, selector=trinton.pleaves()):
 
         pitch_list = []
 
-        random_walk = trinton.random_walk(
-            chord=[
+        if clarinet == "bass":
+            chord = [
                 "gs",
                 "b",
                 "a",
                 "ds'",
                 "a",
                 "b",
-            ],
+            ]
+        else:
+            chord = ["a", "f'", "b", "a", "ds'", "a", "b", "f'"]
+        random_walk = trinton.random_walk(
+            chord=chord,
             seed=6,
         )
 
