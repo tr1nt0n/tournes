@@ -96,6 +96,55 @@ flute_multiphonic = r"""\markup
 # notation tools
 
 
+def clean_rhythm_1_bursts(selector=trinton.pleaves()):
+    def return_clean_rhythm_1_bursts(selections):
+        selections = selector(selections)
+
+        slur_leaves = []
+
+        for leaf in abjad.select.leaves(selections, grace=False):
+            if isinstance(abjad.get.parentage(leaf).parent, abjad.Voice):
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        [
+                            r"\once \override Stem.stencil = ##f",
+                            r"\once \override Flag.stencil = ##f",
+                        ],
+                        site="before",
+                    ),
+                    leaf,
+                )
+                abjad.attach(abjad.Articulation(">"), leaf, direction=abjad.DOWN)
+
+            else:
+                slur_leaves.append(leaf)
+
+        contiguous_leaf_groups = abjad.select.group_by_contiguity(slur_leaves)
+        for group in contiguous_leaf_groups:
+            if len(group) > 1:
+                abjad.slur(group)
+
+        graces = abjad.select.leaves(selections, grace=True)
+
+        contiguous_grace_groups = abjad.select.group_by_contiguity(graces)
+
+        for group in contiguous_grace_groups:
+            first_leaf = abjad.select.leaf(group, 0)
+            abjad.override(first_leaf).NoteHead.transparent = True
+            abjad.attach(
+                abjad.LilyPondLiteral(
+                    [
+                        r"\once \override NoteHead.no-ledgers = ##t",
+                        r"\once \override Accidental.stencil = ##f",
+                    ],
+                    site="before",
+                ),
+                first_leaf,
+            )
+
+    return return_clean_rhythm_1_bursts
+
+
 def string_finger_pressures_1(index=0, seed=3, p=0.5, selector=trinton.pleaves()):
     def return_string_finger_pressures_1(selections):
         selections = selector(selections)
@@ -145,11 +194,12 @@ def clarinet_articulations_1(
                 previous_leaf.written_pitch == leaf.written_pitch
                 or leaf.written_pitch == next_leaf.written_pitch
             ):
-                color_fingering = abjad.Markup(
-                    rf"""\markup {{ \override #'(font-size . 0.75) {{ \circle {{ {finger_numbers[i % len(finger_numbers)]} }} }} }}"""
-                )
-                finger_number_counter += 1
-                abjad.attach(color_fingering, leaf, direction=abjad.UP)
+                if not isinstance(abjad.get.parentage(leaf).parent, abjad.Voice):
+                    color_fingering = abjad.Markup(
+                        rf"""\markup {{ \override #'(font-size . 0.75) {{ \circle {{ {finger_numbers[i % len(finger_numbers)]} }} }} }}"""
+                    )
+                    finger_number_counter += 1
+                    abjad.attach(color_fingering, leaf, direction=abjad.UP)
 
     return do_clarinet_articulations_1
 
