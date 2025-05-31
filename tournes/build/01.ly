@@ -6532,9 +6532,7 @@
                                         tupletFullLength = ##t
                                     }
                                     {
-                                        c'2.
-                                        ~
-                                        c'16
+                                        c'4.
                                     }
                                 >>
                                 \layout
@@ -6543,14 +6541,14 @@
                                     ragged-right = ##t
                                 }
                             }
-                        \times 182/105
+                        \times 1/1
                         {
                             \set fontSize = #-3
                             \highest
                             \override Staff.Dots.stencil = ##f
                             \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            g'64
+                            g'64.
                             _ #(make-dynamic-script
                                 (markup
                                     #:whiteout
@@ -6572,35 +6570,21 @@
                             - \tweak bound-details.left.text \markup \concat { \upright { "1/3 scratch" } \hspace #0.5 }
                             - \tweak bound-details.right.padding -2
                             \startTextSpan
-                            e'64
-                            a'64
-                            e'64
-                            f'64
-                            g'64
-                            e'64
-                            g'64
-                            a'64
-                            g'64
-                            e'64
-                            a'64
-                            e'64
-                            f'64
-                            g'64
-                            e'64
-                            g'64
-                            a'64
-                            g'64
-                            e'64
-                            a'64
-                            e'64
-                            f'64
-                            g'64
-                            e'64
-                            g'64
-                            a'64
-                            g'64
+                            e'64.
+                            a'64.
+                            e'64.
+                            f'64.
+                            g'64.
+                            e'64.
+                            g'64.
+                            a'64.
+                            g'64.
+                            e'64.
+                            a'64.
+                            e'64.
+                            f'64.
                             )
-                            r32
+                            r32.
                             ]
                             \revert-noteheads
                             \set fontSize = #-1
@@ -6635,9 +6619,7 @@
                                         tupletFullLength = ##t
                                     }
                                     {
-                                        c'2
-                                        ~
-                                        c'8.
+                                        c'4.
                                     }
                                 >>
                                 \layout
@@ -6646,42 +6628,168 @@
                                     ragged-right = ##t
                                 }
                             }
-                        \times 33/39
+                        \times 1/1
                         {
                             \set fontSize = #-3
                             \highest
                             \override Staff.Dots.stencil = ##f
                             \override Staff.Accidental.stencil = ##f
                             \my-hack-slash
-                            e'32
+                            g'64.
                             [
                             (
-                            a'32
-                            e'32
-                            f'32
-                            g'32
-                            e'32
-                            g'32
-                            a'32
-                            g'32
-                            e'32
-                            a'32
-                            e'32
-                            f'32
-                            g'32
-                            e'32
-                            g'32
-                            a'32
-                            g'32
-                            e'32
-                            a'32
-                            e'32
-                            f'32
-                            g'32
-                            e'32
+                            e'64.
+                            g'64.
+                            a'64.
+                            g'64.
+                            e'64.
+                            a'64.
+                            e'64.
+                            f'64.
+                            g'64.
+                            e'64.
+                            g'64.
+                            a'64.
+                            g'64.
+                            )
+                            r32.
+                            ]
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'4.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            e'64.
+                            [
+                            (
+                            a'64.
+                            e'64.
+                            f'64.
+                            g'64.
+                            e'64.
+                            g'64.
+                            a'64.
+                            g'64.
+                            e'64.
+                            a'64.
+                            e'64.
+                            f'64.
+                            g'64.
+                            )
+                            r32.
+                            ]
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'4.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            e'64.
+                            [
+                            (
+                            g'64.
+                            a'64.
+                            g'64.
+                            e'64.
+                            a'64.
+                            e'64.
+                            f'64.
+                            g'64.
+                            e'64.
+                            g'64.
+                            a'64.
+                            g'64.
+                            e'64.
                             )
                             \stopTextSpan
-                            r16
+                            r32.
                             ]
                             \revert-noteheads
                             \set fontSize = #-1

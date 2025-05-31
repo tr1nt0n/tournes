@@ -2857,7 +2857,7 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (7,)),
-    evans.RhythmHandler(rhythm.rhythm_2(stage=2)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=3)),
     evans.PitchHandler(["g'", "e'", "a'", "e'", "f'", "g'", "e'", "g'", "a'"]),
     trinton.attachment_command(
         attachments=[
