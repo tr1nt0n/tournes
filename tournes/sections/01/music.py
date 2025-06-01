@@ -2311,9 +2311,9 @@ trinton.make_music(
         octave=1,
         selector=trinton.select_leaves_by_index([4, 5, 7, 8, 10], pitched=True),
     ),
-    trinton.vertical_accidentals(
-        selector=trinton.select_leaves_by_index([-1], pitched=True)
-    ),
+    # trinton.vertical_accidentals(
+    #     selector=trinton.select_leaves_by_index([-1], pitched=True)
+    # ),
     trinton.spanner_command(
         strings=[
             r"\normale-bow-rotation",

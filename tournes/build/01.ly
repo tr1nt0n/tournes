@@ -5571,10 +5571,8 @@
                             \startTextSpanOne
                             \big-half-harmonic
                             fs'32 * 7/4
-                            \once \override Staff.Accidental.stencil = ##f
                             \tweak style #'harmonic
                             af32 * 157/96
-                            - \flat-articulation
                             \!
                             )
                             \stopTextSpanOne
