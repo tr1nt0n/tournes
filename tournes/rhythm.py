@@ -486,9 +486,14 @@ def rhythm_4(stage=1, rest_size=1):
                                 new_ratio.append(int(new_))
                             ratio = new_ratio
                         else:
-                            raise Exception(
-                                rf"{new_duration}: This ratio does not scale smaller than a total duration of 1/4"
-                            )
+                            multiplier = fractions.Fraction(
+                                duration_numerator, duration_denominator
+                            ) / fractions.Fraction(1, 16)
+                            multiplier = int(multiplier)
+                            ratio = [1 for _ in range(0, multiplier)]
+                            # raise Exception(
+                            #     rf"{new_duration}: This ratio does not scale smaller than a total duration of 1/4"
+                            # )
 
                     if duration_numerator % 3 == 0:
                         ratio = [2, 1]
@@ -501,9 +506,14 @@ def rhythm_4(stage=1, rest_size=1):
                                     new_ratio.append(int(new_))
                                 ratio = new_ratio
                         else:
-                            raise Exception(
-                                rf"{new_duration}: This ratio does not scale smaller than a total duration of 3/16"
-                            )
+                            multiplier = fractions.Fraction(
+                                duration_numerator, duration_denominator
+                            ) / fractions.Fraction(1, 16)
+                            multiplier = int(multiplier)
+                            ratio = [1 for _ in range(0, multiplier)]
+                            # raise Exception(
+                            #     rf"{new_duration}: This ratio does not scale smaller than a total duration of 3/16"
+                            # )
 
                     for _ in ratio:
                         talea_numerators.append(_)

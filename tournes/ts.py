@@ -2,7 +2,9 @@ import abjad
 import baca
 import evans
 import trinton
+import random
 from itertools import cycle
+from tournes import library
 
 # Time Signature System 1
 
@@ -68,6 +70,49 @@ def return_system_2_ts(measure_amount, index=0):
             (3, 4),
         ],
         index % 18,
+    )
+
+    return rotated_sequence[0:measure_amount]
+
+
+# Time Signature System 3
+
+numerators = trinton.random_walk(chord=[4, 12, 5, 11, 6, 10, 7, 9, 8], seed=6)
+
+new_numerators = []
+
+random.seed(6)
+
+for numerator in numerators:
+    random_int_1 = random.randint(0, 10)
+    random_int_2 = random.randint(0, 10)
+
+    numerator = numerator - random_int_1
+    numerator = numerator + random_int_2
+
+    numerator = int(numerator)
+    if numerator < 0:
+        numerator = numerator * -1
+    new_numerators.append(numerator)
+
+system_3_time_signatures = []
+
+for _, numerator in zip(
+    library.final_sieve.get_boolean_vector(total_length=len(library.final_sieve)),
+    new_numerators,
+):
+    if _ == 0:
+        denominator = 8
+    if _ == 1:
+        denominator = 16
+
+    system_3_time_signatures.append((numerator, denominator))
+
+
+def return_system_3_ts(measure_amount, index=0):
+    rotated_sequence = trinton.rotated_sequence(
+        system_3_time_signatures,
+        index % len(system_3_time_signatures),
     )
 
     return rotated_sequence[0:measure_amount]

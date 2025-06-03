@@ -260,13 +260,12 @@ afterGraceFraction = #(cons 15 16)
 
         \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72 Book"
-        % \override TimeSignature.X-extent = #'(0 . 0)
         \override TimeSignature.X-extent = ##f
-        \override TimeSignature.Y-extent = #'(0 . 0)
+        \override TimeSignature.Y-extent = ##f
+        \override TimeSignature.Y-offset = 4
         \override TimeSignature.X-offset = -1.2
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
-        \override TimeSignature.Y-offset = 5.5
         \override TimeSignature.layer = 4
         \override TimeSignature.break-visibility = #end-of-line-invisible
     }
@@ -277,6 +276,7 @@ afterGraceFraction = #(cons 15 16)
         \accepts timeSignatureStaff
         \consists Grob_pq_engraver
         % \consists Measure_spanner_engraver
+
         \consists #Interrupt_heads_engraver
         \consists #Explicit_interrupt_heads_engraver
         \consists #Follow_lines_engraver
@@ -321,7 +321,7 @@ afterGraceFraction = #(cons 15 16)
         \fill-line {
             \concat {
                 \override #'(font-name . "Bodoni72 Book Italic")
-                "herbe des tournes"
+                ". . . so fließt den auch mit ihm davon"
                 \override #'(font-name . "Bodoni72 Book")
                 " - Trinity Hlynn Prater"
             }
@@ -341,7 +341,7 @@ afterGraceFraction = #(cons 15 16)
                 }
                 \concat {
                     \override #'(font-name . "Bodoni72 Book Italic")
-                    "herbe des tournes"
+                    ". . . so fließt den auch mit ihm davon"
                     \override #'(font-name . "Bodoni72 Book")
                     " - Trinity Hlynn Prater"
                 }
