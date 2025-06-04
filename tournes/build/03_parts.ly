@@ -29,6 +29,8 @@
             s1 * 13/8
               %! +SCORE
         %%% \pageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 17 17 14 5 8 8)))
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
             \time 10/16
             s1 * 5/8
@@ -42,20 +44,26 @@
                   \abjad-metronome-mark-markup #2 #0 #2 #" 81 " 
               }
             }
+              %! +SCORE
+        %%% \noBreak
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
             \time 5/16
             s1 * 5/16
+              %! +SCORE
+        %%% \noBreak
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
             \time 12/8
             s1 * 3/2
             ^ \markup {
-            \hspace #1.5
+            \hspace #2
               \raise #15 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #1 #2 #" 40 " 
               }
             }
+              %! +SCORE
+        %%% \break
             \time 3/4
             s1 * 3/4
             \once \override Score.TimeSignature.stencil = ##f
@@ -692,9 +700,121 @@
                             \revert Staff.Accidental.stencil
                         }
                         \revert TupletNumber.text
-                        s1 * 5/8
-                        s1 * 5/16
-                        s1 * 3/2
+                        df'16
+                        _ \f
+                        _ \staccatissimo
+                        _ \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #7.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { { "loud key clicks + pitch" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        r8
+                        r8
+                        r8.
+                        r16
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                c'16 * 1/8
+                                _ \f
+                                [
+                                (
+                                - \tweak stencil #abjad-flared-hairpin
+                                _ \>
+                                \once \override Staff.Accidental.stencil = ##f
+                                df'16 * 1/8
+                                - \flat-articulation
+                                c'16 * 1/8
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqf'16 * 1/8
+                                - \quarter-flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                ef'16 * 1/8
+                                - \flat-articulation
+                                _ \p
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                  %! trinton.on_beat_grace_container(4)
+                                \voiceTwo
+                                c'16
+                                _ \accent
+                            }
+                        >>
+                        r8.
+                        r8
+                        r8.
+                        [
+                        dqf'16
+                        _ \f
+                        _ \staccatissimo
+                        _ \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                        r8
+                        ]
+                        r4
+                        r16
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                ef'16 * 1/8
+                                _ \f
+                                [
+                                (
+                                - \tweak stencil #abjad-flared-hairpin
+                                _ \>
+                                \once \override Staff.Accidental.stencil = ##f
+                                df'16 * 1/8
+                                - \flat-articulation
+                                c'16 * 1/8
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqf'16 * 1/8
+                                - \quarter-flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                ef'16 * 1/8
+                                - \flat-articulation
+                                _ \p
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                  %! trinton.on_beat_grace_container(4)
+                                \voiceTwo
+                                ef'16
+                                _ \accent
+                            }
+                        >>
+                        r4.
+                        r16
+                        [
+                        df'16
+                        _ \f
+                        _ \staccatissimo
+                        _ \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                        \stopTextSpan
+                        ]
+                        r4
                         s1 * 3/4
                         s1 * 3/4
                         s1 * 5/8
@@ -830,7 +950,59 @@
                         s1 * 13/8
                         s1 * 5/8
                         s1 * 5/16
-                        s1 * 3/2
+                        \slapped
+                        \override Staff.Stem.stemlet-length = 0.75
+                        ds16
+                        \ff
+                        [
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        \revert-noteheads
+                        \override Dots.staff-position = #2
+                        \revert Staff.Stem.stemlet-length
+                        ff16
+                        ]
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        ff4
+                        ~
+                        ff2.
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 \override #'(font-size . 5) {.} )
+                                            }
+                                        }
+                        ~
+                        ff4
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        ff16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        eqf16
+                        \!
+                        ]
                         s1 * 3/4
                         s1 * 3/4
                         s1 * 5/8
@@ -897,9 +1069,139 @@
                         d,16
                         \p
                         ]
-                        s1 * 5/8
-                        s1 * 5/16
-                        s1 * 3/2
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \ottava -2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        \mp
+                        r8
+                        r8
+                        r16
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r16
+                        r8
+                        ]
+                        r8
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        ]
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        ]
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        ]
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        \ottava 0
+                        r8
+                        ]
                         s1 * 3/4
                         s1 * 3/4
                         s1 * 5/8
@@ -1302,9 +1604,138 @@
                         d,4
                         ~
                         d,4
-                        s1 * 5/8
-                        s1 * 5/16
-                        s1 * 3/2
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \ottava -2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        r8
+                        r16
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r16
+                        r8
+                        ]
+                        r8
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        ]
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        ]
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        r8
+                        ]
+                        r8.
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,
+                            \tweak style #'la
+                            b,,,
+                            \tweak style #'la
+                            c,,
+                            \tweak style #'la
+                            d,,
+                        >16
+                        - \tenuto
+                        \ottava 0
+                        r8
+                        ]
                         s1 * 3/4
                         s1 * 3/4
                         s1 * 5/8
@@ -2216,8 +2647,51 @@
                         \stopBowSpan
                         \stopTextSpan
                         \ottava 0
-                        s1 * 5/8
-                        s1 * 5/16
+                        \override Dots.staff-position = #2
+                        \clef "bass"
+                        e,8.
+                        - \accent
+                        \f
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        e,8
+                        ~
+                        e,8.
+                        ~
+                        e,8
+                        ~
+                        e,8.
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        e,16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        cqs,16
+                        \!
+                        ]
                         s1 * 3/2
                         s1 * 3/4
                         s1 * 3/4
