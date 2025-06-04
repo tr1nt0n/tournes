@@ -2,6 +2,7 @@ import abjad
 import baca
 import evans
 import trinton
+import fractions
 import random
 from itertools import cycle
 from tournes import library
@@ -106,7 +107,10 @@ for _, numerator in zip(
     if _ == 1:
         denominator = 16
 
-    system_3_time_signatures.append((numerator, denominator))
+    if fractions.Fraction(numerator, denominator) < fractions.Fraction(3, 16):
+        pass
+    else:
+        system_3_time_signatures.append((numerator, denominator))
 
 
 def return_system_3_ts(measure_amount, index=0):

@@ -146,7 +146,7 @@
                             - \tweak padding #8
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { \upright { "whistle" } \hspace #0.5 }
-                            \startTextSpan
+                            \startTextSpanOne
                             e'''32
                             b''32
                             e'''32
@@ -257,14 +257,21 @@
                                         )
                                     )
                                 )
-                            \stopTextSpan
+                            \stopTextSpanOne
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "throat-scream" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -1
+                            \startTextSpanTwo
                             - \tweak font-name "Bodoni72 Book Italic" 
                             - \tweak font-size #0
                             - \tweak padding #8
                             - \abjad-dashed-line-with-hook
                             - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
                             - \tweak bound-details.right.padding -1
-                            \startTextSpan
+                            \startTextSpanOne
                             c'''64..
                             d'''64..
                             c'''64..
@@ -398,7 +405,8 @@
                             e'''64
                             b''64
                             )
-                            \stopTextSpan
+                            \stopTextSpanOne
+                            \stopTextSpanTwo
                             r32
                             ]
                             \revert-noteheads
@@ -1196,6 +1204,13 @@
                             \stopTextSpan
                             - \tweak font-name "Bodoni72 Book Italic" 
                             - \tweak font-size #0
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "throat-scream" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -1
+                            \startTextSpanTwo
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
                             - \tweak padding #8
                             - \abjad-dashed-line-with-hook
                             - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
@@ -1390,6 +1405,7 @@
                             c'''64
                             )
                             \stopTextSpan
+                            \stopTextSpanTwo
                             r32
                             ]
                             \revert-noteheads

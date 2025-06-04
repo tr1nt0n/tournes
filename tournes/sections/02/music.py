@@ -11,7 +11,7 @@ from tournes import ts
 
 # score
 
-section_ts = ts.return_system_3_ts(measure_amount=6, index=9)
+section_ts = ts.return_system_3_ts(measure_amount=6, index=7)
 
 section_ts.extend(ts.return_system_1_ts(measure_amount=6, index=0))
 
@@ -60,8 +60,24 @@ trinton.make_music(
         full_string=False,
         end_hook=True,
         end_hook_right_padding=1,
-        command="",
+        command="One",
         tag=None,
+    ),
+    trinton.hooked_spanner_command(
+        string=r"throat-scream",
+        selector=trinton.select_leaves_by_index([45, -1], pitched=True),
+        padding=10.5,
+        direction=None,
+        right_padding=1,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="Two",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -350,6 +366,22 @@ trinton.make_music(
         end_hook_right_padding=1,
         command="",
         tag=None,
+    ),
+    trinton.hooked_spanner_command(
+        string=r"throat-scream",
+        selector=trinton.select_leaves_by_index([45, -1], pitched=True),
+        padding=10.5,
+        direction=None,
+        right_padding=1,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="Two",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -1225,7 +1257,16 @@ for measure in [6, 12]:
 #         voice=score["Global Context"],
 #     )
 #
-for measure in [1, 2, 4, 5, 7, 8, 10, 11]:
+for measure in [
+    1,
+    2,
+    4,
+    5,
+    7,
+    8,
+    10,
+    11,
+]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1251,7 +1292,7 @@ for measure in [
     )
 
 # spacing
-
+#
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (10,)),
 #     trinton.attachment_command(
