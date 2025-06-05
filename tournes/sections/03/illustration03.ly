@@ -80,11 +80,19 @@
             \break
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+            \pageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 12 12 14.5 2 16 16.5)))
             \time 5/8
             s1 * 5/8
+              %! +SCORE
+            \noBreak
             \time 4/4
             s1 * 1
             - \tweak padding #18
@@ -101,11 +109,19 @@
             }
             - \tweak bound-details.right.padding 7.5
             \startTextSpan
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 10 19 14 2 19 18)))
             \time 5/8
             s1 * 5/8
+              %! +SCORE
+            \noBreak
+              %! +PARTS
+        %%% \noBreak
             \time 4/4
             s1 * 1
             \stopTextSpan
+              %! +SCORE
+            \break
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -829,12 +845,907 @@
                         \stopTextSpan
                         ]
                         r4
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 1
-                        s1 * 5/8
-                        s1 * 1
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #8
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \upright { "whistle" }
+                            - \tweak bound-details.right.padding 1
+                            \startTextSpanOne
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            \stopTextSpanOne
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            ^ \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "( sim. )" } }
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            b''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            b''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            b''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'8.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 6/5
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            d'''64
+                            c'''64
+                            e'''64
+                            b''64
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'16
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 2/3
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            b''64
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
+                            - \accent
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            e'''64
+                            c'''64
+                            d'''64
+                            c'''64
+                            e'''64
+                            \!
+                            )
+                            ]
+                            \breathe
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        ^ \markup \center-align { \concat { -14 } }
+                        - \tweak padding #8.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "10°/sounding C-sharp ( with violin )" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        - \tweak padding 7.5
+                        \startBowSpan #'((0 . 0.2) (0.14285714285714285 . 2) (0.2857142857142857 . 0.2) (0.42857142857142855 . 2) (0.5714285714285714 . 0.2) (0.7142857142857142 . 2) (0.857142857142857 . 0.2) (0.9999999999999998 . 2))
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        \stopBowSpan
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        ^ \markup \center-align { \concat { -14 } }
+                        - \tweak padding 7.5
+                        \startBowSpan #'((0 . 0.2) (0.07142857142857142 . 2) (0.14285714285714285 . 0.2) (0.21428571428571427 . 2) (0.2857142857142857 . 0.2) (0.3571428571428571 . 2) (0.4285714285714285 . 0.2) (0.4999999999999999 . 2) (0.5714285714285713 . 0.2) (0.6428571428571427 . 2) (0.7142857142857141 . 0.2) (0.7857142857142855 . 2) (0.8571428571428569 . 0.2) (0.9285714285714283 . 2) (0.9999999999999997 . 0.2))
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4.
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        ^ \markup \center-align { \concat { -14 } }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        as''4
+                        - \accent
+                        \stopBowSpan
+                        \stopTextSpan
                     }
                 }
                 \context Staff = "bassclarinet staff"
@@ -977,6 +1888,7 @@
                         \revert Staff.Stem.stemlet-length
                         ff16
                         ]
+                        (
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
@@ -1016,13 +1928,99 @@
                         \revert Staff.Stem.stemlet-length
                         eqf16
                         \!
+                        )
                         ]
                         s1 * 3/4
-                        s1 * 3/4
+                        \override Dots.staff-position = #2
+                        gf2
+                        \mp
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        \>
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \override Staff.Stem.stemlet-length = 0.75
+                        gf8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        fqs16
+                        \!
+                        )
+                        ]
                         s1 * 5/8
-                        s1 * 1
-                        s1 * 5/8
-                        s1 * 1
+                        r2
+                        \slapped
+                        \override Staff.Stem.stemlet-length = 0.75
+                        ds16
+                        \f
+                        [
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        \revert-noteheads
+                        \override Dots.staff-position = #2
+                        \revert Staff.Stem.stemlet-length
+                        ff8.
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        ff4
+                        ~
+                        ff4.
+                        ~
+                        ff4
+                        ~
+                        ff2.
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        ff8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        eqf16
+                        \!
+                        )
+                        ]
                     }
                 }
             >>
@@ -1216,12 +2214,61 @@
                         \ottava 0
                         r8
                         ]
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 1
-                        s1 * 5/8
-                        s1 * 1
+                        r2
+                        \override Dots.staff-position = #2
+                        f,4
+                        \ppp
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        \<
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        f,2.
+                        ~
+                        f,4.
+                        ~
+                        f,4
+                        ~
+                        f,1
+                        \fff
+                        \>
+                        ~
+                        f,4.
+                        ~
+                        f,4
+                        ~
+                        f,2.
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 \override #'(font-size . 5) {.} )
+                                            }
+                                        }
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        f,8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        e,16
+                        \mp
+                        ]
                     }
                 }
                 \context timeSignatureStaff = "accordion 2 staff"
@@ -1750,12 +2797,17 @@
                         \ottava 0
                         r8
                         ]
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 1
-                        s1 * 5/8
-                        s1 * 1
+                        r2
+                        ef,4
+                        r2.
+                        f,4.
+                        ~
+                        f,4
+                        r1
+                        e,4.
+                        ~
+                        e,4
+                        r1
                     }
                 }
             >>
@@ -2415,12 +3467,257 @@
                         s1 * 5/8
                         s1 * 5/16
                         s1 * 3/2
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 5/8
-                        s1 * 1
-                        s1 * 5/8
-                        s1 * 1
+                        \big-half-harmonic
+                        a16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        \ff
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #6.4
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \hspace #-4 \center-column { \line { "pizz." } \line { "ponticello possibile" } } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        r8.
+                        r32
+                        [
+                        \big-half-harmonic
+                        gqs16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        r32
+                        r8
+                        ]
+                        r16
+                        [
+                        \big-half-harmonic
+                        gqs16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        r8
+                        ]
+                        r16
+                        [
+                        \big-half-harmonic
+                        a16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        r8
+                        ]
+                        r16
+                        [
+                        \big-half-harmonic
+                        b16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        r8
+                        ]
+                        r16
+                        [
+                        \big-half-harmonic
+                        bqf16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        r8
+                        ]
+                        r16.
+                        [
+                        \big-half-harmonic
+                        aqs32
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        ~
+                        \big-half-harmonic
+                        aqs32
+                        r16.
+                        r8
+                        ]
+                        \big-half-harmonic
+                        gqs16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        \stopTextSpan
+                        r16
+                        r8
+                        \times 4/5
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            ^ \markup \center-align { \concat { G-49 } }
+                            [
+                            - \tweak padding #7.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "11°/sounding C-sharp ( with flute )" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpan
+                            - \tweak padding 6.5
+                            \startBowSpan #'((0 . 4) (0.03571428571428571 . 5) (0.10714285714285714 . 3) (0.14285714285714285 . 4) (0.25 . 0.5) (0.2857142857142857 . 1) (0.3214285714285714 . 0.2) (0.3928571428571428 . 0.7) (0.4285714285714285 . 0.5) (0.5357142857142856 . 1) (0.5714285714285713 . 2) (0.607142857142857 . 5) (0.6785714285714284 . 4) (0.7142857142857141 . 5) (0.8214285714285712 . 2) (0.8571428571428569 . 3) (0.8928571428571426 . 0.1) (0.964285714285714 . 0.5) (0.9999999999999997 . 0.1))
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            ]
+                        }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''4
+                        - \accent
+                        \times 8/11
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            [
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            ]
+                        }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''4
+                        - \accent
+                        \stopBowSpan
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''4
+                        - \accent
+                        ^ \markup \center-align { \concat { G-49 } }
+                        - \tweak padding 6.5
+                        \startBowSpan #'((0 . 0.5) (0.06666666666666667 . 1) (0.1 . 0.2) (0.2 . 0.7) (0.23333333333333334 . 0.5) (0.26666666666666666 . 1) (0.3333333333333333 . 2) (0.36666666666666664 . 5) (0.4666666666666667 . 4) (0.5 . 5) (0.5333333333333333 . 2) (0.6 . 3) (0.6333333333333333 . 0.1) (0.7333333333333333 . 0.5) (0.7666666666666666 . 0.1) (0.7999999999999999 . 4) (0.8666666666666666 . 5) (0.8999999999999999 . 3) (0.9999999999999999 . 4))
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''16
+                        - \accent
+                        [
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''16.
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''16
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''16.
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''16
+                        - \accent
+                        ]
+                        \times 2/3
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            ^ \markup \center-align { \concat { G-49 } }
+                            [
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            ]
+                        }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                        fs''4
+                        - \accent
+                        \times 2/3
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            [
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            [
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            fs''16
+                            - \accent
+                            \stopBowSpan
+                            \stopTextSpan
+                            ]
+                        }
                     }
                 }
                 \context Staff = "cello staff"
@@ -2666,6 +3963,7 @@
                         e,8.
                         - \accent
                         \f
+                        (
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
@@ -2705,14 +4003,107 @@
                         \revert Staff.Stem.stemlet-length
                         cqs,16
                         \!
+                        )
                         ]
                         s1 * 3/2
                         s1 * 3/4
                         s1 * 3/4
+                        \override Dots.staff-position = #2
+                        fs,4.
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        \<
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        fs,4
+                        ~
+                        fs,2...
+                        \f
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 \override #'(font-size . 5) {...} )
+                                            }
+                                        }
+                        - \tweak circled-tip ##t
+                        \>
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        ds,16
+                        \!
+                        )
                         s1 * 5/8
-                        s1 * 1
-                        s1 * 5/8
-                        s1 * 1
+                        \big-half-harmonic
+                        \override Staff.Stem.stemlet-length = 0.75
+                        cqs,16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        \ff
+                        ^ \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pizz." } }
+                        [
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        \override Dots.staff-position = #2
+                        \revert Staff.Stem.stemlet-length
+                        f,8.
+                        - \accent
+                        ^ \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "arco" } }
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        f,2
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 )
+                                            }
+                                        }
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        f,8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        eqf,16
+                        \pp
+                        )
+                        ]
                     }
                 }
             >>
