@@ -84,6 +84,17 @@ first_voice_names = eval(
     ]"""
 )
 
+all_voice_names = eval(
+    """[
+        "flute voice",
+        "bassclarinet voice",
+        "accordion 1 voice",
+        "accordion 3 voice",
+        "violin voice",
+        "cello voice"
+    ]"""
+)
+
 flute_multiphonic = r"""\markup
     \override #'(layer . 20) {
         \hspace #-4 {

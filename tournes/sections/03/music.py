@@ -1560,7 +1560,7 @@ for measure in [
         voice=score["Global Context"],
     )
 
-for measure in [1, 4, 5, 7, 9, 11]:
+for measure in [1, 4, 5, 7, 9, 11, 12]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1574,7 +1574,6 @@ for measure in [1, 4, 5, 7, 9, 11]:
 for measure in [
     2,
     6,
-    12,
 ]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
@@ -1649,7 +1648,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 10 19 14 2 19 18)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 19 19 14 2 19 18)))",
                 site="absolute_before",
             ),
         ],

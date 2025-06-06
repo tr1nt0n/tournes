@@ -96,7 +96,7 @@
             - \tweak bound-details.right.padding 7.5
             \startTextSpan
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 10 19 14 2 19 18)))
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 19 19 14 2 19 18)))
             \time 5/8
             s1 * 5/8
               %! +SCORE
@@ -107,7 +107,7 @@
             s1 * 1
             \stopTextSpan
               %! +SCORE
-        %%% \break
+        %%% \noBreak
         }
         \context StaffGroup = "Staff Group"
         <<

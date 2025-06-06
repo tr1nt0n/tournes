@@ -166,3 +166,12 @@ for numerator in taal_numerator_sequence:
         pair = (numerator, 4)
 
     taal_ts_sequence.append(pair)
+
+
+def return_system_5_ts(measure_amount, index=0):
+    rotated_sequence = trinton.rotated_sequence(
+        taal_ts_sequence,
+        index % len(system_3_time_signatures),
+    )
+
+    return rotated_sequence[0:measure_amount]
