@@ -520,11 +520,18 @@ def rhythm_4(stage=1, rest_size=1):
 
         if stage > 1:
             new_numerators = []
-            rest_numerator = rest_size * -1
 
-            for _ in talea_numerators:
-                new_numerators.append(_)
-                new_numerators.append(rest_numerator)
+            if isinstance(rest_size, list):
+                for _, rest in zip(talea_numerators, cycle(rest_size)):
+                    rest_numerator = rest * -1
+                    new_numerators.append(_)
+                    new_numerators.append(rest_numerator)
+
+            else:
+                rest_numerator = rest_size * -1
+                for _ in talea_numerators:
+                    new_numerators.append(_)
+                    new_numerators.append(rest_numerator)
 
             talea_numerators = new_numerators
 

@@ -123,6 +123,146 @@ trinton.make_music(
     voice=score["flute voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=1)),
+    voice=score["flute voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8,)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=2)),
+    voice=score["flute voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9,)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=3)),
+    voice=score["flute voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    evans.PitchHandler(
+        [
+            "c'''",
+            "e'''",
+            "b''",
+            "e'''",
+            "c'''",
+            "d'''",
+        ],
+    ),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves()),
+    trinton.spanner_command(
+        strings=[
+            "whistle",
+            "overblow",
+        ],
+        selector=trinton.select_leaves_by_index([0, 26, 26, 35], pitched=True),
+        style="solid-line-with-arrow",
+        padding=8,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=1,
+        command="One",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=[
+            "whistle",
+            "overblow",
+        ],
+        selector=trinton.select_leaves_by_index([36, 50, 50, 55], pitched=True),
+        style="solid-line-with-arrow",
+        padding=8,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=1,
+        command="One",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=[
+            "whistle",
+            "overblow",
+        ],
+        selector=trinton.select_leaves_by_index([56, 67, 67, 71], pitched=True),
+        style="solid-line-with-arrow",
+        padding=8,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=1,
+        command="One",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=[
+            "whistle",
+            "overblow",
+        ],
+        selector=trinton.select_leaves_by_index([72, 81, 81, 84], pitched=True),
+        style="solid-line-with-arrow",
+        padding=8,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=1,
+        command="One",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=[
+            "whistle",
+            "overblow",
+        ],
+        selector=trinton.select_leaves_by_index([86, 92, 92, -1], pitched=True),
+        style="solid-line-with-arrow",
+        padding=8,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=1,
+        command="One",
+        tag=None,
+    ),
+    trinton.linear_attachment_command(
+        attachments=cycle([abjad.StartHairpin("o<"), abjad.Dynamic('"ffff"')]),
+        selector=trinton.select_leaves_by_index(
+            [0, 26, 36, 50, 56, 67, 72, 81, 86, 92], pitched=True
+        ),
+    ),
+    voice=score["flute voice"],
+)
+
 # clarinet music
 
 trinton.make_music(
@@ -296,8 +436,7 @@ trinton.make_music(
         finger_number_index=0,
         selector=trinton.logical_ties(first=True, pitched=True, grace=False),
     ),
-    library.clean_rhythm_1_bursts(),
-    trinton.annotate_leaves_locally(selector=trinton.pleaves(grace=False)),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves(grace=False)),
     trinton.vertical_accidentals(
         selector=trinton.select_leaves_by_index(
             [
@@ -314,79 +453,323 @@ trinton.make_music(
             grace=False,
         )
     ),
-    # trinton.spanner_command(
-    #     strings=[
-    #         "\woodwind-three-quarters-closed",
-    #         "\woodwind-open",
-    #         "\woodwind-closed",
-    #         "\woodwind-half-closed",
-    #         "\woodwind-closed",
-    #         "\woodwind-open",
-    #         "\woodwind-three-quarters-closed",
-    #         "\woodwind-closed",
-    #         "\woodwind-half-closed",
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.StartSlur(),
+    #         abjad.StopSlur()
     #     ],
-    #     selector=trinton.select_leaves_by_index(
-    #         [
-    #             0,
-    #             3,
-    #             3,
-    #             10,
-    #             10,
-    #             11,
-    #             11,
-    #             14,
-    #             14,
-    #             25,
-    #             25,
-    #             28,
-    #             28,
-    #             33,
-    #             33,
-    #             -1,
-    #         ],
-    #         pitched=True,
-    #     ),
-    #     style="solid-line-with-arrow",
-    #     padding=11.5,
-    #     tweaks=None,
-    #     right_padding=None,
-    #     direction=None,
-    #     full_string=True,
-    #     command="One",
-    #     end_hook=False,
-    #     end_hook_style="dashed-line-with-hook",
-    #     tag=None,
+    #     selector=trinton.select_leaves_by_index([])
     # ),
-    # library.graphic_bow_pressure_spanner(
-    #     selector=trinton.logical_ties(),
-    #     peaks=[4, 0.2, 2, 1, 4, 3, 2, 1, 0.5, 0.6, 0.7, 0.5, 3, 0.2, 4, 0.2],
-    #     peak_direction=abjad.DOWN,
-    #     anchor_point_step_sizes=[
-    #         1,
-    #         0.5,
-    #         1,
-    #         0.25,
-    #         0.5,
-    #         0.2,
-    #         0.4,
-    #         1,
-    #         1,
-    #         0.5,
-    #         0.4,
-    #         0.2,
-    #         0.7,
-    #     ],
-    #     divisions=[24],
-    #     counts=[40],
-    #     cyclic=True,
-    #     left_broken_text=None,
-    #     left_text=None,
-    #     right_padding=None,
-    #     right_text=None,
-    #     padding=11,
-    #     forget=False,
-    # ),
+    trinton.spanner_command(
+        strings=[
+            "\woodwind-three-quarters-closed",
+            "\woodwind-open",
+            "\woodwind-closed",
+            "\woodwind-half-closed",
+            "\woodwind-closed",
+            "\woodwind-open",
+            "\woodwind-three-quarters-closed",
+            "\woodwind-closed",
+            "\woodwind-half-closed",
+            "\woodwind-closed",
+            "\woodwind-three-quarters-closed",
+            "\woodwind-open",
+            "\woodwind-closed",
+            "\woodwind-half-closed",
+            "\woodwind-closed",
+            "\woodwind-open",
+            "\woodwind-three-quarters-closed",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                3,
+                3,
+                10,
+                10,
+                11,
+                11,
+                14,
+                14,
+                25,
+                25,
+                28,
+                28,
+                33,
+                33,
+                38,
+                38,
+                42,
+                42,
+                46,
+                46,
+                49,
+                49,
+                52,
+                52,
+                65,
+                65,
+                77,
+                77,
+                81,
+                81,
+                -1,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+        style="solid-line-with-arrow",
+        padding=10,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="One",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        tag=None,
+    ),
+    voice=score["bassclarinet voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 12)),
+    library.clean_rhythm_1_bursts(),
+    voice=score["bassclarinet voice"],
+)
+
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 6)),
+    library.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[
+            0.2,
+            1,
+            1.5,
+            5,
+            3,
+            2,
+            3,
+            2,
+            1,
+            2,
+            1,
+            3,
+            1,
+            2,
+            3,
+            4,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            1,
+            2,
+            5,
+        ],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[
+            0.5,
+            0.5,
+            0.5,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1.5,
+        ],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=9.5,
+        forget=False,
+    ),
+    voice=score["bassclarinet voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 8)),
+    library.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[
+            2,
+            5,
+            5,
+            3,
+            1,
+            2,
+            3,
+            2,
+            3,
+            2,
+            1,
+            5,
+            0.5,
+            2,
+            1,
+            3,
+            4,
+            5,
+            0.5,
+            1,
+        ],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[
+            1,
+            1,
+            3,
+            3,
+            1,
+            3,
+            1,
+        ],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=9.5,
+        forget=False,
+    ),
+    voice=score["bassclarinet voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 11)),
+    library.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[
+            3,
+            4,
+            5,
+            0.5,
+            3,
+            2,
+            1,
+            5,
+            0.5,
+            5,
+            2,
+            1,
+            5,
+            3,
+            4,
+            2,
+            4,
+            2,
+            5,
+            2,
+            3,
+            5,
+            1,
+            5,
+            0.5,
+            5,
+            2,
+            4,
+            5,
+            3,
+            1,
+            4,
+            1,
+            5,
+            3,
+            4,
+            3,
+            4,
+            5,
+            0.5,
+        ],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[
+            0.5,
+            0.5,
+            0.5,
+            1,
+            0.5,
+            0.5,
+            0.5,
+            3,
+            6,
+            3,
+            6,
+        ],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=9.5,
+        forget=False,
+    ),
+    voice=score["bassclarinet voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (12,)),
+    library.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[
+            3,
+            2,
+            1,
+            5,
+            0.5,
+            5,
+            2,
+            1,
+            5,
+            3,
+            4,
+            2,
+            4,
+            2,
+            5,
+            2,
+            3,
+            5,
+            1,
+            5,
+            0.5,
+            5,
+            0.5,
+        ],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[
+            1,
+            0.5,
+            0.5,
+            0.5,
+            3,
+            6,
+            0.5,
+            0.5,
+            0.5,
+            6,
+            3,
+        ],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=9.5,
+        forget=False,
+    ),
     voice=score["bassclarinet voice"],
 )
 
@@ -526,6 +909,216 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0, 0, 9, 10, 11]),
     ),
     voice=score["accordion 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9,)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=3)),
+    evans.PitchHandler(
+        [
+            "c'''",
+            "e'''",
+            "b''",
+            "e'''",
+            "c'''",
+            "d'''",
+        ],
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("treble")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    voice=score["accordion 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    evans.RhythmHandler(rhythm.rhythm_3(stage=2, seed=10, p=0.45, tuplet_index=17)),
+    evans.PitchHandler(
+        [
+            ["af", "ef''"],
+        ]
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("treble")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation(">")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    voice=score["accordion 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 8)),
+    library.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[
+            0.2,
+            1,
+            0.5,
+            1,
+            0.2,
+            3,
+            0.5,
+            1,
+            2,
+            1,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            0.2,
+            1,
+            0.5,
+            1,
+            0.2,
+            3,
+            0.5,
+            1,
+            2,
+            1,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            0.2,
+            1,
+            0.5,
+            1,
+            0.2,
+            3,
+            0.5,
+            1,
+            2,
+            1,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            0.2,
+            1,
+            0.5,
+            1,
+            0.2,
+            3,
+            0.5,
+            1,
+            2,
+            1,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+        ],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[
+            1,
+            1,
+            1,
+            0.5,
+            0.5,
+            0.5,
+            2,
+            1,
+            1.5,
+        ],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=9.5,
+        forget=False,
+    ),
+    voice=score["accordion 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9,)),
+    library.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[
+            0.5,
+            2,
+            1,
+            2,
+            0.5,
+            1,
+            0.5,
+            2,
+            1,
+            2,
+            0.5,
+            1,
+            5,
+            0.5,
+            5,
+            0.5,
+            5,
+            0.5,
+            2,
+            1,
+            2,
+            0.5,
+            1,
+            0.5,
+            2,
+            1,
+            2,
+            0.5,
+            1,
+        ],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[
+            0.5,
+            0.5,
+            0.5,
+            1,
+            2,
+            1.5,
+            1,
+            1,
+            1,
+        ],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=9.5,
+        forget=False,
+    ),
+    voice=score["accordion 3 voice"],
 )
 
 # violin music
@@ -714,6 +1307,57 @@ trinton.make_music(
     voice=score["violin voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    evans.RhythmHandler(rhythm.rhythm_4(stage=2, rest_size=[1, 2, 1, 3])),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 12)),
+    evans.RhythmHandler(rhythm.rhythm_4(stage=1)),
+    voice=score["violin voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 12)),
+    evans.PitchHandler(["bqs"]),
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+        selector=trinton.pleaves(),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"scratch, tasto",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=3.5,
+        direction=None,
+        right_padding=2,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.logical_ties(pitched=True, first=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([1, 2, 3, 6, 10, 11, 12, 13, 17, 19]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.Dynamic("mp"), abjad.StartHairpin("<"), abjad.Dynamic("ff")],
+        selector=trinton.select_leaves_by_index([0, 6, 15], pitched=True, grace=False),
+    ),
+    voice=score["violin voice"],
+)
+
 # cello music
 
 trinton.make_music(
@@ -815,7 +1459,13 @@ trinton.make_music(
         selector=trinton.pleaves(grace=True, exclude=[0, 1, 3])
     ),
     trinton.change_notehead_command(
-        notehead="harmonic", selector=trinton.pleaves(grace=True, exclude=[0, 3])
+        notehead="harmonic",
+        selector=trinton.pleaves(
+            grace=True,
+            exclude=[
+                0,
+            ],
+        ),
     ),
     trinton.continuous_glissando(
         selector=trinton.pleaves(grace=True),
@@ -921,6 +1571,90 @@ trinton.make_music(
         direction=abjad.UP,
     ),
     voice=score["cello voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    evans.RhythmHandler(evans.talea([1, 30, 1, 1, 8, 1], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(
+        [
+            "aqf'",
+            "c''",
+            "a'",
+            "aqf'",
+            "bf'",
+            "af'",
+        ]
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+            abjad.bundle(abjad.Articulation("snappizzicato"), r"- \tweak font-size #3"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 3], pitched=True, first=True, grace=False
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=cycle(
+            [
+                abjad.bundle(
+                    abjad.Markup(r"""\markup { \hspace #-1 "pizz." }"""),
+                    r"""- \tweak font-name "Bodoni72 Book Italic" """,
+                    r"""- \tweak font-size 0""",
+                ),
+                abjad.bundle(
+                    abjad.Markup(r"""\markup { "arco + flaut." }"""),
+                    r"""- \tweak font-name "Bodoni72 Book Italic" """,
+                    r"""- \tweak font-size 0""",
+                ),
+            ]
+        ),
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 3, 4], first=True, pitched=True, grace=False
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("treble")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.continuous_glissando(
+        selector=trinton.select_logical_ties_by_index(
+            [1, 2, 4, 5], pitched=True, grace=False
+        ),
+        zero_padding=True,
+        slur=True,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Markup(
+                r"""\markup {
+                    \hspace #-2 {
+                        ( \note {2} #2 \override #'(font-size . 5) {.} )
+                    }
+                }"""
+            )
+        ],
+        selector=trinton.select_leaves_by_index([3], pitched=True),
+        direction=abjad.UP,
+    ),
+    trinton.linear_attachment_command(
+        attachments=cycle(
+            [
+                abjad.Dynamic("ff"),
+                abjad.Dynamic("mp"),
+                abjad.StartHairpin(">o"),
+                abjad.StopHairpin(),
+            ]
+        ),
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 1, 2, 3, 4, 4, 5], first=True, pitched=True, grace=False
+        ),
+    ),
+    voice=score["cello voice"],
+    beam_meter=True,
 )
 
 # globals
@@ -1067,22 +1801,22 @@ trinton.make_music(
 
 # breaking
 
-# for measure in [
-#     6,
-#     8,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[abjad.LilyPondLiteral(r"\noPageBreak", site="absolute_after")],
-#             selector=trinton.select_leaves_by_index([0]),
-#             tag=abjad.Tag("+SCORE"),
-#         ),
-#         voice=score["Global Context"],
-#     )
-#
+for measure in [
+    3,
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noPageBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+            tag=abjad.Tag("+SCORE"),
+        ),
+        voice=score["Global Context"],
+    )
+
 for measure in [
     1,
+    6,
 ]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
@@ -1161,20 +1895,50 @@ for measure in [
 
 # spacing
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 26 9 15 6 24 25)))",
-#                 site="absolute_before",
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         tag=abjad.Tag("+SCORE"),
-#     ),
-#     voice=score["Global Context"],
-# )
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 12 10 2 16 24)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (0.5 25.5 16 13 6 12 17)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-3 26.5 21 15 8 11.5 18)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
 
 # instrument names
 
