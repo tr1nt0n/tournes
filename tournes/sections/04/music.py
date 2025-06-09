@@ -847,6 +847,39 @@ trinton.make_music(
     voice=score["bassclarinet voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="Traffic Cone OUT",
+                # tweaks=[r"- \tweak padding 14"],
+                column="\center-column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=2,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="B-flat Soprano",
+                # tweaks=[r"- \tweak padding 14"],
+                column="\center-column",
+                font_name="Bodoni72 Book Italic",
+                fontsize=2,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["bassclarinet voice"],
+)
+
 # accordion music
 
 for voice_name in [
