@@ -603,6 +603,22 @@ trinton.make_music(
         end_hook_style="dashed-line-with-hook",
         tag=None,
     ),
+    trinton.hooked_spanner_command(
+        string=r"+ throat-scream",
+        selector=trinton.select_leaves_by_index([-40, -1], pitched=True, grace=False),
+        padding=8,
+        direction=None,
+        right_padding=1,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="Three",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+    ),
     voice=score["bassclarinet voice"],
 )
 

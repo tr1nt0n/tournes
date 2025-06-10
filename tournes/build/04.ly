@@ -1619,6 +1619,13 @@
                             b32 * 69/32
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 2 } } }
                             (
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #8
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "+ throat-scream" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -1
+                            \startTextSpanThree
                             a32 * 13/8
                             \once \override Staff.Accidental.stencil = ##f
                             gs32 * 47/32
@@ -2073,6 +2080,7 @@
                             ^ \markup { \override #'(font-size . 0.75) { \circle { 3 } } }
                             \stopBowSpan
                             \stopTextSpanOne
+                            \stopTextSpanThree
                             ]
                             \revert Voice.Stem.direction
                         }
