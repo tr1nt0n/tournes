@@ -164,6 +164,12 @@ trinton.make_music(
     voice=score["flute voice"],
 )
 
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (7, 9)),
+#
+#     voice=score["flute voice"]
+# )
+
 # clarinet music
 
 trinton.make_music(
@@ -1007,6 +1013,141 @@ trinton.make_music(
         right_text=None,
         padding=6.5,
         forget=False,
+    ),
+    voice=score["cello voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=2)),
+    voice=score["cello voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 9)),
+    evans.RhythmHandler(rhythm.rhythm_2(stage=3)),
+    voice=score["cello voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    trinton.force_rest(selector=trinton.select_tuplets_by_index([0, -1, -2])),
+    trinton.call_rmaker(
+        rmaker=rmakers.trivialize, selector=trinton.select_tuplets_by_index([0, -1, -2])
+    ),
+    trinton.call_rmaker(
+        rmaker=rmakers.rewrite_rest_filled,
+        selector=trinton.select_tuplets_by_index([0, -1, -2]),
+    ),
+    trinton.call_rmaker(
+        rmaker=rmakers.extract_trivial,
+        selector=trinton.select_tuplets_by_index([0, -1, -2]),
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(
+        [
+            "c'''",
+            "e'''",
+            "b''",
+            "e'''",
+            "c'''",
+            "d'''",
+        ],
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartHairpin("o<"),
+            abjad.Dynamic("p"),
+            abjad.StartHairpin("<|"),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("|>o"),
+            abjad.StartHairpin("o<|"),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("|>o"),
+            abjad.StartHairpin("o<|"),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("|>o"),
+            abjad.StartHairpin("o<|"),
+            abjad.Dynamic("ff"),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                11,
+                18,
+                24,
+                24,
+                38,
+                51,
+                52,
+                66,
+                79,
+                80,
+                94,
+                -1,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"flaut.",
+        selector=trinton.select_leaves_by_index([0, 18], pitched=True),
+        padding=8,
+        direction=None,
+        right_padding=0,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[
+            "",
+            "2/3 scratch",
+            "flaut.",
+            "2/3 scratch",
+            "flaut.",
+            "2/3 scratch",
+            "flaut.",
+            "2/3 scratch",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                18,
+                24,
+                24,
+                38,
+                38,
+                51,
+                51,
+                66,
+                66,
+                79,
+                79,
+                94,
+                94,
+                -1,
+            ],
+            pitched=True,
+        ),
+        style="solid-line-with-arrow",
+        padding=8,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=1,
+        command="One",
+        tag=None,
     ),
     voice=score["cello voice"],
 )
