@@ -616,9 +616,579 @@
                             \stopTextSpan
                             \revert Voice.Stem.direction
                         }
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            \once \override Beam.grow-direction = #left
+                            r32 * 51/32
+                            [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 51/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
+                            r32 * 29/16
+                            <gqf' af''>32 * 65/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            \p
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 73/32
+                            af'32 * 21/8
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            (
+                            <gqf' af''>32 * 97/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 111/32
+                            f'32 * 31/8
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            \once \override Beam.grow-direction = #right
+                            r32 * 15/4
+                            [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 115/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 103/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
+                            r32 * 11/4
+                            <gqf' af''>32 * 37/16
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            \<
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 2
+                            df'32 * 7/4
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            (
+                            <gqf' af''>32 * 13/8
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 49/32
+                            af'32 * 47/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Beam.grow-direction = #left
+                            <gqf' af''>32 * 51/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            \mp
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 51/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 29/16
+                            f'32 * 65/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            (
+                            \<
+                            <gqf' af''>32 * 73/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 21/8
+                            df'32 * 97/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            (
+                            <gqf' af''>32 * 111/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 31/8
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Beam.grow-direction = #right
+                            af'32 * 15/4
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            \mf
+                            [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 115/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 103/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 11/4
+                            <gqf' af''>32 * 37/16
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            (
+                            \<
+                            f'32 * 2
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 7/4
+                            <gqf' af''>32 * 13/8
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            (
+                            df'32 * 49/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 47/32
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            \once \override Beam.grow-direction = #left
+                            r32 * 51/32
+                            [
+                            <gqf' af''>32 * 51/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            \f
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 29/16
+                            af'32 * 65/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 73/32
+                            <gqf' af''>32 * 21/8
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            (
+                            f'32 * 97/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            <gqf' af''>32 * 111/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 31/8
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            \once \override Beam.grow-direction = #right
+                            r32 * 15/4
+                            [
+                            df'32 * 115/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 103/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 11/4
+                            <gqf' af''>32 * 37/16
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 2
+                            af'32 * 7/4
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            (
+                            <gqf' af''>32 * 13/8
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            - \tweak font-size 2
+                            ^ \markup \upright { \hspace #-1.8 { "( M )" } }
+                            f'32 * 49/32
+                            - \tweak stencil #ly:text-interface::print
+                            - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                            :512
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 47/32
+                            ]
+                        }
+                        \revert TupletNumber.text
                     }
                 }
                 \context Staff = "bassclarinet staff"
@@ -1248,8 +1818,252 @@
                         }
                         \revert TupletNumber.text
                         s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        r8
+                        [
+                        \override Dots.staff-position = #2
+                        af'8
+                        - \accent
+                        \mf
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "1/4 air" }
+                        - \tweak bound-details.right.padding 4
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        af'4
+                        ~
+                        af'16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        gqs'16
+                        \!
+                        )
+                        \stopTextSpan
+                        r8
+                        ]
+                        \override Dots.staff-position = #2
+                        af'4
+                        - \accent
+                        \mf
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "1/4 air" }
+                        - \tweak bound-details.right.padding 4
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        af'16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        g'16
+                        \!
+                        )
+                        \stopTextSpan
+                        r8
+                        ]
+                        r16
+                        [
+                        \override Dots.staff-position = #2
+                        g'8.
+                        - \accent
+                        \f
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "1/4 air" }
+                        - \tweak bound-details.right.padding 4
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        g'4
+                        ~
+                        g'8
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        fs'16
+                        \!
+                        )
+                        \stopTextSpan
+                        r16
+                        ]
+                        r16
+                        [
+                        \override Dots.staff-position = #2
+                        af'8.
+                        - \accent
+                        \f
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "1/4 air" }
+                        - \tweak bound-details.right.padding 4
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        af'8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        gqs'16
+                        \!
+                        )
+                        \stopTextSpan
+                        ]
+                        r8.
+                        [
+                        \override Dots.staff-position = #2
+                        af'16
+                        - \accent
+                        \ff
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "1/4 air" }
+                        - \tweak bound-details.right.padding 4
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \afterGrace
+                        af'4
+                        {
+                            \revert Dots.staff-position
+                            \once \override Flag.stroke-style = #"grace"
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            gqs'16
+                            \!
+                            )
+                            \stopTextSpan
+                        }
                     }
                 }
             >>
@@ -2192,8 +3006,184 @@
                         \ff
                         )
                         ]
-                        s1 * 3/2
-                        s1 * 3/2
+                        \override Dots.staff-position = #2
+                        \clef "treble"
+                        c'4
+                        - \accent
+                        \mf
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'8
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        b16
+                        \!
+                        )
+                        r16
+                        ]
+                        r16
+                        [
+                        \override Dots.staff-position = #2
+                        d'8.
+                        - \accent
+                        \mf
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        d'4
+                        ~
+                        d'16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        cs'16
+                        \!
+                        )
+                        r8
+                        ]
+                        r16
+                        [
+                        \override Dots.staff-position = #2
+                        c'8.
+                        - \accent
+                        \f
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'4
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        bqs16
+                        \!
+                        )
+                        [
+                        r16
+                        r16
+                        \override Dots.staff-position = #2
+                        f'16
+                        - \accent
+                        \f
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        f'4
+                        ~
+                        f'16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        e'16
+                        \!
+                        )
+                        r8
+                        ]
+                        \override Dots.staff-position = #2
+                        \afterGrace
+                        fs'2
+                        - \accent
+                        \ff
+                        (
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        {
+                            \revert Dots.staff-position
+                            \once \override Flag.stroke-style = #"grace"
+                            eqs'16
+                            \!
+                            )
+                        }
                     }
                 }
                 \context timeSignatureStaff = "accordion 2 staff"
@@ -2432,8 +3422,197 @@
                         fs,1.
                         ~
                         fs,1.
-                        s1 * 3/2
-                        s1 * 3/2
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,
+                            \tweak style #'la
+                            b,
+                            \tweak style #'la
+                            c
+                            \tweak style #'la
+                            d
+                        >2
+                        - \tenuto
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 )
+                                            }
+                                        }
+                        r4
+                        r16
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,
+                            \tweak style #'la
+                            b,
+                            \tweak style #'la
+                            c
+                            \tweak style #'la
+                            d
+                        >8.
+                        - \tenuto
+                        ]
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,
+                            \tweak style #'la
+                            b,
+                            \tweak style #'la
+                            c
+                            \tweak style #'la
+                            d
+                        >16
+                        [
+                        r8.
+                        ]
+                        r16
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            f,
+                            \tweak style #'la
+                            g,
+                            \tweak style #'la
+                            a,
+                            \tweak style #'la
+                            b,
+                        >8.
+                        - \tenuto
+                        ]
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            f,
+                            \tweak style #'la
+                            g,
+                            \tweak style #'la
+                            a,
+                            \tweak style #'la
+                            b,
+                        >4
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            f,
+                            \tweak style #'la
+                            g,
+                            \tweak style #'la
+                            a,
+                            \tweak style #'la
+                            b,
+                        >16
+                        [
+                        r16
+                        r16
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            d,
+                            \tweak style #'la
+                            e,
+                            \tweak style #'la
+                            f,
+                            \tweak style #'la
+                            g,
+                        >16
+                        - \tenuto
+                        ]
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            d,
+                            \tweak style #'la
+                            e,
+                            \tweak style #'la
+                            f,
+                            \tweak style #'la
+                            g,
+                        >8.
+                        [
+                        r16
+                        ]
+                        r8
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            b,,
+                            \tweak style #'la
+                            c,
+                            \tweak style #'la
+                            d,
+                            \tweak style #'la
+                            e,
+                        >8
+                        - \tenuto
+                        ]
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            b,,
+                            \tweak style #'la
+                            c,
+                            \tweak style #'la
+                            d,
+                            \tweak style #'la
+                            e,
+                        >4
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            b,,
+                            \tweak style #'la
+                            c,
+                            \tweak style #'la
+                            d,
+                            \tweak style #'la
+                            e,
+                        >8
+                        r8
                     }
                 }
             >>
@@ -3465,9 +4644,506 @@
                         }
                         \revert TupletNumber.text
                         r2.
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            \once \override Beam.grow-direction = #left
+                            r32 * 51/32
+                            [
+                            \clef "bass"
+                            \tweak style #'harmonic-mixed
+                            e,32 * 51/32
+                            - \espressivo
+                            - \tenuto
+                            \p
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size 0
+                            - \tweak padding #10.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "flaut. + tasto moltiss." } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpanOne
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 29/16
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 65/32
+                            - \espressivo
+                            - \tenuto
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 73/32
+                            \tweak style #'harmonic-mixed
+                            e,32 * 21/8
+                            - \espressivo
+                            - \tenuto
+                            (
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 97/32
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            e,32 * 111/32
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 31/8
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            \once \override Beam.grow-direction = #right
+                            r32 * 15/4
+                            [
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 115/32
+                            - \espressivo
+                            - \tenuto
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 103/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 11/4
+                            \tweak style #'harmonic-mixed
+                            e,32 * 37/16
+                            - \espressivo
+                            - \tenuto
+                            \<
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 2
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 7/4
+                            - \espressivo
+                            - \tenuto
+                            (
+                            \tweak style #'harmonic-mixed
+                            e,32 * 13/8
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 49/32
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 47/32
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Beam.grow-direction = #left
+                            \tweak style #'harmonic-mixed
+                            e,32 * 51/32
+                            - \espressivo
+                            - \tenuto
+                            \mp
+                            [
+                            (
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 51/32
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            e,32 * 27/16
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 29/16
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 65/32
+                            - \espressivo
+                            - \tenuto
+                            (
+                            \tweak style #'harmonic-mixed
+                            e,32 * 73/32
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 21/8
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 97/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 111/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
+                            r32 * 31/8
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Beam.grow-direction = #right
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 15/4
+                            - \espressivo
+                            - \tenuto
+                            [
+                            (
+                            \<
+                            \tweak style #'harmonic-mixed
+                            e,32 * 115/32
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 103/32
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 11/4
+                            \tweak style #'harmonic-mixed
+                            e,32 * 37/16
+                            - \espressivo
+                            - \tenuto
+                            (
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 2
+                            - \espressivo
+                            - \tenuto
+                            \mf
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 7/4
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 13/8
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 49/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
+                            r32 * 47/32
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            \once \override Beam.grow-direction = #left
+                            r32 * 51/32
+                            [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 51/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 27/16
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
+                            r32 * 29/16
+                            \tweak style #'harmonic-mixed
+                            e,32 * 65/32
+                            - \espressivo
+                            - \tenuto
+                            (
+                            \<
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 73/32
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            e,32 * 21/8
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 97/32
+                            - \espressivo
+                            - \tenuto
+                            \f
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 111/32
+                            \tweak style #'harmonic-mixed
+                            e,32 * 31/8
+                            - \espressivo
+                            - \tenuto
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            \once \override Beam.grow-direction = #right
+                            r32 * 15/4
+                            [
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 2 }
+                            r32 * 115/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 3 }
+                            r32 * 103/32
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 4 }
+                            r32 * 11/4
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 37/16
+                            - \espressivo
+                            - \tenuto
+                            (
+                            \tweak style #'harmonic-mixed
+                            e,32 * 2
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 7/4
+                            - \espressivo
+                            - \tenuto
+                            \tweak style #'harmonic-mixed
+                            e,32 * 13/8
+                            - \espressivo
+                            - \tenuto
+                            )
+                            \once \override Rest.stencil = #ly:text-interface::print
+                            \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
+                            r32 * 49/32
+                            \tweak style #'harmonic-mixed
+                            fqs,32 * 47/32
+                            - \espressivo
+                            - \tenuto
+                            \stopTextSpanOne
+                            ]
+                        }
+                        \revert TupletNumber.text
                     }
                 }
             >>
