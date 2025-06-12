@@ -681,7 +681,7 @@ trinton.make_music(
         attachments=[abjad.StartHairpin(">"), abjad.Dynamic("p")],
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
     ),
-    trinton.continuous_glissando(zero_padding=True),
+    trinton.continuous_glissando(slur=True, zero_padding=True),
     voice=score["accordion 1 voice"],
     beam_meter=True,
 )
@@ -751,7 +751,9 @@ trinton.make_music(
     evans.RhythmHandler(evans.talea([-8, 67, 1], 16)),
     trinton.rewrite_meter_command(boundary_depth=-1),
     evans.PitchHandler(["f,", "e,"]),
-    trinton.continuous_glissando(selector=trinton.pleaves(), zero_padding=True),
+    trinton.continuous_glissando(
+        selector=trinton.pleaves(), slur=True, zero_padding=True
+    ),
     trinton.attachment_command(
         attachments=[
             abjad.Markup(

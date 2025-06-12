@@ -1874,6 +1874,7 @@
                         \ottava 0
                         \override Dots.staff-position = #2
                         af4.
+                        (
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
@@ -1920,6 +1921,7 @@
                         \revert Staff.Stem.stemlet-length
                         gqs16
                         \p
+                        )
                         ]
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f

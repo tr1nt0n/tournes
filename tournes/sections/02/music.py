@@ -562,7 +562,9 @@ trinton.make_music(
     evans.RhythmHandler(evans.talea([39, 1], 16)),
     trinton.rewrite_meter_command(boundary_depth=-2),
     evans.PitchHandler(["af", "gqs"]),
-    trinton.continuous_glissando(selector=trinton.pleaves(), zero_padding=True),
+    trinton.continuous_glissando(
+        selector=trinton.pleaves(), slur=True, zero_padding=True
+    ),
     trinton.attachment_command(
         attachments=[
             abjad.Markup(

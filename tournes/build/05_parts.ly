@@ -7,7 +7,7 @@
             \time 4/4
             s1 * 1
             ^ \markup {
-            \hspace #0.5
+            \hspace #2
               \raise #14.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
@@ -61,13 +61,21 @@
             s1 * 3/4
               %! +SCORE
         %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3.5 22 11.5 13.5 2 17 19.5)))
             \time 2/4
             s1 * 1/2
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-3 24.5 11 7 2 14 19.5)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3.5 21 16 9 2 10 14)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -81,6 +89,8 @@
                   \abjad-metronome-mark-markup #2 #0 #2 #" 54 " 
               }
             }
+              %! +SCORE
+        %%% \pageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -193,9 +203,405 @@
                             \ottava 0
                         }
                         r4
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        r4
+                        r8
+                        bf'16
+                        - \staccatissimo
+                        \ff
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        r16
+                        r4
+                        r16
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                eqs'16 * 1/8
+                                [
+                                (
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                d'16 * 1/8
+                                \once \override Staff.Accidental.stencil = ##f
+                                fs'16 * 1/8
+                                - \sharp-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqf'16 * 1/8
+                                - \quarter-flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                ef'16 * 1/8
+                                - \flat-articulation
+                                \p
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                \voiceTwo
+                                eqs'16
+                                - \accent
+                                - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            }
+                        >>
+                        r8
+                        r4
+                        r8.
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                f'16 * 1/8
+                                - \natural-articulation
+                                - \tweak X-offset -1
+                                \f
+                                [
+                                (
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                \once \override Staff.Accidental.stencil = ##f
+                                ef'16 * 1/8
+                                - \flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                cqs'16 * 1/8
+                                - \quarter-sharp-articulation
+                                - \tweak X-offset 0.5
+                                \p
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                \voiceTwo
+                                f'16
+                                - \accent
+                                - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                            }
+                        >>
+                        r4
+                        \times 4/5
+                        {
+                            c'16
+                            - \staccatissimo
+                            \p
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            [
+                            \<
+                            f'16
+                            - \staccatissimo
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                            bqf'16
+                            - \accent
+                            \mf
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            (
+                            e'16
+                            )
+                            dqf'16
+                            - \staccatissimo
+                            \p
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                            ]
+                        }
+                        r8
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 8/7
+                        {
+                            e''16
+                            - \tweak Beam.positions #'(-9 . -8)
+                            [
+                            (
+                            - \tweak padding #4
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \flute-forty-five-degrees \hspace #0.5 }
+                            - \tweak bound-details.right.text \flute-ninety-degrees
+                            \startTextSpanOne
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            \set stemLeftBeamCount = 3
+                            \set stemRightBeamCount = 1
+                            gqf'32
+                            - \staccatissimo
+                            \!
+                            )
+                            \stopTextSpanOne
+                            <<
+                                \context Voice = "On_Beat_Grace_Container"
+                                {
+                                      %! trinton.on_beat_grace_container(1)
+                                    \set fontSize = #-4
+                                    \my-hack-slash
+                                    \once \override Accidental.stencil = ##f
+                                    \once \override Accidental.stencil = ##f
+                                    \once \override NoteHead.no-ledgers = ##t
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override NoteHead.transparent = ##t
+                                    \voiceOne
+                                    af'16 * 7/64
+                                    - \flat-articulation
+                                    [
+                                    (
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    bf'16 * 7/64
+                                    - \flat-articulation
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    gf''16 * 7/64
+                                    - \flat-articulation
+                                    f''16 * 7/64
+                                    )
+                                    ]
+                                }
+                                \context Voice = "flute voice Anchor"
+                                {
+                                    \once \override Accidental.stencil = ##f
+                                    \voiceTwo
+                                    af'16.
+                                    - \accent
+                                    \f
+                                    - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                                }
+                            >>
+                            \set stemLeftBeamCount = 3
+                            \set stemRightBeamCount = 0
+                            a''32
+                            - \staccatissimo
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            ]
+                        }
+                        af'''8
+                        - \accent
+                        - \staccatissimo
+                        \fff
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        - \tweak Beam.positions #'(-5 . -5)
+                        [
+                        - \tweak padding #12.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \flute-one-hundred-thirty-five-degrees \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        af'''8
+                        - \accent
+                        - \staccatissimo
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                af'''16 * 1/8
+                                [
+                                (
+                                \once \override Staff.Accidental.stencil = ##f
+                                a'''16 * 1/8
+                                - \natural-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                g'''16 * 1/8
+                                - \natural-articulation
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                \voiceTwo
+                                af'''8
+                                - \accent
+                                - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            }
+                        >>
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                af'''16 * 1/8
+                                [
+                                (
+                                \once \override Staff.Accidental.stencil = ##f
+                                cqf''''16 * 1/8
+                                - \quarter-flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                b'''16 * 1/8
+                                - \natural-articulation
+                                f'''16 * 1/8
+                                \once \override Staff.Accidental.stencil = ##f
+                                bf''16 * 1/8
+                                - \flat-articulation
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                \voiceTwo
+                                af'''8
+                                - \accent
+                                - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            }
+                        >>
+                        af'''8
+                        - \accent
+                        - \staccatissimo
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        af'''8
+                        - \accent
+                        - \staccatissimo
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                af'''16 * 1/8
+                                [
+                                (
+                                f'''16 * 1/8
+                                \once \override Staff.Accidental.stencil = ##f
+                                eqf'''16 * 1/8
+                                - \quarter-flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                e'''16 * 1/8
+                                - \natural-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqf'''16 * 1/8
+                                - \quarter-flat-articulation
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                \voiceTwo
+                                af'''8
+                                - \accent
+                                - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            }
+                        >>
+                        gf'''8
+                        - \accent
+                        - \staccatissimo
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        af'''8
+                        - \accent
+                        - \staccatissimo
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        af'''8
+                        - \accent
+                        - \staccatissimo
+                        - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                af'''16 * 1/8
+                                [
+                                (
+                                b'''16 * 1/8
+                                \once \override Staff.Accidental.stencil = ##f
+                                aqs'''16 * 1/8
+                                - \quarter-sharp-articulation
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                \voiceTwo
+                                af'''8
+                                - \accent
+                                - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            }
+                        >>
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                gf'''16 * 1/8
+                                [
+                                (
+                                \once \override Staff.Accidental.stencil = ##f
+                                g'''16 * 1/8
+                                - \natural-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                d'''16 * 1/8
+                                - \natural-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqf'''16 * 1/8
+                                - \quarter-flat-articulation
+                                )
+                                ]
+                            }
+                            \context Voice = "flute voice Anchor"
+                            {
+                                \voiceTwo
+                                gf'''8
+                                - \accent
+                                - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
+                            }
+                        >>
+                        r8
+                        \times 2/3
+                        {
+                            af'''8
+                            - \accent
+                            - \staccatissimo
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                            r8
+                            af'''8
+                            - \accent
+                            - \staccatissimo
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                            ]
+                            r4
+                            af'''8
+                            - \accent
+                            - \staccatissimo
+                            - \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "pe" } }
+                            \stopTextSpan
+                            \revert Voice.Stem.direction
+                        }
                         s1 * 3/2
                         s1 * 3/2
                         s1 * 3/2
@@ -325,8 +731,508 @@
                         \stopTextSpan
                         \ottava 0
                         s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \override Dots.staff-position = #2
+                        g'2.
+                        \mp
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "norm." } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "overblow" }
+                        - \tweak bound-details.right.padding 4
+                        \startTextSpan
+                        \<
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        g'16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        fs'16
+                        \ff
+                        )
+                        \stopTextSpan
+                        ]
+                        \once \override Stem.direction = #DOWN
+                        \afterGrace
+                        af'8
+                        - \accent
+                        [
+                        (
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #-1.5 { "1/2 o.b." } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { "norm." }
+                        - \tweak bound-details.right.padding -0.5
+                        \startTextSpan
+                        {
+                            \once \override Flag.stroke-style = #"grace"
+                            g'16
+                            )
+                            \stopTextSpan
+                        }
+                        \once \override Stem.direction = #DOWN
+                        \afterGrace
+                        af'8
+                        - \accent
+                        (
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7.5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #-1.5 { "1/2 o.b." } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { "norm." }
+                        - \tweak bound-details.right.padding -0.5
+                        \startTextSpan
+                        {
+                            \once \override Flag.stroke-style = #"grace"
+                            g'16
+                            )
+                            \stopTextSpan
+                        }
+                        \once \override Stem.direction = #DOWN
+                        \afterGrace
+                        af'8
+                        - \accent
+                        (
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #10
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "throat-scream" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -1
+                        \startTextSpanTwo
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #-1.5 { "1/2 o.b." } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { "norm." }
+                        - \tweak bound-details.right.padding -0.5
+                        \startTextSpan
+                        {
+                            \once \override Flag.stroke-style = #"grace"
+                            g'16
+                            )
+                            \stopTextSpan
+                        }
+                        \once \override Stem.direction = #DOWN
+                        \afterGrace
+                        af'8
+                        - \accent
+                        (
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7.5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #-1.5 { "1/2 o.b." } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { "norm." }
+                        - \tweak bound-details.right.padding -0.5
+                        \startTextSpan
+                        {
+                            \once \override Flag.stroke-style = #"grace"
+                            g'16
+                            )
+                            \stopTextSpan
+                            \stopTextSpanTwo
+                        }
+                        \once \override Stem.direction = #DOWN
+                        \afterGrace
+                        af'8
+                        - \accent
+                        ]
+                        (
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #-1.5 { "1/2 o.b." } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { "norm." }
+                        - \tweak bound-details.right.padding -0.5
+                        \startTextSpan
+                        {
+                            \once \override Flag.stroke-style = #"grace"
+                            g'16
+                            )
+                            \stopTextSpan
+                        }
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'4.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64.
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "ffff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            [
+                            (
+                            - \tweak circled-tip ##t
+                            \>
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #8
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 overblow" } \hspace #0.5 }
+                            \startTextSpanOne
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            )
+                            \stopTextSpanOne
+                            - \tweak circled-tip ##t
+                            \<
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #8
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 air" } \hspace #0.5 }
+                            \startTextSpanOne
+                            r32.
+                            ]
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'4.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            b''64.
+                            [
+                            (
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "ffff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            )
+                            \stopTextSpanOne
+                            - \tweak circled-tip ##t
+                            \>
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #8
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 overblow" } \hspace #0.5 }
+                            \startTextSpanOne
+                            r32.
+                            ]
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'4.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64.
+                            [
+                            (
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            )
+                            \stopTextSpanOne
+                            - \tweak circled-tip ##t
+                            \<
+                            - \tweak font-name "Bodoni72 Book Italic" 
+                            - \tweak font-size #0
+                            - \tweak padding #8
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 air" } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \upright { "1/2 overblow" }
+                            \startTextSpanOne
+                            r32.
+                            ]
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'4.
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            \set fontSize = #-3
+                            \highest
+                            \override Staff.Dots.stencil = ##f
+                            \override Staff.Accidental.stencil = ##f
+                            \my-hack-slash
+                            c'''64.
+                            [
+                            (
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            b''64.
+                            e'''64.
+                            c'''64.
+                            d'''64.
+                            c'''64.
+                            e'''64.
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "ffff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            )
+                            \stopTextSpanOne
+                            r32.
+                            ]
+                            \revert-noteheads
+                            \set fontSize = #-1
+                            \revert Staff.Dots.stencil
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
                         s1 * 3/2
                         s1 * 3/2
                         s1 * 3/2
@@ -1223,8 +2129,55 @@
                         }
                         \revert TupletNumber.text
                         s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \override Dots.staff-position = #2
+                        g,1.
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "ffpp"))
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        \<
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        g,2.
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 \override #'(font-size . 5) {.} )
+                                            }
+                                        }
+                        ~
+                        g,2
+                        ^ \markup {
+                                            \hspace #-2 {
+                                                ( \note {2} #2 )
+                                            }
+                                        }
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        g,8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        fs,16
+                        \ff
+                        )
+                        ]
                         s1 * 3/2
                         s1 * 3/2
                     }
@@ -1462,8 +2415,9 @@
                         s1 * 1/2
                         s1 * 3/2
                         s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        fs,1.
+                        ~
+                        fs,1.
                         s1 * 3/2
                         s1 * 3/2
                     }
@@ -1651,8 +2605,180 @@
                         \stopBowSpan
                         \stopTextSpan
                         \ottava 0
-                        s1 * 3/2
-                        s1 * 3/2
+                        r2.
+                        \big-half-harmonic
+                        d'16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        \ff
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        ^ \markup { \hspace #-3 { \center-column { \line { "pizz." } \line { "pont. poss." } } } }
+                        r8.
+                        r8.
+                        \override Dots.staff-position = #2
+                        bf16
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "ffpp"))
+                        - \accent
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #4
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "arco, norm." } \hspace #0.5 }
+                        \startTextSpanOne
+                        \<
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        bf4
+                        ~
+                        bf4
+                        \f
+                        \stopTextSpanOne
+                        - \tweak circled-tip ##t
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #4
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 scratch" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "norm." }
+                        \startTextSpanOne
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        bf8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        gqs16
+                        \!
+                        )
+                        \stopTextSpanOne
+                        ]
+                        r16
+                        \big-half-harmonic
+                        gqs16
+                        - \tweak font-size #3
+                        - \snappizzicato
+                        \ff
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        ^ \markup { \hspace #-3 { \center-column { \line { "pizz." } \line { "pont. poss." } } } }
+                        r16
+                        <<
+                            \context Voice = "On_Beat_Grace_Container"
+                            {
+                                  %! trinton.on_beat_grace_container(1)
+                                \set fontSize = #-4
+                                \my-hack-slash
+                                \once \override Accidental.stencil = ##f
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override NoteHead.transparent = ##t
+                                \voiceOne
+                                a'16 * 1/8
+                                ^ \downbow
+                                - \tweak font-name "Bodoni72 Book Italic" 
+                                - \tweak font-size 0
+                                ^ \markup { \hspace #-1 { "arco" } }
+                                [
+                                (
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                \grace-half-harmonic
+                                \once \override Staff.Accidental.stencil = ##f
+                                bf'16 * 1/8
+                                - \flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                aqf'16 * 1/8
+                                - \quarter-flat-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                \tweak style #'harmonic
+                                g'16 * 1/8
+                                - \natural-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                \tweak style #'harmonic
+                                fs'16 * 1/8
+                                - \sharp-articulation
+                                \once \override Staff.Accidental.stencil = ##f
+                                dqs'16 * 1/8
+                                - \quarter-sharp-articulation
+                                \p
+                                )
+                                ]
+                            }
+                            \context Voice = "violin voice Anchor"
+                            {
+                                \voiceTwo
+                                a'16
+                            }
+                        >>
+                        r8.
+                        \override Dots.staff-position = #2
+                        fs'16
+                        - \accent
+                        \f
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #6
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "3/4 scratch" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "1/4 scratch" }
+                        \startTextSpanOne
+                        \>
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        fs'4
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        fs'8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \revert Staff.Stem.stemlet-length
+                        eqf'16
+                        \mf
+                        )
+                        \stopTextSpanOne
+                        ]
                         s1 * 3/2
                         s1 * 3/2
                         s1 * 3/2
