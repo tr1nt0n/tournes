@@ -1288,7 +1288,7 @@ trinton.make_music(
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"- \tweak font-size #0",
         ],
-        right_padding=-4,
+        right_padding=0,
         direction=None,
         full_string=False,
         end_hook=False,
@@ -1305,7 +1305,7 @@ trinton.make_music(
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"- \tweak font-size #0",
         ],
-        right_padding=-4,
+        right_padding=0,
         direction=None,
         full_string=False,
         end_hook=False,
@@ -1322,7 +1322,7 @@ trinton.make_music(
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"- \tweak font-size #0",
         ],
-        right_padding=-4,
+        right_padding=0,
         direction=None,
         full_string=False,
         end_hook=False,
@@ -1339,7 +1339,7 @@ trinton.make_music(
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"- \tweak font-size #0",
         ],
-        right_padding=-4,
+        right_padding=0,
         direction=None,
         full_string=False,
         end_hook=False,
@@ -1356,7 +1356,7 @@ trinton.make_music(
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"- \tweak font-size #0",
         ],
-        right_padding=-4,
+        right_padding=0,
         direction=None,
         full_string=False,
         end_hook=False,
@@ -2210,6 +2210,168 @@ trinton.make_music(
     beam_meter=True,
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (11, 12)),
+    evans.RhythmHandler(evans.talea([-3, 8, 1, -3, 5, 1, -2, 3, 1, -3, 7, 1, -1], 16)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        slash=True,
+        selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
+    ),
+    evans.PitchHandler(
+        ["b", "gqs", "d'", "c'", "df'", "aqf", "gf'", "f'", "b'", "aqf'"]
+    ),
+    trinton.continuous_glissando(
+        zero_padding=True, slur=True, selector=trinton.pleaves()
+    ),
+    # trinton.annotate_leaves_locally(selector=abjad.select.leaves),
+    trinton.linear_attachment_command(
+        attachments=cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                1,
+                3,
+                4,
+                5,
+                6,
+                8,
+                11,
+                12,
+                14,
+                15,
+                16,
+                18,
+                20,
+                21,
+                22,
+            ],
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Articulation(">"),
+            abjad.StartHairpin("|>o"),
+        ],
+        selector=trinton.patterned_tie_index_selector(
+            [0],
+            2,
+            first=True,
+            pitched=True,
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.StopHairpin()],
+        selector=trinton.patterned_tie_index_selector(
+            [1],
+            2,
+            first=True,
+            pitched=True,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("mf"),
+            abjad.Dynamic("mf"),
+            abjad.Dynamic("f"),
+            abjad.Dynamic("f"),
+            abjad.Dynamic("ff"),
+        ],
+        selector=trinton.patterned_tie_index_selector(
+            [0],
+            2,
+            first=True,
+            pitched=True,
+        ),
+    ),
+    trinton.spanner_command(
+        strings=["1/2 scratch", "flaut."],
+        selector=trinton.select_logical_ties_by_index([0, 1], first=True, pitched=True),
+        style="solid-line-with-arrow",
+        padding=5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=1,
+        command="",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=["1/2 scratch", "flaut."],
+        selector=trinton.select_logical_ties_by_index([2, 3], first=True, pitched=True),
+        style="solid-line-with-arrow",
+        padding=5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=1,
+        command="",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=[r'\markup { \hspace #-3 { "1/2 scratch" } }', r"\markup { flaut. }"],
+        selector=trinton.select_logical_ties_by_index([4, 5], first=True, pitched=True),
+        style="solid-line-with-arrow",
+        padding=5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=1,
+        command="",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=["1/2 scratch", "flaut."],
+        selector=trinton.select_logical_ties_by_index([6, 7], first=True, pitched=True),
+        style="solid-line-with-arrow",
+        padding=7,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=1,
+        command="",
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=["1/2 scratch", "flaut."],
+        selector=trinton.select_logical_ties_by_index([8, 9], first=True, pitched=True),
+        style="solid-line-with-arrow",
+        padding=5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=1,
+        command="",
+        tag=None,
+    ),
+    voice=score["violin voice"],
+)
+
 # cello music
 
 trinton.make_music(
@@ -2763,6 +2925,7 @@ for measure in [
     1,
     3,
     4,
+    10,
 ]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
@@ -2777,6 +2940,7 @@ for measure in [
 for measure in [
     5,
     8,
+    11,
 ]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),

@@ -94,6 +94,8 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -107,6 +109,8 @@
                   \abjad-metronome-mark-markup #1 #1 #2 #" 54 " 
               }
             }
+              %! +SCORE
+        %%% \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -1825,7 +1829,6 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \upright { "1/4 air" }
-                        - \tweak bound-details.right.padding 4
                         \startTextSpan
                         ~
                           %! abjad.glissando(1)
@@ -1873,7 +1876,6 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \upright { "1/4 air" }
-                        - \tweak bound-details.right.padding 4
                         \startTextSpan
                         ~
                           %! abjad.glissando(1)
@@ -1922,7 +1924,6 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \upright { "1/4 air" }
-                        - \tweak bound-details.right.padding 4
                         \startTextSpan
                         ~
                           %! abjad.glissando(1)
@@ -1973,7 +1974,6 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \upright { "1/4 air" }
-                        - \tweak bound-details.right.padding 4
                         \startTextSpan
                         ~
                           %! abjad.glissando(1)
@@ -2021,7 +2021,6 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \upright { "overblow" } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \upright { "1/4 air" }
-                        - \tweak bound-details.right.padding 4
                         \startTextSpan
                         ~
                           %! abjad.glissando(1)
@@ -3960,8 +3959,248 @@
                         ]
                         s1 * 3/2
                         s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        r8.
+                        [
+                        \override Dots.staff-position = #2
+                        b16
+                        - \accent
+                        \mf
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 scratch" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "flaut." }
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        b4
+                        ~
+                        b8.
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        gqs16
+                        \!
+                        )
+                        \stopTextSpan
+                        ]
+                        r8.
+                        [
+                        \override Dots.staff-position = #2
+                        d'16
+                        - \accent
+                        \mf
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 scratch" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "flaut." }
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        d'4
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        c'16
+                        \!
+                        )
+                        \stopTextSpan
+                        [
+                        r16
+                        r16
+                        \override Dots.staff-position = #2
+                        df'16
+                        - \accent
+                        \f
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #-3 { "1/2 scratch" } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { flaut. }
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        df'8
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        aqf16
+                        \!
+                        )
+                        \stopTextSpan
+                        r16
+                        ]
+                        r8
+                        [
+                        \override Dots.staff-position = #2
+                        gf'8
+                        - \accent
+                        \f
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 scratch" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "flaut." }
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        gf'4
+                        ~
+                        gf'16
+                        [
+                        \revert Dots.staff-position
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        f'16
+                        \!
+                        )
+                        \stopTextSpan
+                        r8
+                        ]
+                        r8
+                        [
+                        \override Dots.staff-position = #2
+                        b'8
+                        - \accent
+                        \ff
+                        ]
+                        (
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 scratch" } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \upright { "flaut." }
+                        \startTextSpan
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \afterGrace
+                        b'4
+                        {
+                            \revert Dots.staff-position
+                            \once \override Flag.stroke-style = #"grace"
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            aqf'16
+                            \!
+                            )
+                            \stopTextSpan
+                        }
                     }
                 }
                 \context Staff = "cello staff"
