@@ -2138,6 +2138,11 @@ trinton.make_music(
         ),
         direction=abjad.UP,
     ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.pleaves(exclude=[0], grace=True),
+        direction=abjad.DOWN,
+    ),
     trinton.linear_attachment_command(
         attachments=[
             abjad.Dynamic("ff"),

@@ -3900,21 +3900,26 @@
                                 \once \override Staff.Accidental.stencil = ##f
                                 bf'16 * 1/8
                                 - \flat-articulation
+                                _ \staccato
                                 \once \override Staff.Accidental.stencil = ##f
                                 aqf'16 * 1/8
                                 - \quarter-flat-articulation
+                                _ \staccato
                                 \once \override Staff.Accidental.stencil = ##f
                                 \tweak style #'harmonic
                                 g'16 * 1/8
                                 - \natural-articulation
+                                _ \staccato
                                 \once \override Staff.Accidental.stencil = ##f
                                 \tweak style #'harmonic
                                 fs'16 * 1/8
                                 - \sharp-articulation
+                                _ \staccato
                                 \once \override Staff.Accidental.stencil = ##f
                                 dqs'16 * 1/8
                                 - \quarter-sharp-articulation
                                 \p
+                                _ \staccato
                                 )
                                 ]
                             }

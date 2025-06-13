@@ -886,6 +886,7 @@
                         \tweak style #'la
                         ds'8.
                         \pppp
+                        _ \tremolo-articulation
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
@@ -939,6 +940,7 @@
                         \afterGrace
                         \tweak style #'la
                         b'8.
+                        _ \tremolo-articulation
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
@@ -984,6 +986,7 @@
                         \afterGrace
                         \tweak style #'la
                         cs'8
+                        _ \tremolo-articulation
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)

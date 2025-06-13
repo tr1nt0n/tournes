@@ -307,6 +307,11 @@ trinton.make_music(
             r"""- \tweak font-size 0""",
         ],
     ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation(r"tremolo-articulation")],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+        direction=abjad.DOWN,
+    ),
     trinton.linear_attachment_command(
         attachments=[
             abjad.Dynamic("pppp"),
