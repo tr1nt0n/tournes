@@ -114,6 +114,8 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+            \noBreak
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -661,7 +663,7 @@
                             <gqf' af''>32 * 65/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             \p
@@ -673,14 +675,14 @@
                             af'32 * 21/8
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             (
                             <gqf' af''>32 * 97/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -692,7 +694,7 @@
                             f'32 * 31/8
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             ]
@@ -753,7 +755,7 @@
                             <gqf' af''>32 * 37/16
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -765,14 +767,14 @@
                             df'32 * 7/4
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             (
                             <gqf' af''>32 * 13/8
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -784,7 +786,7 @@
                             af'32 * 47/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             ]
@@ -832,7 +834,7 @@
                             <gqf' af''>32 * 51/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             \mp
@@ -851,7 +853,7 @@
                             f'32 * 65/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             (
@@ -859,7 +861,7 @@
                             <gqf' af''>32 * 73/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -871,14 +873,14 @@
                             df'32 * 97/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             (
                             <gqf' af''>32 * 111/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -932,7 +934,7 @@
                             af'32 * 15/4
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             \mf
@@ -949,7 +951,7 @@
                             <gqf' af''>32 * 37/16
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -959,7 +961,7 @@
                             f'32 * 2
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             )
@@ -969,7 +971,7 @@
                             <gqf' af''>32 * 13/8
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -978,7 +980,7 @@
                             df'32 * 49/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             )
@@ -1034,7 +1036,7 @@
                             <gqf' af''>32 * 51/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             \f
@@ -1049,7 +1051,7 @@
                             af'32 * 65/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             \once \override Rest.stencil = #ly:text-interface::print
@@ -1058,7 +1060,7 @@
                             <gqf' af''>32 * 21/8
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -1067,13 +1069,13 @@
                             f'32 * 97/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             <gqf' af''>32 * 111/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -1131,7 +1133,7 @@
                             df'32 * 115/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             \once \override Rest.stencil = #ly:text-interface::print
@@ -1143,7 +1145,7 @@
                             <gqf' af''>32 * 37/16
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -1154,14 +1156,14 @@
                             af'32 * 7/4
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             (
                             <gqf' af''>32 * 13/8
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             - \tweak font-size 2
@@ -1169,7 +1171,7 @@
                             f'32 * 49/32
                             - \tweak stencil #ly:text-interface::print
                             - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                            :512
+                            :128
                             - \espressivo
                             - \tenuto
                             )

@@ -661,7 +661,7 @@ trinton.make_music(
             abjad.Articulation("tenuto"),
             abjad.Articulation("espressivo"),
             abjad.bundle(
-                abjad.StemTremolo(512),
+                abjad.StemTremolo(128),
                 r"- \tweak stencil #ly:text-interface::print",
                 r"""- \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }""",
             ),
@@ -2931,6 +2931,7 @@ for measure in [
     3,
     4,
     10,
+    12,
 ]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
