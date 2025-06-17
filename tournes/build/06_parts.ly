@@ -64,6 +64,8 @@
             s1 * 1/3
               %! +SCORE
         %%% \pageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (5 23 20.5 17.5 9.5 23 24)))
             \time 6/4
             s1 * 3/2
               %! +PARTS
@@ -75,9 +77,13 @@
             s1 * 3/2
               %! +SCORE
         %%% \break
+              %! +SCORE
+        %%% \pageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -96,9 +102,15 @@
             \time 6/4
             s1 * 3/2
             \stopTextSpan
+              %! +SCORE
+        %%% \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% \break
+              %! +SCORE
+        %%% \pageBreak
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -325,7 +337,26 @@
                         s1 * 5/4
                         s1 * 1/4
                         s1 * 9/8
-                        s1 * 1/3
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 2/3
+                        {
+                            <gqf' af''>4
+                            :32
+                            - \espressivo
+                            - \tenuto
+                            \p
+                            - \tweak font-size 2
+                            - \tweak padding #7.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "( M )" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -3
+                            \startTextSpan
+                            <gqf' af''>4
+                            :32
+                            - \espressivo
+                            - \tenuto
+                            \stopTextSpan
+                        }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 12/13
                         {
@@ -415,10 +446,120 @@
                             \ottava 0
                         }
                         r2.
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        <gqf' af''>2
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        \f
+                        - \tweak font-size 2
+                        - \tweak padding #7.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "( M )" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -3
+                        \startTextSpan
+                        <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        <gqf' af''>2
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        <gqf' af''>2
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        \>
+                        <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        <gqf' af''>2
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        <gqf' af''>2
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        r4
+                        <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        r8.
+                        [
+                        <gqf' af''>16
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        ]
+                        ~
+                        <gqf' af''>4
+                        ~
+                        <gqf' af''>8.
+                        r16
+                        <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        \pp
+                        r8
+                        [
+                        <gqf' af''>8
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        ]
+                        ~
+                        <gqf' af''>4
+                        ~
+                        <gqf' af''>8
+                        r8
+                        r8
+                        [
+                        <gqf' af''>8
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :128
+                        - \espressivo
+                        - \tenuto
+                        \stopTextSpan
+                        ]
                     }
                 }
                 \context Staff = "bassclarinet staff"
@@ -1155,11 +1296,121 @@
                         aqs4
                         \mf
                         \stopTextSpanOne
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        bs''8
+                        - \accent
+                        ^ \markup \center-align { \concat { -14 } }
+                        [
+                        - \tweak padding #9
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "10°/sounding F-sharp ( with violin )" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpan
+                        - \tweak padding 8.5
+                        \startBowSpan #'((0 . 4) (0.1111111111111111 . 3) (0.18518518518518517 . 5) (0.2962962962962963 . 3) (0.3333333333333333 . 4) (0.4074074074074074 . 3) (0.48148148148148145 . 5) (0.5925925925925926 . 3) (0.7037037037037037 . 4) (0.7777777777777778 . 2) (0.8888888888888888 . 3) (0.9259259259259258 . 1) (0.9999999999999999 . 3))
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        bs''8.
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        bs''8
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        bs''8.
+                        - \accent
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        bs''8
+                        - \accent
+                        ]
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        bs''2.
+                        - \accent
+                        \stopBowSpan
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                        bs''2.
+                        - \accent
+                        ^ \markup \center-align { \concat { -14 } }
+                        - \tweak padding 8.5
+                        \startBowSpan #'((0 . 3) (0.13636363636363635 . 4) (0.22727272727272727 . 2) (0.3181818181818182 . 1) (0.36363636363636365 . 0.5) (0.4090909090909091 . 1) (0.4545454545454546 . 0.5) (0.5 . 1) (0.5454545454545454 . 0.7) (0.6818181818181818 . 1) (0.7727272727272727 . 0.3) (0.8636363636363636 . 1) (0.9090909090909091 . 0.2) (0.9545454545454545 . 1.5) (0.9999999999999999 . 0.1))
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 12/15
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                            bs''8
+                            - \accent
+                            [
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                            bs''8.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                            bs''8.
+                            - \accent
+                            ]
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                            bs''4
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                            bs''8.
+                            - \accent
+                            \stopBowSpan
+                            \stopTextSpan
+                        }
+                        aqs2
+                        \f
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #4
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/5 air" } \hspace #0.5 }
+                        \startTextSpanOne
+                        \>
+                        aqs4
+                        aqs2
+                        aqs4
+                        aqs2
+                        aqs4
+                        aqs2
+                        aqs4
+                        aqs2
+                        \pp
+                        \stopTextSpanOne
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #4
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "4/5 air" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -1
+                        \startTextSpanOne
+                        r16
+                        [
+                        aqs8.
+                        ]
+                        ~
+                        aqs16
+                        [
+                        r16
+                        aqs8
+                        ]
+                        ~
+                        aqs4
+                        ~
+                        aqs8
+                        [
+                        r16
+                        aqs16
+                        \stopTextSpanOne
+                        ]
                     }
                 }
             >>
@@ -3377,11 +3628,161 @@
                         - \tenuto
                         \mf
                         \stopTextSpanOne
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 12/17
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'!8.
+                            - \accent
+                            ^ \markup \center-align { \concat { -31 } }
+                            - \tweak padding #9
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "7°/sounding F-sharp ( with clarinet )" } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -2
+                            \startTextSpan
+                            - \tweak padding 8
+                            \startBowSpan #'((0 . 4) (0.07142857142857142 . 3) (0.14285714285714285 . 5) (0.25 . 3) (0.35714285714285715 . 4) (0.4285714285714286 . 3) (0.5357142857142857 . 5) (0.5714285714285714 . 3) (0.6428571428571428 . 4) (0.7142857142857142 . 2) (0.8214285714285713 . 3) (0.9285714285714284 . 1) (0.9999999999999998 . 3))
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'4
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'4
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8.
+                            - \accent
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 24/23
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'16.
+                            - \accent
+                            [
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8.
+                            - \accent
+                            \stopBowSpan
+                            ]
+                        }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                        e'!2.
+                        - \accent
+                        ^ \markup \center-align { \concat { -31 } }
+                        - \tweak padding 8
+                        \startBowSpan #'((0 . 3) (0.045454545454545456 . 4) (0.09090909090909091 . 2) (0.13636363636363635 . 1) (0.2727272727272727 . 0.5) (0.36363636363636365 . 1) (0.4545454545454546 . 0.5) (0.5 . 1) (0.5454545454545454 . 0.7) (0.5909090909090908 . 1) (0.6363636363636362 . 0.3) (0.6818181818181817 . 1) (0.818181818181818 . 0.2) (0.909090909090909 . 1.5) (0.9999999999999999 . 0.1))
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 24/23
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8.
+                            - \accent
+                            [
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8.
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'8
+                            - \accent
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-septimal-comma-down  }
+                            e'16.
+                            - \accent
+                            \stopBowSpan
+                            \stopTextSpan
+                            ]
+                        }
+                        \big-half-harmonic
+                        bqs2
+                        - \tenuto
+                        \ff
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #3.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "scratch, tasto" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpanOne
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        \big-half-harmonic
+                        bqs4
+                        - \tenuto
+                        \>
+                        \big-half-harmonic
+                        bqs2
+                        - \tenuto
+                        \big-half-harmonic
+                        bqs4
+                        - \tenuto
+                        \big-half-harmonic
+                        bqs2
+                        - \tenuto
+                        \big-half-harmonic
+                        bqs4
+                        - \tenuto
+                        \big-half-harmonic
+                        bqs2
+                        - \tenuto
+                        \big-half-harmonic
+                        bqs4
+                        - \tenuto
+                        \big-half-harmonic
+                        bqs2
+                        - \tenuto
+                        r8.
+                        [
+                        \big-half-harmonic
+                        bqs16
+                        - \tenuto
+                        \p
+                        ]
+                        ~
+                        \big-half-harmonic
+                        bqs8.
+                        [
+                        r16
+                        ]
+                        r8
+                        [
+                        \big-half-harmonic
+                        bqs8
+                        - \tenuto
+                        ]
+                        ~
+                        \big-half-harmonic
+                        bqs4
+                        \stopTextSpanOne
                     }
                 }
                 \context Staff = "cello staff"
@@ -4607,10 +5008,590 @@
                         ]
                         \ottava 0
                         r2.
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
-                        s1 * 3/2
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \clef "bass"
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,2
+                        - \espressivo
+                        - \tenuto
+                        \f
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #4.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "flaut. + tasto moltiss." } \hspace #0.5 }
+                        \startTextSpanOne
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,4
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,2
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,4
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,2
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \>
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,4
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,2
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,4
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,2
+                        - \espressivo
+                        - \tenuto
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                        }
+                        r8
+                        [
+                        \override Dots.staff-position = #2
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \tweak style #'harmonic-mixed
+                        eqs,8
+                        - \espressivo
+                        - \tenuto
+                        ]
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,8
+                        [
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            c'16
+                        }
+                        r16
+                        \override Dots.staff-position = #2
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \tweak style #'harmonic-mixed
+                        eqs,16
+                        - \espressivo
+                        - \tenuto
+                        ]
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \tweak style #'harmonic-mixed
+                        eqs,4
+                        ~
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,8.
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            c'16
+                        }
+                        r16
+                        r8.
+                        \override Dots.staff-position = #2
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \tweak style #'harmonic-mixed
+                        eqs,16
+                        - \espressivo
+                        - \tenuto
+                        \pp
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,8.
+                        [
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            c'16
+                        }
+                        r16
+                        ]
+                        r16
+                        [
+                        \override Dots.staff-position = #2
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \tweak style #'harmonic-mixed
+                        eqs,8.
+                        - \espressivo
+                        - \tenuto
+                        ]
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \tweak style #'harmonic-mixed
+                        eqs,4
+                        ~
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,16
+                        [
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            c'16
+                        }
+                        r16
+                        \override Dots.staff-position = #2
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                              (6 0 6.5 1 7 0)
+                              (7 0 7.5 -1 8 0)
+                              (8 0 8.5 1 9 0)
+                              (9 0 9.5 -1 10 0)
+                              (10 0 10.5 1 11 0)
+                              (11 0 11.5 -1 12 0)
+                         )
+                         #0.5
+                        \tweak style #'harmonic-mixed
+                        eqs,8
+                        - \espressivo
+                        - \tenuto
+                        ]
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \afterGrace
+                        \tweak style #'harmonic-mixed
+                        eqs,8
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            c'16
+                            \stopTextSpanOne
+                        }
+                        r8
                     }
                 }
             >>
