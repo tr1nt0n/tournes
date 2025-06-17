@@ -463,7 +463,7 @@
                         <gqf' af''>2
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         \f
@@ -476,57 +476,57 @@
                         <gqf' af''>4
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         <gqf' af''>2
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         <gqf' af''>4
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         <gqf' af''>2
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         \>
                         <gqf' af''>4
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         <gqf' af''>2
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         <gqf' af''>4
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         <gqf' af''>2
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         r4
                         <gqf' af''>4
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         r8.
@@ -534,19 +534,25 @@
                         <gqf' af''>16
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         ]
                         ~
                         <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :32
                         ~
                         <gqf' af''>8.
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :32
                         r16
                         <gqf' af''>4
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         \pp
@@ -555,21 +561,27 @@
                         <gqf' af''>8
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         ]
                         ~
                         <gqf' af''>4
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :32
                         ~
                         <gqf' af''>8
+                        - \tweak stencil #ly:text-interface::print
+                        - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
+                        :32
                         r8
                         r8
                         [
                         <gqf' af''>8
                         - \tweak stencil #ly:text-interface::print
                         - \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }
-                        :128
+                        :32
                         - \espressivo
                         - \tenuto
                         \stopTextSpan
@@ -1380,7 +1392,7 @@
                             \stopBowSpan
                             \stopTextSpan
                         }
-                        aqs2
+                        gqs2
                         \f
                         - \tweak font-name "Bodoni72 Book Italic" 
                         - \tweak font-size #0
@@ -1389,14 +1401,14 @@
                         - \tweak bound-details.left.text \markup \concat { \upright { "1/5 air" } \hspace #0.5 }
                         \startTextSpanOne
                         \>
-                        aqs4
-                        aqs2
-                        aqs4
-                        aqs2
-                        aqs4
-                        aqs2
-                        aqs4
-                        aqs2
+                        gqs4
+                        gqs2
+                        gqs4
+                        gqs2
+                        gqs4
+                        gqs2
+                        gqs4
+                        gqs2
                         \pp
                         \stopTextSpanOne
                         - \tweak font-name "Bodoni72 Book Italic" 
@@ -1408,21 +1420,21 @@
                         \startTextSpanOne
                         r16
                         [
-                        aqs8.
+                        gqs8.
                         ]
                         ~
-                        aqs16
+                        gqs16
                         [
                         r16
-                        aqs8
+                        gqs8
                         ]
                         ~
-                        aqs4
+                        gqs4
                         ~
-                        aqs8
+                        gqs8
                         [
                         r16
-                        aqs16
+                        gqs16
                         \stopTextSpanOne
                         ]
                     }

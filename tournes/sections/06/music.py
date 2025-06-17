@@ -319,13 +319,18 @@ trinton.make_music(
         attachments=[
             abjad.Articulation("espressivo"),
             abjad.Articulation("tenuto"),
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[
             abjad.bundle(
-                abjad.StemTremolo(128),
+                abjad.StemTremolo(32),
                 r"- \tweak stencil #ly:text-interface::print",
                 r"""- \tweak text \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") { \char ##xe222 } }""",
             ),
         ],
-        selector=trinton.logical_ties(first=True, pitched=True),
+        selector=trinton.pleaves(grace=False),
     ),
     trinton.hooked_spanner_command(
         string=r"( M )",
@@ -709,7 +714,7 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (13, 15)),
-    evans.PitchHandler(["aqs"]),
+    evans.PitchHandler(["gqs"]),
     # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True, grace=False)),
     trinton.linear_attachment_command(
         attachments=cycle([abjad.StartBeam(), abjad.StopBeam()]),
