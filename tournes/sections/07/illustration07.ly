@@ -573,12 +573,20 @@
                         (
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #4
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 air" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpanOne
                         - \tweak stencil #constante-hairpin
                         \<
                         \revert Dots.staff-position
                         fqs16
                         \!
                         )
+                        \stopTextSpanOne
                         r16
                         r4
                         \override Dots.staff-position = #2
@@ -590,6 +598,13 @@
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
                         \glissando
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #7.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 air" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpanOne
                         - \tweak stencil #constante-hairpin
                         \<
                         ~
@@ -607,8 +622,16 @@
                                                 ( \note {2} #2 )
                                             }
                                         }
+                        \stopTextSpanOne
                         - \tweak circled-tip ##t
                         \>
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #7.5
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #2 { "" } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup  { "4/5 air" } 
+                        \startTextSpanOne
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         e''8.
@@ -626,6 +649,7 @@
                         ds''16
                         \!
                         )
+                        \stopTextSpanOne
                         ]
                         r16
                         \override Dots.staff-position = #2
@@ -837,7 +861,32 @@
                         s1 * 3/4
                         s1 * 5/8
                         s1 * 3/4
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size 0
+                        - \tweak padding #4
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 air" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -2
+                        \startTextSpanOne
+                        \afterGrace
                         s1 * 3/4
+                        \stopTextSpanOne
+                        - \tweak font-name "Bodoni72 Book Italic" 
+                        - \tweak font-size #0
+                        - \tweak padding #4
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { { \hspace #2 { "" } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { "4/5 air" } 
+                        \startTextSpanOne
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                            \stopTextSpanOne
+                        }
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25

@@ -302,6 +302,55 @@ trinton.make_music(
             [0], 2, first=True, pitched=True, grace=False
         ),
     ),
+    trinton.hooked_spanner_command(
+        string=r"1/2 air",
+        selector=trinton.select_leaves_by_index([0, 1], pitched=True),
+        padding=4,
+        direction=None,
+        right_padding=2,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+    ),
+    trinton.hooked_spanner_command(
+        string=r"1/2 air",
+        selector=trinton.select_leaves_by_index([2, 3], pitched=True),
+        padding=7.5,
+        direction=None,
+        right_padding=2,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[r"""\markup { \hspace #2 { "" } }""", r"""\markup  { "4/5 air" } """],
+        selector=trinton.select_leaves_by_index([3, 5], pitched=True),
+        style="solid-line-with-arrow",
+        padding=7.5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="One",
+        tag=None,
+    ),
     voice=score["bassclarinet voice"],
     beam_meter=True,
 )
@@ -361,6 +410,49 @@ trinton.make_music(
     ),
     voice=score["accordion 1 voice"],
     beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    trinton.aftergrace_command(
+        selector=trinton.select_leaves_by_index([-1], grace=False), invisible=True
+    ),
+    trinton.hooked_spanner_command(
+        string=r"1/2 air",
+        selector=trinton.select_leaves_by_index([0, 1]),
+        padding=4,
+        direction=None,
+        right_padding=2,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[r"""\markup { \hspace #2 { "" } }""", r"""\markup { "4/5 air" } """],
+        selector=trinton.select_leaves_by_index(
+            [1, -1],
+        ),
+        style="solid-line-with-arrow",
+        padding=4,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="One",
+        tag=None,
+    ),
+    voice=score["accordion 3 voice"],
 )
 
 trinton.make_music(
