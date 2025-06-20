@@ -981,6 +981,30 @@ library.write_short_instrument_names(score=score)
 trinton.remove_redundant_time_signatures(score=score)
 library.clean_time_signatures(score=score)
 
+# colophon
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    trinton.attachment_command(
+        attachments=[
+            # abjad.LilyPondLiteral(
+            #     r"\override Staff.TextScript.whiteout = 0",
+            #     site="before",
+            # ),
+            abjad.bundle(
+                abjad.Markup(
+                    r"""\markup \fontsize #4 { \right-column \override #'(font-name . "Bodoni72 Book Italic") { \line { "March - August 2025" } \line { "Dresden DE - Coralville IA" } } }"""
+                ),
+                r"- \tweak X-extent ##f",
+                r"- \tweak padding 3",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([-1]),
+        direction=abjad.DOWN,
+    ),
+    voice=score["cello voice"],
+)
+
 # render file
 
 trinton.render_file(

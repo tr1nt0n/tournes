@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=11in,paperheight=17in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\vspace*{25\baselineskip}
+
+\begingroup
+\begin{center}
+. . . so fließt den auch mit ihm davon \textit{was written at the request of} Patrik Kako \textit{on behalf of Ensemble} laug.sonoris, \textit{who premiered the work in} Trenčin, Slovakia, \textit{on} 27th September, 2025. \\
+\textit{This work is dedicated to } Patrik \textit{for years of sincere support and friendship, and for his uncompromising dedication to the new.} 
+\end{center}
+\endgroup
+
+\end{document}
