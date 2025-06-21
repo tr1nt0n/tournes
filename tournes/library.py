@@ -232,6 +232,7 @@ def graphic_bow_pressure_spanner(
     right_text=None,
     padding=2,
     forget=False,
+    tag=None,
 ):
     if peak_direction == abjad.UP:
         peaks = [0 - _ for _ in peaks]
@@ -275,13 +276,14 @@ def graphic_bow_pressure_spanner(
             )
             bundle = abjad.bundle(
                 start_indicator,
-                abjad.Tweak(rf"- \tweak padding {padding}"),
+                abjad.Tweak(rf"- \tweak padding {padding}", tag=tag),
+                tag=tag,
             )
             stop_indicator = abjad.StopTextSpan(
                 command=r"\stopBowSpan",
             )
-            abjad.attach(bundle, abjad.select.leaf(group, 0))
-            abjad.attach(stop_indicator, abjad.select.leaf(group, -1))
+            abjad.attach(bundle, abjad.select.leaf(group, 0), tag=tag)
+            abjad.attach(stop_indicator, abjad.select.leaf(group, -1), tag=tag)
 
     return returned_function
 
@@ -490,4 +492,5 @@ def clean_time_signatures(score):
                         site="before",
                     ),
                     leaf,
+                    tag=abjad.Tag("+SCORE"),
                 )

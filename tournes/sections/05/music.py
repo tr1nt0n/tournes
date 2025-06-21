@@ -2755,6 +2755,22 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=54,
+                padding=7,
+                site="after",
+                hspace=0,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -2778,6 +2794,26 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=162,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'8"),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                padding=7,
+                site="after",
+                hspace=0,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -2801,6 +2837,26 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=72,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("9:8", "c'2"),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                padding=7,
+                site="after",
+                hspace=0,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -2824,6 +2880,26 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=54,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'2"),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                padding=10,
+                site="after",
+                hspace=0.5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -2847,6 +2923,26 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="dotted half",
+                tempo=54,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'8"),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                padding=12.5,
+                site="after",
+                hspace=0,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -3072,6 +3168,44 @@ library.write_short_instrument_names(score=score)
 
 trinton.remove_redundant_time_signatures(score=score)
 library.clean_time_signatures(score=score)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 9)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        tag=abjad.Tag("+PARTS"),
+    ),
+    voice=score["Global Context"],
+)
+
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (9,)),
+#     trinton.attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r"proportionalNotationDuration = #(ly:make-moment 1 20)",
+#                 site="absolute_before"
+#             )
+#         ],
+#         selector=trinton.select_leaves_by_index([0]),
+#         tag=abjad.Tag("+PARTS")
+#     ),
+#     voice=score["Global Context"]
+# )
+
+# extract parts
+
+trinton.extract_parts(score=score)
 
 # render file
 

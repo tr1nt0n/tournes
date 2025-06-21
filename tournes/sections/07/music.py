@@ -925,7 +925,41 @@ trinton.make_music(
         direction=None,
         full_string=True,
         command="",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=108,
+                padding=0,
+                metric_modulation=None,
+                site="before",
+                hspace=None,
+                string_only=True,
+            ),
+            trinton.return_metronome_markup(
+                note_value="eighth",
+                tempo=72,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'4"),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                hspace=None,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=10,
+        tweaks=None,
+        right_padding=-8,
+        direction=None,
+        full_string=True,
+        command="",
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -949,6 +983,26 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=108,
+                padding=7,
+                site="after",
+                hspace=0,
+                string_only=False,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Note("c'8."),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -1129,6 +1183,10 @@ library.write_short_instrument_names(score=score)
 
 trinton.remove_redundant_time_signatures(score=score)
 library.clean_time_signatures(score=score)
+
+# extract parts
+
+trinton.extract_parts(score=score)
 
 # render file
 

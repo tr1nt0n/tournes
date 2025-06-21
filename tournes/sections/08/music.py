@@ -83,7 +83,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=2,
         end_hook_style="dashed-line-with-hook",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -104,7 +104,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=4,
         end_hook_style="dashed-line-with-hook",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -125,7 +125,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=4,
         end_hook_style="dashed-line-with-hook",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -143,7 +143,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=4,
         end_hook_style="dashed-line-with-hook",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -164,7 +164,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=4,
         end_hook_style="dashed-line-with-hook",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -182,7 +182,126 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=4,
         end_hook_style="dashed-line-with-hook",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\flute-forty-five-degrees",
+            r"\flute-one-hundred-thirty-five-degrees",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [0, 3, 3, 4], pitched=True, grace=False
+        ),
+        style="solid-line-with-arrow",
+        padding=6.5,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="One",
+        end_hook=True,
+        end_hook_right_padding=2,
+        end_hook_style="dashed-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\flute-one-hundred-thirty-five-degrees",
+            r"\flute-forty-five-degrees",
+            r"\flute-one-hundred-thirty-five-degrees",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [5, 10, 10, 14, 14, 15], pitched=True, grace=False
+        ),
+        style="solid-line-with-arrow",
+        padding=5.5,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="One",
+        end_hook=True,
+        end_hook_right_padding=4,
+        end_hook_style="dashed-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\flute-one-hundred-thirty-five-degrees",
+            r"\flute-forty-five-degrees",
+            r"\flute-one-hundred-thirty-five-degrees",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [16, 19, 19, 22], pitched=True, grace=False
+        ),
+        style="solid-line-with-arrow",
+        padding=12.5,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="One",
+        end_hook=False,
+        end_hook_right_padding=4,
+        end_hook_style="dashed-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\flute-one-hundred-thirty-five-degrees",
+            r"\flute-forty-five-degrees",
+        ],
+        selector=trinton.select_leaves_by_index([23, 27], pitched=True, grace=False),
+        style="solid-line-with-arrow",
+        padding=12.5,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="One",
+        end_hook=False,
+        end_hook_right_padding=4,
+        end_hook_style="dashed-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\flute-forty-five-degrees",
+            r"\flute-one-hundred-thirty-five-degrees",
+            r"\flute-forty-five-degrees",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [28, 32, 32, 35], pitched=True, grace=False
+        ),
+        style="solid-line-with-arrow",
+        padding=11.5,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="One",
+        end_hook=False,
+        end_hook_right_padding=4,
+        end_hook_style="dashed-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\flute-forty-five-degrees",
+            r"\flute-one-hundred-thirty-five-degrees",
+        ],
+        selector=trinton.select_leaves_by_index([36, 38], pitched=True, grace=False),
+        style="solid-line-with-arrow",
+        padding=11.5,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="One",
+        end_hook=False,
+        end_hook_right_padding=4,
+        end_hook_style="dashed-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -821,6 +940,26 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="dotted eighth",
+                tempo=56,
+                padding=7,
+                site="after",
+                hspace=0,
+                string_only=False,
+                # metric_modulation=abjad.MetricModulation(
+                #     left_rhythm=abjad.Note("c'8."),
+                #     right_rhythm=abjad.Note("c'4"),
+                # ),
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -848,7 +987,30 @@ trinton.make_music(
         direction=None,
         full_string=True,
         command="",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
+            trinton.return_metronome_markup(
+                note_value="eighth",
+                tempo=72,
+                padding=0,
+                metric_modulation=None,
+                site="after",
+                hspace=None,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=10,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        command="",
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )
@@ -890,6 +1052,17 @@ for measure in [1, 2, 4, 5, 7, 8, 10, 11, 12]:
             attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
             selector=trinton.select_leaves_by_index([0]),
             tag=abjad.Tag("+SCORE"),
+        ),
+        voice=score["Global Context"],
+    )
+
+for measure in [10, 11, 12]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+            tag=abjad.Tag("+PARTS"),
         ),
         voice=score["Global Context"],
     )
@@ -1004,6 +1177,10 @@ trinton.make_music(
     ),
     voice=score["cello voice"],
 )
+
+# extract parts
+
+trinton.extract_parts(score=score)
 
 # render file
 
