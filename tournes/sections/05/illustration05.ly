@@ -25,7 +25,7 @@
               %! +PARTS
         %%% \hspace #0
               %! +PARTS
-          %%% \raise #7 \with-dimensions-from \null
+          %%% \raise #3.5 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS
@@ -52,8 +52,6 @@
               }
               %! +SCORE
             }
-              %! +PARTS
-        %%% \noBreak
               %! +SCORE
             \noBreak
               %! +SCORE
@@ -91,7 +89,7 @@
               %! +PARTS
           %%% \hspace #-9
               %! +PARTS
-          %%% \raise #7 \with-dimensions-from \null
+          %%% \raise #5 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS
@@ -106,8 +104,6 @@
           %%% }
               %! +PARTS
         %%% }
-              %! +PARTS
-        %%% \noBreak
               %! +SCORE
             \noBreak
             \time 4/4
@@ -137,7 +133,7 @@
               %! +PARTS
           %%% \hspace #-9
               %! +PARTS
-          %%% \raise #7 \with-dimensions-from \null
+          %%% \raise #5 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS
@@ -152,8 +148,6 @@
           %%% }
               %! +PARTS
         %%% }
-              %! +PARTS
-        %%% \noBreak
               %! +SCORE
             \noBreak
             \time 3/4
@@ -169,8 +163,6 @@
               %! +SCORE
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-3 24.5 11 7 2 14 19.5)))
             \once \override Score.TimeSignature.stencil = ##f
-              %! +PARTS
-        %%% \once \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/128)
             \time 6/4
             s1 * 3/2
               %! +SCORE
@@ -180,26 +172,6 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
-              %! +PARTS
-        %%% ^ \markup {
-              %! +PARTS
-          %%% \hspace #-9
-              %! +PARTS
-          %%% \raise #10 \with-dimensions-from \null
-              %! +PARTS
-          %%% \override #'(font-size . 5.5)
-              %! +PARTS
-          %%% \concat {
-              %! +PARTS
-          %%% [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]
-              %! +PARTS
-              %%% \hspace #1
-              %! +PARTS
-              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 54 " 
-              %! +PARTS
-          %%% }
-              %! +PARTS
-        %%% }
               %! +SCORE
             ^ \markup {
               %! +SCORE
@@ -220,6 +192,26 @@
               }
               %! +SCORE
             }
+              %! +PARTS
+        %%% ^ \markup {
+              %! +PARTS
+          %%% \hspace #-9
+              %! +PARTS
+          %%% \raise #5 \with-dimensions-from \null
+              %! +PARTS
+          %%% \override #'(font-size . 5.5)
+              %! +PARTS
+          %%% \concat {
+              %! +PARTS
+          %%% [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]
+              %! +PARTS
+              %%% \hspace #1
+              %! +PARTS
+              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 54 " 
+              %! +PARTS
+          %%% }
+              %! +PARTS
+        %%% }
               %! +SCORE
             \pageBreak
             \once \override Score.TimeSignature.stencil = ##f
@@ -255,7 +247,7 @@
               %! +PARTS
           %%% \hspace #-9
               %! +PARTS
-          %%% \raise #12.5 \with-dimensions-from \null
+          %%% \raise #7.5 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS

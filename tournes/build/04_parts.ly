@@ -9,7 +9,7 @@
               %! +PARTS
             \hspace #0
               %! +PARTS
-              \raise #10 \with-dimensions-from \null
+              \raise #4.5 \with-dimensions-from \null
               %! +PARTS
               \override #'(font-size . 5.5)
               %! +PARTS

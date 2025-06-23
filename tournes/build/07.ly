@@ -4,58 +4,32 @@
         {
             \time 5/8
             s1 * 5/8
-              %! +PARTS
-        %%% - \tweak padding #10
-              %! +PARTS
-        %%% - \abjad-solid-line-with-arrow
-              %! +PARTS
-        %%% - \tweak bound-details.left.text \markup \concat { {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 108 " 
-              }
-            } \hspace #0.5 }
-              %! +PARTS
-        %%% - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-              [\abjad-metric-modulation-tuplet-lhs #2 #0 #2 #3 #3 #0 #'(1 . 1)]
-                  \hspace #1
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 72 " 
-              }
-            }
-              %! +PARTS
-        %%% - \tweak bound-details.right.padding 8
-              %! +PARTS
-        %%% \startTextSpan
+              %! +SCORE
               %! +SCORE
             - \tweak padding #17.5
               %! +SCORE
             - \abjad-solid-line-with-arrow
               %! +SCORE
-            - \tweak bound-details.left.text \markup \concat { {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 108 " 
-              }
-            } \hspace #0.5 }
+            - \tweak bound-details.left.text \markup \concat { {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #2 #0 #2 #" 108 "   }} \hspace #0.5 }
               %! +SCORE
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-              [\abjad-metric-modulation-tuplet-lhs #2 #0 #2 #3 #3 #0 #'(1 . 1)]
-                  \hspace #1
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 72 " 
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation-tuplet-lhs #2 #0 #2 #3 #3 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
               %! +SCORE
             - \tweak bound-details.right.padding 8
               %! +SCORE
             \startTextSpan
+              %! +PARTS
+              %! +PARTS
+        %%% - \tweak padding #6
+              %! +PARTS
+        %%% - \abjad-solid-line-with-arrow
+              %! +PARTS
+        %%% - \tweak bound-details.left.text \markup \concat { {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #2 #0 #2 #" 108 "   }} \hspace #0.5 }
+              %! +PARTS
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation-tuplet-lhs #2 #0 #2 #3 #3 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
+              %! +PARTS
+        %%% - \tweak bound-details.right.padding 8
+              %! +PARTS
+        %%% \startTextSpan
               %! +SCORE
             \noBreak
             \time 3/4

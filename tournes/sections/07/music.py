@@ -953,7 +953,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
-        padding=10,
+        padding=6,
         tweaks=None,
         right_padding=-8,
         direction=None,

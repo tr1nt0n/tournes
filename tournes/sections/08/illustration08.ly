@@ -33,7 +33,7 @@
               %! +PARTS
           %%% \concat {
               %! +PARTS
-              %%% \abjad-metronome-mark-markup #3 #1 #2 #" 56 "
+              %%% \abjad-metronome-mark-markup #3 #1 #2 #" 56 " 
               %! +PARTS
           %%% }
               %! +PARTS
@@ -49,7 +49,7 @@
               %! +SCORE
               \concat {
               %! +SCORE
-                  \abjad-metronome-mark-markup #3 #1 #2 #" 56 "
+                  \abjad-metronome-mark-markup #3 #1 #2 #" 56 " 
               %! +SCORE
               }
               %! +SCORE
@@ -90,23 +90,6 @@
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 18 12 10 2 16 19.5)))
             \time 5/8
             s1 * 5/8
-              %! +PARTS
-              %! +PARTS
-        %%% - \tweak padding #10
-              %! +PARTS
-        %%% - \abjad-solid-line-with-arrow
-              %! +PARTS
-        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
-              %! +PARTS
-        %%% - \tweak bound-details.right.text \markup {
-        %%%      \raise #0 \with-dimensions-from \null
-        %%%      \override #'(font-size . 5.5)
-        %%%      \concat {
-        %%%          \abjad-metronome-mark-markup #3 #0 #2 #" 72 "
-        %%%      }
-        %%%    }
-              %! +PARTS
-        %%% \startTextSpan
               %! +SCORE
               %! +SCORE
             - \tweak padding #18.5
@@ -115,15 +98,20 @@
               %! +SCORE
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +SCORE
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 72 "
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
               %! +SCORE
             \startTextSpan
+              %! +PARTS
+              %! +PARTS
+        %%% - \tweak padding #6.5
+              %! +PARTS
+        %%% - \abjad-solid-line-with-arrow
+              %! +PARTS
+        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
+              %! +PARTS
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
+              %! +PARTS
+        %%% \startTextSpan
               %! +SCORE
             \noBreak
             \time 4/4
@@ -1179,7 +1167,7 @@
                                         (
                                         - \tweak circled-tip ##t
                                         \<
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -1199,7 +1187,7 @@
                                         \stopTextSpanTwo
                                         - \tweak circled-tip ##t
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -1774,13 +1762,13 @@
                                         (
                                         - \tweak circled-tip ##t
                                         \<
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #10.5
                                         - \abjad-solid-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \upright { "flaut." } \hspace #0.5 }
                                         \startTextSpanTwo
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #9
                                         - \abjad-solid-line-with-arrow
@@ -1808,14 +1796,14 @@
                                         \stopTextSpanTwo
                                         - \tweak circled-tip ##t
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #10.5
                                         - \abjad-solid-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \upright { "scratch" } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \upright { "flaut." }
                                         \startTextSpanTwo
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #9
                                         - \abjad-solid-line-with-arrow
@@ -1985,7 +1973,7 @@
                                         (
                                         - \tweak circled-tip ##t
                                         \<
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #9
                                         - \abjad-solid-line-with-arrow
@@ -2090,7 +2078,7 @@
                                         \stopTextSpanOne
                                         - \tweak circled-tip ##t
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #9
                                         - \abjad-solid-line-with-arrow

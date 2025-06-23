@@ -40,7 +40,7 @@ afterGraceFraction = #(cons 15 16)
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
         \override BarNumber.Y-extent = ##f
         \override BarNumber.Y-offset = -1
-        \override BarNumber.X-offset = -5
+        \override BarNumber.X-offset = -7
         % \override BarNumber.extra-offset = #'(0 . 10)
         \override BarNumber.font-size = 1
         \override BarNumber.padding = 1
@@ -78,7 +78,7 @@ afterGraceFraction = #(cons 15 16)
         pedalSustainStyle = #'mixed
 
         \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 7) (minimum distance . 7) (padding . 7) (stretchability . 0))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 4) (minimum distance . 4) (padding . 4) (stretchability . 0))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
         \override Accidental.layer = 3
@@ -307,7 +307,7 @@ afterGraceFraction = #(cons 15 16)
 	        #:music "haydn"
 	        #:brace "haydn"
 	))
-    % min-systems-per-page = 5
+    min-systems-per-page = 4
     % max-systems-per-page = 3
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
     system-system-spacing = #'((basic-distance . 26) (minimum-distance . 26) (padding . 3) (stretchability . 20))

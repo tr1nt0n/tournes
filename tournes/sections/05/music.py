@@ -2762,7 +2762,7 @@ trinton.make_music(
             trinton.return_metronome_markup(
                 note_value="quarter",
                 tempo=54,
-                padding=7,
+                padding=3.5,
                 site="after",
                 hspace=0,
                 string_only=False,
@@ -2805,7 +2805,7 @@ trinton.make_music(
                     left_rhythm=abjad.Tuplet("3:2", "c'8"),
                     right_rhythm=abjad.Note("c'4"),
                 ),
-                padding=7,
+                padding=5,
                 site="after",
                 hspace=0,
                 string_only=False,
@@ -2848,7 +2848,7 @@ trinton.make_music(
                     left_rhythm=abjad.Tuplet("9:8", "c'2"),
                     right_rhythm=abjad.Note("c'4"),
                 ),
-                padding=7,
+                padding=5,
                 site="after",
                 hspace=0,
                 string_only=False,
@@ -2891,7 +2891,7 @@ trinton.make_music(
                     left_rhythm=abjad.Tuplet("3:2", "c'2"),
                     right_rhythm=abjad.Note("c'4"),
                 ),
-                padding=10,
+                padding=5,
                 site="after",
                 hspace=0.5,
                 string_only=False,
@@ -2934,7 +2934,7 @@ trinton.make_music(
                     left_rhythm=abjad.Tuplet("3:2", "c'8"),
                     right_rhythm=abjad.Note("c'4"),
                 ),
-                padding=12.5,
+                padding=7.5,
                 site="after",
                 hspace=0,
                 string_only=False,
@@ -3007,20 +3007,20 @@ for measure in [
         voice=score["Global Context"],
     )
 
-for measure in [
-    1,
-    3,
-    4,
-]:
-    trinton.make_music(
-        lambda _: trinton.select_target(_, (measure,)),
-        trinton.attachment_command(
-            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
-            selector=trinton.select_leaves_by_index([0]),
-            tag=abjad.Tag("+PARTS"),
-        ),
-        voice=score["Global Context"],
-    )
+# for measure in [
+#     1,
+#     3,
+#     4,
+# ]:
+#     trinton.make_music(
+#         lambda _: trinton.select_target(_, (measure,)),
+#         trinton.attachment_command(
+#             attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+#             selector=trinton.select_leaves_by_index([0]),
+#             tag=abjad.Tag("+PARTS"),
+#         ),
+#         voice=score["Global Context"],
+#     )
 
 for measure in [
     1,
@@ -3169,24 +3169,24 @@ library.write_short_instrument_names(score=score)
 trinton.remove_redundant_time_signatures(score=score)
 library.clean_time_signatures(score=score)
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (8, 9)),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
-                site="before",
-            ),
-            abjad.LilyPondLiteral(
-                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
-                site="before",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-        tag=abjad.Tag("+PARTS"),
-    ),
-    voice=score["Global Context"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (8, 9)),
+#     trinton.linear_attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
+#                 site="before",
+#             ),
+#             abjad.LilyPondLiteral(
+#                 r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
+#                 site="before",
+#             ),
+#         ],
+#         selector=trinton.select_leaves_by_index([0, -1]),
+#         tag=abjad.Tag("+PARTS"),
+#     ),
+#     voice=score["Global Context"],
+# )
 
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (9,)),
