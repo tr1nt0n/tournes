@@ -103,7 +103,7 @@
             \startTextSpan
               %! +PARTS
               %! +PARTS
-        %%% - \tweak padding #6.5
+        %%% - \tweak padding #8
               %! +PARTS
         %%% - \abjad-solid-line-with-arrow
               %! +PARTS

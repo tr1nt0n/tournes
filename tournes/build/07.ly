@@ -1596,18 +1596,57 @@
                                     - \snappizzicato
                                     \ff
                                     [
+                                      %! +PARTS
+                                %%% - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +PARTS
+                                %%% - \tweak font-size 0
+                                      %! +PARTS
+                                %%% - \tweak padding #10.5
+                                      %! +PARTS
+                                %%% - \abjad-dashed-line-with-hook
+                                      %! +PARTS
+                                %%% - \tweak bound-details.left.text \markup \concat { \upright { "ponticello possibile" } \hspace #0.5 }
+                                      %! +PARTS
+                                %%% \startTextSpanTwo
+                                      %! +PARTS
+                                %%% - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +PARTS
+                                %%% - \tweak font-size 0
+                                      %! +PARTS
+                                %%% - \tweak padding #12
+                                      %! +PARTS
+                                %%% - \abjad-dashed-line-with-hook
+                                      %! +PARTS
+                                %%% - \tweak bound-details.left.text \markup \concat { \upright { "pizz." } \hspace #0.5 }
+                                      %! +PARTS
+                                %%% - \tweak bound-details.right.padding -2
+                                      %! +PARTS
+                                %%% \startTextSpanOne
+                                      %! +SCORE
                                     - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +SCORE
                                     - \tweak font-size 0
+                                      %! +SCORE
                                     - \tweak padding #8
+                                      %! +SCORE
                                     - \abjad-dashed-line-with-hook
+                                      %! +SCORE
                                     - \tweak bound-details.left.text \markup \concat { \upright { "ponticello possibile" } \hspace #0.5 }
+                                      %! +SCORE
                                     \startTextSpanTwo
+                                      %! +SCORE
                                     - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +SCORE
                                     - \tweak font-size 0
+                                      %! +SCORE
                                     - \tweak padding #9.5
+                                      %! +SCORE
                                     - \abjad-dashed-line-with-hook
+                                      %! +SCORE
                                     - \tweak bound-details.left.text \markup \concat { \upright { "pizz." } \hspace #0.5 }
+                                      %! +SCORE
                                     - \tweak bound-details.right.padding -2
+                                      %! +SCORE
                                     \startTextSpanOne
                                     r8
                                     r8
@@ -1616,12 +1655,39 @@
                                     - \tweak font-size #3
                                     - \snappizzicato
                                     r16
+                                      %! +SCORE
                                     \stopTextSpanTwo
+                                      %! +PARTS
+                                %%% \stopTextSpanTwo
+                                      %! +PARTS
+                                      %! +PARTS
+                                %%% - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +PARTS
+                                      %! +PARTS
+                                %%% - \tweak font-size #0
+                                      %! +PARTS
+                                      %! +PARTS
+                                %%% - \tweak padding #10.5
+                                      %! +PARTS
+                                %%% - \abjad-solid-line-with-arrow
+                                      %! +PARTS
+                                %%% - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
+                                      %! +PARTS
+                                %%% \startTextSpanTwo
+                                      %! +SCORE
+                                      %! +SCORE
                                     - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +SCORE
+                                      %! +SCORE
                                     - \tweak font-size #0
+                                      %! +SCORE
+                                      %! +SCORE
                                     - \tweak padding #8
+                                      %! +SCORE
                                     - \abjad-solid-line-with-arrow
+                                      %! +SCORE
                                     - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
+                                      %! +SCORE
                                     \startTextSpanTwo
                                     r8
                                     \big-half-harmonic
@@ -1641,13 +1707,43 @@
                                     \set stemRightBeamCount = 1
                                     gqf'16
                                     \p
+                                      %! +SCORE
                                     \stopTextSpanTwo
+                                      %! +PARTS
+                                %%% \stopTextSpanTwo
+                                      %! +PARTS
+                                      %! +PARTS
+                                %%% - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +PARTS
+                                      %! +PARTS
+                                %%% - \tweak font-size #0
+                                      %! +PARTS
+                                      %! +PARTS
+                                %%% - \tweak padding #10.5
+                                      %! +PARTS
+                                %%% - \abjad-dashed-line-with-hook
+                                      %! +PARTS
+                                %%% - \tweak bound-details.left.text \markup \concat { \upright { "molto tasto" } \hspace #0.5 }
+                                      %! +PARTS
+                                %%% - \tweak bound-details.right.padding -2
+                                      %! +PARTS
+                                %%% \startTextSpanTwo
+                                      %! +SCORE
+                                      %! +SCORE
                                     - \tweak font-name "Bodoni72 Book Italic" 
+                                      %! +SCORE
+                                      %! +SCORE
                                     - \tweak font-size #0
+                                      %! +SCORE
+                                      %! +SCORE
                                     - \tweak padding #8
+                                      %! +SCORE
                                     - \abjad-dashed-line-with-hook
+                                      %! +SCORE
                                     - \tweak bound-details.left.text \markup \concat { \upright { "molto tasto" } \hspace #0.5 }
+                                      %! +SCORE
                                     - \tweak bound-details.right.padding -2
+                                      %! +SCORE
                                     \startTextSpanTwo
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
@@ -1657,8 +1753,14 @@
                                     r16
                                     \big-half-harmonic
                                     aqf''16
+                                      %! +SCORE
                                     \stopTextSpanOne
+                                      %! +PARTS
+                                %%% \stopTextSpanOne
+                                      %! +SCORE
                                     \stopTextSpanTwo
+                                      %! +PARTS
+                                %%% \stopTextSpanTwo
                                     ]
                                     s1 * 3/4
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score

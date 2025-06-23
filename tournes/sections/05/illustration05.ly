@@ -52,6 +52,8 @@
               }
               %! +SCORE
             }
+              %! +PARTS
+        %%% \noBreak
               %! +SCORE
             \noBreak
               %! +SCORE
@@ -104,6 +106,8 @@
           %%% }
               %! +PARTS
         %%% }
+              %! +PARTS
+        %%% \noBreak
               %! +SCORE
             \noBreak
             \time 4/4
@@ -148,6 +152,8 @@
           %%% }
               %! +PARTS
         %%% }
+              %! +PARTS
+        %%% \noBreak
               %! +SCORE
             \noBreak
             \time 3/4

@@ -1603,7 +1603,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
-        padding=6.5,
+        padding=10,
         tweaks=None,
         right_padding=-7.5,
         direction=None,

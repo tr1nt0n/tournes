@@ -54,6 +54,19 @@
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 12 10 2 16 24)))
             \time 3/4
             s1 * 3/4
+              %! +PARTS
+              %! +PARTS
+        %%% - \tweak padding #13
+              %! +PARTS
+        %%% - \abjad-solid-line-with-arrow
+              %! +PARTS
+        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
+              %! +PARTS
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation #2 #1 #2 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #2 #0 #2 #" 72 "   }}
+              %! +PARTS
+        %%% - \tweak bound-details.right.padding 7
+              %! +PARTS
+        %%% \startTextSpan
               %! +SCORE
               %! +SCORE
             - \tweak padding #18
@@ -62,40 +75,11 @@
               %! +SCORE
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +SCORE
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-              [\abjad-metric-modulation #2 #1 #2 #0 #'(1 . 1)]
-                  \hspace #1
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 72 " 
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation #2 #1 #2 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #2 #0 #2 #" 72 "   }}
               %! +SCORE
             - \tweak bound-details.right.padding 7
               %! +SCORE
             \startTextSpan
-              %! +PARTS
-              %! +PARTS
-        %%% - \tweak padding #5
-              %! +PARTS
-        %%% - \abjad-solid-line-with-arrow
-              %! +PARTS
-        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
-              %! +PARTS
-        %%% - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-              [\abjad-metric-modulation #2 #1 #2 #0 #'(1 . 1)]
-                  \hspace #1
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 72 " 
-              }
-            }
-              %! +PARTS
-        %%% - \tweak bound-details.right.padding 7
-              %! +PARTS
-        %%% \startTextSpan
               %! +SCORE
             \noBreak
               %! +PARTS
@@ -3733,16 +3717,51 @@
                                             )
                                         [
                                         (
+                                          %! +SCORE
                                         - \tweak font-name "Bodoni72 Book Italic" 
+                                          %! +SCORE
                                         - \tweak font-size 0
+                                          %! +SCORE
                                         - \tweak padding #11.5
+                                          %! +SCORE
                                         - \abjad-dashed-line-with-hook
+                                          %! +SCORE
                                         - \tweak bound-details.left.text \markup \concat { \upright { "1/4 spz." } \hspace #0.5 }
+                                          %! +SCORE
                                         - \tweak bound-details.right.padding -2
+                                          %! +SCORE
                                         \startTextSpanTwo
+                                          %! +PARTS
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
+                                          %! +PARTS
+                                    %%% - \tweak font-size 0
+                                          %! +PARTS
+                                    %%% - \tweak padding #14
+                                          %! +PARTS
+                                    %%% - \abjad-dashed-line-with-hook
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.left.text \markup \concat { \upright { "1/4 spz." } \hspace #0.5 }
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.right.padding -2
+                                          %! +PARTS
+                                    %%% \startTextSpanTwo
+                                          %! +PARTS
+                                          %! +PARTS
+                                    %%% - \tweak padding #12
+                                          %! +PARTS
+                                    %%% - \abjad-solid-line-with-arrow
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
+                                          %! +PARTS
+                                    %%% \startTextSpanOne
+                                          %! +SCORE
+                                          %! +SCORE
                                         - \tweak padding #9.5
+                                          %! +SCORE
                                         - \abjad-solid-line-with-arrow
+                                          %! +SCORE
                                         - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
+                                          %! +SCORE
                                         \startTextSpanOne
                                         g32 * 51/32
                                         \tweak style #'harmonic
@@ -3753,22 +3772,59 @@
                                         g32 * 73/32
                                         \tweak style #'harmonic
                                         fs'32 * 21/8
+                                          %! +SCORE
                                         \stopTextSpanOne
+                                          %! +PARTS
+                                    %%% \stopTextSpanOne
+                                          %! +PARTS
+                                          %! +PARTS
+                                    %%% - \tweak padding #12
+                                          %! +PARTS
+                                    %%% - \abjad-solid-line-with-arrow
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
+                                          %! +PARTS
+                                    %%% \startTextSpanOne
+                                          %! +SCORE
+                                          %! +SCORE
                                         - \tweak padding #9.5
+                                          %! +SCORE
                                         - \abjad-solid-line-with-arrow
+                                          %! +SCORE
                                         - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
+                                          %! +SCORE
                                         \startTextSpanOne
                                         g32 * 97/32
                                         \tweak style #'harmonic
                                         fqs'32 * 111/32
                                         g32 * 31/8
                                         )
+                                          %! +SCORE
                                         \stopTextSpanOne
+                                          %! +PARTS
+                                    %%% \stopTextSpanOne
                                         ]
+                                          %! +PARTS
+                                          %! +PARTS
+                                    %%% - \tweak padding #12
+                                          %! +PARTS
+                                    %%% - \abjad-dashed-line-with-hook
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.right.padding -4
+                                          %! +PARTS
+                                    %%% \startTextSpanOne
+                                          %! +SCORE
+                                          %! +SCORE
                                         - \tweak padding #9.5
+                                          %! +SCORE
                                         - \abjad-dashed-line-with-hook
+                                          %! +SCORE
                                         - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
+                                          %! +SCORE
                                         - \tweak bound-details.right.padding -4
+                                          %! +SCORE
                                         \startTextSpanOne
                                     }
                                     \revert TupletNumber.text
@@ -3830,7 +3886,10 @@
                                         (
                                         g32 * 15/4
                                         )
+                                          %! +SCORE
                                         \stopTextSpanOne
+                                          %! +PARTS
+                                    %%% \stopTextSpanOne
                                         \once \override Rest.stencil = #ly:text-interface::print
                                         \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                                         r32 * 7/2
@@ -3847,10 +3906,27 @@
                                         fs'32 * 71/32
                                         - \tenuto
                                         (
+                                          %! +PARTS
+                                          %! +PARTS
+                                    %%% - \tweak padding #11.5
+                                          %! +PARTS
+                                    %%% - \abjad-solid-line-with-arrow
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
+                                          %! +PARTS
+                                    %%% - \tweak bound-details.right.text \bow-tip-half-down
+                                          %! +PARTS
+                                    %%% \startTextSpanOne
+                                          %! +SCORE
+                                          %! +SCORE
                                         - \tweak padding #9
+                                          %! +SCORE
                                         - \abjad-solid-line-with-arrow
+                                          %! +SCORE
                                         - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
+                                          %! +SCORE
                                         - \tweak bound-details.right.text \bow-tip-half-down
+                                          %! +SCORE
                                         \startTextSpanOne
                                         \>
                                         g32 * 2
@@ -3878,8 +3954,14 @@
                                                 )
                                             )
                                         )
+                                          %! +SCORE
                                         \stopTextSpanOne
+                                          %! +PARTS
+                                    %%% \stopTextSpanOne
+                                          %! +SCORE
                                         \stopTextSpanTwo
+                                          %! +PARTS
+                                    %%% \stopTextSpanTwo
                                         \once \override Rest.stencil = #ly:text-interface::print
                                         \once \override Rest.text = \markup \override #'(font-name . "Bodoni72 Book") { 1 }
                                         r32 * 49/32

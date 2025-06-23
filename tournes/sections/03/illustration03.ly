@@ -43,7 +43,7 @@
               %! +SCORE
                   \hspace #1
               %! +SCORE
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 108 "
+                  \abjad-metronome-mark-markup #2 #0 #2 #" 108 " 
               %! +SCORE
               }
               %! +SCORE
@@ -63,7 +63,7 @@
               %! +PARTS
               %%% \hspace #1
               %! +PARTS
-              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 108 "
+              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 108 " 
               %! +PARTS
           %%% }
               %! +PARTS
@@ -97,7 +97,7 @@
               %! +SCORE
                   \hspace #1
               %! +SCORE
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 81 "
+                  \abjad-metronome-mark-markup #2 #0 #2 #" 81 " 
               %! +SCORE
               }
               %! +SCORE
@@ -117,7 +117,7 @@
               %! +PARTS
               %%% \hspace #1
               %! +PARTS
-              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 81 "
+              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 81 " 
               %! +PARTS
           %%% }
               %! +PARTS
@@ -145,7 +145,7 @@
               %! +PARTS
           %%% \concat {
               %! +PARTS
-              %%% \abjad-metronome-mark-markup #2 #1 #2 #" 40 "
+              %%% \abjad-metronome-mark-markup #2 #1 #2 #" 40 " 
               %! +PARTS
           %%% }
               %! +PARTS
@@ -161,7 +161,7 @@
               %! +SCORE
               \concat {
               %! +SCORE
-                  \abjad-metronome-mark-markup #2 #1 #2 #" 40 "
+                  \abjad-metronome-mark-markup #2 #1 #2 #" 40 " 
               %! +SCORE
               }
               %! +SCORE
@@ -185,6 +185,19 @@
             \noBreak
             \time 4/4
             s1 * 1
+              %! +PARTS
+              %! +PARTS
+        %%% - \tweak padding #10
+              %! +PARTS
+        %%% - \abjad-solid-line-with-arrow
+              %! +PARTS
+        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
+              %! +PARTS
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #2 #0 #2 #" 45 "   }}
+              %! +PARTS
+        %%% - \tweak bound-details.right.padding 7.5
+              %! +PARTS
+        %%% \startTextSpan
               %! +SCORE
               %! +SCORE
             - \tweak padding #18
@@ -193,40 +206,11 @@
               %! +SCORE
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +SCORE
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-              [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]
-                  \hspace #1
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 45 "
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #2 #0 #2 #" 45 "   }}
               %! +SCORE
             - \tweak bound-details.right.padding 7.5
               %! +SCORE
             \startTextSpan
-              %! +PARTS
-              %! +PARTS
-        %%% - \tweak padding #6.5
-              %! +PARTS
-        %%% - \abjad-solid-line-with-arrow
-              %! +PARTS
-        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
-              %! +PARTS
-        %%% - \tweak bound-details.right.text \markup {
-        %%%      \raise #0 \with-dimensions-from \null
-        %%%      \override #'(font-size . 5.5)
-        %%%      \concat {
-        %%%      [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]
-        %%%          \hspace #1
-        %%%          \abjad-metronome-mark-markup #2 #0 #2 #" 45 "
-        %%%      }
-        %%%    }
-              %! +PARTS
-        %%% - \tweak bound-details.right.padding 7.5
-              %! +PARTS
-        %%% \startTextSpan
               %! +SCORE
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 19 19 14 2 19 18)))
             \time 5/8
@@ -321,7 +305,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8
                                         - \abjad-dashed-line-with-hook
@@ -507,7 +491,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8
                                         - \abjad-dashed-line-with-hook
@@ -861,7 +845,7 @@
                                     _ \f
                                     _ \staccatissimo
                                     _ \markup \override #'(font-name . "Bodoni72 Book Italic") { \override #'(font-size . 0) { "te" } }
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #7.5
                                     - \abjad-dashed-line-with-hook
@@ -1023,7 +1007,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8
                                         - \abjad-solid-line-with-arrow
@@ -3111,7 +3095,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #7.5
                                         - \abjad-dashed-line-with-hook
@@ -3624,7 +3608,7 @@
                                     - \tweak font-size #3
                                     - \snappizzicato
                                     \ff
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #6.4
                                     - \abjad-dashed-line-with-hook
@@ -3943,7 +3927,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #9
                                         - \abjad-dashed-line-with-hook

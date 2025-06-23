@@ -3007,20 +3007,20 @@ for measure in [
         voice=score["Global Context"],
     )
 
-# for measure in [
-#     1,
-#     3,
-#     4,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
-#             selector=trinton.select_leaves_by_index([0]),
-#             tag=abjad.Tag("+PARTS"),
-#         ),
-#         voice=score["Global Context"],
-#     )
+for measure in [
+    1,
+    3,
+    4,
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+            tag=abjad.Tag("+PARTS"),
+        ),
+        voice=score["Global Context"],
+    )
 
 for measure in [
     1,

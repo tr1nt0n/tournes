@@ -171,6 +171,19 @@
             \noBreak
             \time 4/4
             s1 * 1
+              %! +PARTS
+              %! +PARTS
+        %%% - \tweak padding #10
+              %! +PARTS
+        %%% - \abjad-solid-line-with-arrow
+              %! +PARTS
+        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
+              %! +PARTS
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #2 #0 #2 #" 45 "   }}
+              %! +PARTS
+        %%% - \tweak bound-details.right.padding 7.5
+              %! +PARTS
+        %%% \startTextSpan
               %! +SCORE
               %! +SCORE
             - \tweak padding #18
@@ -179,40 +192,11 @@
               %! +SCORE
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +SCORE
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-              [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]
-                  \hspace #1
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 45 " 
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {  [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]      \hspace #1      \abjad-metronome-mark-markup #2 #0 #2 #" 45 "   }}
               %! +SCORE
             - \tweak bound-details.right.padding 7.5
               %! +SCORE
             \startTextSpan
-              %! +PARTS
-              %! +PARTS
-        %%% - \tweak padding #6.5
-              %! +PARTS
-        %%% - \abjad-solid-line-with-arrow
-              %! +PARTS
-        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
-              %! +PARTS
-        %%% - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-              [\abjad-metric-modulation-tuplet-lhs #1 #0 #2 #3 #2 #0 #'(1 . 1)]
-                  \hspace #1
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 45 " 
-              }
-            }
-              %! +PARTS
-        %%% - \tweak bound-details.right.padding 7.5
-              %! +PARTS
-        %%% \startTextSpan
               %! +SCORE
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (2.5 19 19 14 2 19 18)))
             \time 5/8
