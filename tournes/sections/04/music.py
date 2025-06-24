@@ -2097,6 +2097,19 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([-1], pitched=True, grace=False),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Markup(r'\markup { \hspace #0.5 { "1/2 spz." } }'),
+                r"""- \tweak font-name "Bodoni72 Book Italic" """,
+                r"""- \tweak font-size 0""",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([-1], pitched=True, grace=False),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["cello voice"],
 )
@@ -2403,7 +2416,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
-        padding=13,
+        padding=10.5,
         tweaks=None,
         right_padding=-7,
         direction=None,
@@ -2551,6 +2564,25 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 5)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )

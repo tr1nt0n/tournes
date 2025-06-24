@@ -1466,7 +1466,7 @@ trinton.make_music(
                     left_rhythm=abjad.Tuplet("3:2", "c'4"),
                     right_rhythm=abjad.Note("c'4"),
                 ),
-                padding=7,
+                padding=11.5,
                 site="after",
                 # hspace=0.5,
                 string_only=False,

@@ -203,7 +203,7 @@
               %! +PARTS
           %%% \hspace #-9
               %! +PARTS
-          %%% \raise #5 \with-dimensions-from \null
+          %%% \raise #9 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS
@@ -228,6 +228,26 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +PARTS
+        %%% ^ \markup {
+              %! +PARTS
+          %%% \hspace #-9
+              %! +PARTS
+          %%% \raise #11 \with-dimensions-from \null
+              %! +PARTS
+          %%% \override #'(font-size . 5.5)
+              %! +PARTS
+          %%% \concat {
+              %! +PARTS
+          %%% [\abjad-metric-modulation-tuplet-lhs #3 #0 #2 #3 #2 #0 #'(1 . 1)]
+              %! +PARTS
+              %%% \hspace #1
+              %! +PARTS
+              %%% \abjad-metronome-mark-markup #1 #1 #2 #" 54 " 
+              %! +PARTS
+          %%% }
+              %! +PARTS
+        %%% }
               %! +SCORE
             ^ \markup {
               %! +SCORE
@@ -248,26 +268,6 @@
               }
               %! +SCORE
             }
-              %! +PARTS
-        %%% ^ \markup {
-              %! +PARTS
-          %%% \hspace #-9
-              %! +PARTS
-          %%% \raise #7.5 \with-dimensions-from \null
-              %! +PARTS
-          %%% \override #'(font-size . 5.5)
-              %! +PARTS
-          %%% \concat {
-              %! +PARTS
-          %%% [\abjad-metric-modulation-tuplet-lhs #3 #0 #2 #3 #2 #0 #'(1 . 1)]
-              %! +PARTS
-              %%% \hspace #1
-              %! +PARTS
-              %%% \abjad-metronome-mark-markup #1 #1 #2 #" 54 " 
-              %! +PARTS
-          %%% }
-              %! +PARTS
-        %%% }
               %! +SCORE
             \break
             \once \override Score.TimeSignature.stencil = ##f

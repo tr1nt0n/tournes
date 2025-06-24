@@ -32,10 +32,14 @@
         %%% \startTextSpan
               %! +SCORE
             \noBreak
+              %! +PARTS
+        %%% \noBreak
             \time 3/4
             s1 * 3/4
               %! +SCORE
             \noBreak
+              %! +PARTS
+        %%% \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -49,6 +53,8 @@
             s1 * 5/8
               %! +SCORE
             \noBreak
+              %! +PARTS
+        %%% \noBreak
             \time 3/4
             s1 * 3/4
               %! +SCORE
@@ -93,6 +99,8 @@
         %%% }
               %! +SCORE
             \noBreak
+              %! +PARTS
+        %%% \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4

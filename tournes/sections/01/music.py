@@ -3175,7 +3175,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=0,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3192,7 +3192,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=0,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3209,7 +3209,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=0,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3227,7 +3227,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3244,7 +3244,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3261,7 +3261,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3278,7 +3278,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3298,7 +3298,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.hooked_spanner_command(
         string=r"1/4 spz.",
@@ -3310,7 +3310,7 @@ trinton.make_music(
         style="dashed-line-with-hook",
         hspace=None,
         command="",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"""- \tweak font-size 0""",
@@ -3331,7 +3331,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=0,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[r" ", r"norm.", r"3/4 spz."],
@@ -3348,7 +3348,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=0,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3368,7 +3368,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=2,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[r"norm.", r"1/2 spz.", r"norm."],
@@ -3385,7 +3385,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=2,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.hooked_spanner_command(
         string=r"5/6 spz.",
@@ -3397,7 +3397,7 @@ trinton.make_music(
         style="dashed-line-with-hook",
         hspace=None,
         command="",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"""- \tweak font-size 0""",
@@ -3466,6 +3466,249 @@ trinton.make_music(
             ],
             pitched=True,
         ),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\normale-bow-rotation",
+            r"\bow-tip-half-down",
+        ],
+        selector=trinton.select_leaves_by_index([1, 4, 4, 5], pitched=True),
+        style="solid-line-with-arrow",
+        padding=13.5,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=0,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\markup {}",
+            r"\normale-bow-rotation",
+        ],
+        selector=trinton.select_leaves_by_index([5, 6], pitched=True),
+        style="solid-line-with-arrow",
+        padding=13.5,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=0,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\bow-tip-half-down",
+            r"\bow-tip-half-up",
+        ],
+        selector=trinton.select_leaves_by_index([7, 10], pitched=True),
+        style="solid-line-with-arrow",
+        padding=7.5,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=0,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\bow-tip-half-up",
+            r"\normale-bow-rotation",
+            r"\bow-tip-up",
+        ],
+        selector=trinton.select_leaves_by_index([13, 15, 15, 17, 17, 18], pitched=True),
+        style="solid-line-with-arrow",
+        padding=7.5,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\bow-tip-up",
+            r"\bow-tip-half-down",
+        ],
+        selector=trinton.select_leaves_by_index([19, 24], pitched=True),
+        style="solid-line-with-arrow",
+        padding=10.5,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\bow-tip-half-up",
+            r"\normale-bow-rotation",
+        ],
+        selector=trinton.select_leaves_by_index([25, 28, 28, 30], pitched=True),
+        style="solid-line-with-arrow",
+        padding=11,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\normale-bow-rotation",
+            r"\bow-tip-up",
+        ],
+        selector=trinton.select_leaves_by_index([31, 34], pitched=True),
+        style="solid-line-with-arrow",
+        padding=11,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"1/3 spz.",
+            r"3/4 spz.",
+        ],
+        selector=trinton.select_leaves_by_index([1, 4], pitched=True),
+        style="solid-line-with-arrow",
+        padding=15.5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"1/4 spz.",
+        selector=trinton.select_leaves_by_index([5, 6], pitched=True),
+        padding=15.5,
+        direction=None,
+        right_padding=2,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="",
+        tag=abjad.Tag("+PARTS"),
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[r"norm.", r"spz.", r"2/3 spz."],
+        selector=trinton.select_leaves_by_index([7, 10, 10, 12, 12, 14], pitched=True),
+        style="solid-line-with-arrow",
+        padding=9.5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=0,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[r" ", r"norm.", r"3/4 spz."],
+        selector=trinton.select_leaves_by_index([14, 16, 16, 18], pitched=True),
+        style="solid-line-with-arrow",
+        padding=9.5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=0,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"spz.",
+            r"norm.",
+        ],
+        selector=trinton.select_leaves_by_index([19, 22, 22, 24], pitched=True),
+        style="solid-line-with-arrow",
+        padding=12.5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=2,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[r"norm.", r"1/2 spz.", r"norm."],
+        selector=trinton.select_leaves_by_index([25, 27, 27, 29, 29, 30], pitched=True),
+        style="solid-line-with-arrow",
+        padding=13,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=2,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"5/6 spz.",
+        selector=trinton.select_leaves_by_index([31, 34], pitched=True),
+        padding=13,
+        direction=None,
+        right_padding=2,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="",
+        tag=abjad.Tag("+PARTS"),
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
     ),
     voice=score["cello voice"],
     preprocessor=trinton.fuse_eighths_preprocessor((6, 5, 6, 4, 6, 7, 8)),
@@ -3606,7 +3849,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[r"norm.", r"spz.", r"1/5 spz."],
@@ -3623,7 +3866,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -3638,6 +3881,40 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index(
             [0, 17, 17, 26, 29, 29, -1], pitched=True
         ),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\bow-tip-up",
+            r"\bow-tip-half-down",
+        ],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        style="solid-line-with-arrow",
+        padding=11,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[r"norm.", r"spz.", r"1/5 spz."],
+        selector=trinton.select_leaves_by_index([0, 19, 19, -1], pitched=True),
+        style="solid-line-with-arrow",
+        padding=13,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["cello voice"],
 )
@@ -3819,7 +4096,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=0,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3840,7 +4117,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=0,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3857,7 +4134,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=0,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -3874,7 +4151,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.hooked_spanner_command(
         string=r"3/4 spz.",
@@ -3886,7 +4163,7 @@ trinton.make_music(
         style="dashed-line-with-hook",
         hspace=None,
         command="",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book Italic" """,
             r"- \tweak font-size #0",
@@ -3909,7 +4186,7 @@ trinton.make_music(
         end_hook=True,
         end_hook_right_padding=2,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -3935,6 +4212,113 @@ trinton.make_music(
             ],
             pitched=True,
         ),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\bow-tip-half-up",
+            r"\normale-bow-rotation",
+        ],
+        selector=trinton.select_leaves_by_index([0, 5, 5, 7], pitched=True),
+        style="solid-line-with-arrow",
+        padding=13,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=0,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\markup {}",
+            r"\bow-tip-half-up",
+            r"\bow-tip-up",
+            r"\normale-bow-rotation",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [7, 9, 9, 12, 12, 15, 15, 17], pitched=True
+        ),
+        style="solid-line-with-arrow",
+        padding=13,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=0,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\markup {}",
+            r"\bow-tip-half-down",
+        ],
+        selector=trinton.select_leaves_by_index([17, 24, 24, 27], pitched=True),
+        style="solid-line-with-arrow",
+        padding=13,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=0,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\markup {}",
+            r"\bow-tip-up",
+        ],
+        selector=trinton.select_leaves_by_index([27, 31, 31, -1], pitched=True),
+        style="solid-line-with-arrow",
+        padding=13,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"3/4 spz.",
+        selector=trinton.select_leaves_by_index([0, 8], pitched=True),
+        padding=15,
+        direction=None,
+        right_padding=0,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="",
+        tag=abjad.Tag("+PARTS"),
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"- \tweak font-size #0",
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[r"", r"spz.", r"1/2 spz.", r"norm.", r"spz."],
+        selector=trinton.select_leaves_by_index(
+            [8, 12, 12, 22, 22, 26, 26, 31, 31, -1], pitched=True
+        ),
+        style="solid-line-with-arrow",
+        padding=15,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=2,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["cello voice"],
 )
@@ -4027,7 +4411,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[r"1/3 spz.", r"spz."],
@@ -4044,7 +4428,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -4061,7 +4445,7 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="One",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.spanner_command(
         strings=[
@@ -4081,7 +4465,75 @@ trinton.make_music(
         end_hook=False,
         end_hook_right_padding=2,
         command="Two",
-        tag=None,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.spanner_command(
+        strings=[r"\bow-tip-half-up", r"\normale-bow-rotation"],
+        selector=trinton.select_leaves_by_index([2, 5], grace=False),
+        style="solid-line-with-arrow",
+        padding=6,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[r"1/3 spz.", r"spz."],
+        selector=trinton.select_leaves_by_index([2, 5], grace=False),
+        style="solid-line-with-arrow",
+        padding=8.5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\normale-bow-rotation",
+            r"\bow-tip-half-down",
+        ],
+        selector=trinton.select_leaves_by_index([8, 11], grace=False),
+        style="solid-line-with-arrow",
+        padding=6,
+        tweaks=None,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="One",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"spz.",
+            r"1/3 spz.",
+        ],
+        selector=trinton.select_leaves_by_index([8, 11], grace=False),
+        style="solid-line-with-arrow",
+        padding=8.5,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            r"""- \tweak font-size 0""",
+        ],
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=False,
+        end_hook_right_padding=2,
+        command="Two",
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["cello voice"],
 )
@@ -4231,7 +4683,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
-        padding=13.5,
+        padding=15,
         tweaks=None,
         right_padding=-7.5,
         direction=None,
@@ -4268,7 +4720,7 @@ trinton.make_music(
             trinton.return_metronome_markup(
                 note_value="quarter",
                 tempo=90,
-                padding=5.5,
+                padding=12,
                 metric_modulation=abjad.MetricModulation(
                     left_rhythm=abjad.Tuplet("3:2", "c'8"),
                     right_rhythm=abjad.Note("c'4"),
@@ -4338,6 +4790,27 @@ for measure in [15]:
         ),
         voice=score["Global Context"],
     )
+
+# spacing
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3, 4)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        tag=abjad.Tag("+PARTS"),
+    ),
+    voice=score["Global Context"],
+)
 
 # extract parts
 

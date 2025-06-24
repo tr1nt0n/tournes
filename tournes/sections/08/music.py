@@ -1174,6 +1174,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([-1]),
         direction=abjad.DOWN,
+        tag=abjad.Tag("+SCORE"),
     ),
     voice=score["cello voice"],
 )

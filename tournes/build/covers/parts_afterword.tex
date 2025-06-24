@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=9in,paperheight=12in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begingroup
+\begin{center}
+\end{center}
+\endgroup
+
+\vspace{8\baselineskip}
+
+\begingroup
+\begin{center}
+\huge A F T E R W O R D
+\end{center}
+\endgroup
+
+\vspace{3\baselineskip}
+
+\begingroup
+``Verfließet, vielgeliebte Lieder,\\
+``Zum Meere der Vergessenheit.\\
+``Kein Knabe sing entzückt euch wieder,\\
+``Kein Mädchen in der Blütenzeit.\\
+\endgroup
+
+\begingroup
+``Ihr sanget nur von meiner Lieben,\\
+``Nun spricht sie meiner Treue Hohn.\\
+``Ihr wart ins Wasser eingeschrieben,\\
+``\textit{So fließt den auch mit ihm davon.}"
+\phantom{text} \hfill - \textbf{Johan Wolfgang von Göthe}\\
+\endgroup
+
+\end{document}

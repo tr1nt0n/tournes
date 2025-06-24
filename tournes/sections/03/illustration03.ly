@@ -28,6 +28,26 @@
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
             \time 8/16
             s1 * 1/2
+              %! +PARTS
+        %%% ^ \markup {
+              %! +PARTS
+          %%% \hspace #-9
+              %! +PARTS
+          %%% \raise #11.5 \with-dimensions-from \null
+              %! +PARTS
+          %%% \override #'(font-size . 5.5)
+              %! +PARTS
+          %%% \concat {
+              %! +PARTS
+          %%% [\abjad-metric-modulation-tuplet-lhs #2 #0 #2 #3 #2 #0 #'(1 . 1)]
+              %! +PARTS
+              %%% \hspace #1
+              %! +PARTS
+              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 108 " 
+              %! +PARTS
+          %%% }
+              %! +PARTS
+        %%% }
               %! +SCORE
             ^ \markup {
               %! +SCORE
@@ -48,26 +68,6 @@
               }
               %! +SCORE
             }
-              %! +PARTS
-        %%% ^ \markup {
-              %! +PARTS
-          %%% \hspace #-9
-              %! +PARTS
-          %%% \raise #7 \with-dimensions-from \null
-              %! +PARTS
-          %%% \override #'(font-size . 5.5)
-              %! +PARTS
-          %%% \concat {
-              %! +PARTS
-          %%% [\abjad-metric-modulation-tuplet-lhs #2 #0 #2 #3 #2 #0 #'(1 . 1)]
-              %! +PARTS
-              %%% \hspace #1
-              %! +PARTS
-              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 108 " 
-              %! +PARTS
-          %%% }
-              %! +PARTS
-        %%% }
               %! +SCORE
             \break
               %! +SCORE

@@ -2241,9 +2241,12 @@
                                       %! +SCORE
                                 %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     s1 * 1/4
-                                    - \tweak X-extent ##f
-                                    - \tweak padding 3
-                                    _ \markup \fontsize #4 { \right-column \override #'(font-name . "Bodoni72 Book Italic") { \line { "March - August 2025" } \line { "Dresden DE - Coralville IA" } } }
+                                      %! +SCORE
+                                %%% - \tweak X-extent ##f
+                                      %! +SCORE
+                                %%% - \tweak padding 3
+                                      %! +SCORE
+                                %%% _ \markup \fontsize #4 { \right-column \override #'(font-name . "Bodoni72 Book Italic") { \line { "March - August 2025" } \line { "Dresden DE - Coralville IA" } } }
                                 }
                             }
                         }

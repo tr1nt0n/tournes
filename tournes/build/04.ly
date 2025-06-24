@@ -52,11 +52,13 @@
             \noPageBreak
               %! +SCORE
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 12 10 2 16 24)))
+              %! +PARTS
+        %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/40)
             \time 3/4
             s1 * 3/4
               %! +PARTS
               %! +PARTS
-        %%% - \tweak padding #13
+        %%% - \tweak padding #10.5
               %! +PARTS
         %%% - \abjad-solid-line-with-arrow
               %! +PARTS
@@ -84,6 +86,8 @@
             \noBreak
               %! +PARTS
         %%% \noBreak
+              %! +PARTS
+        %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/20)
             \time 4/4
             s1 * 1
               %! +SCORE
@@ -4667,9 +4671,18 @@
                                                     )
                                                 )
                                             )
+                                          %! +SCORE
                                         - \tweak font-name "Bodoni72 Book Italic" 
+                                          %! +SCORE
                                         - \tweak font-size 0
+                                          %! +SCORE
                                         ^ \markup { "1/2 spz." }
+                                          %! +PARTS
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
+                                          %! +PARTS
+                                    %%% - \tweak font-size 0
+                                          %! +PARTS
+                                    %%% ^ \markup { \hspace #0.5 { "1/2 spz." } }
                                         ]
                                         \revert Voice.Stem.direction
                                     }
