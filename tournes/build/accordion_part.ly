@@ -18,6 +18,7 @@
             \include "03_parts.ly"
             \include "04_parts.ly"
             \include "05_parts.ly"
+            \include "06_parts.ly"
             \include "07_parts.ly"
             \include "08_parts.ly"
         }

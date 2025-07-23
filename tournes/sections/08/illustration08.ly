@@ -127,6 +127,10 @@
             \time 4/4
             s1 * 1
               %! +SCORE
+            - \tweak padding 22.5
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape XII }
+              %! +SCORE
             \stopTextSpan
               %! +PARTS
         %%% \stopTextSpan

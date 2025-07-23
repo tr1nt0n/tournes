@@ -2160,6 +2160,48 @@ trinton.make_music(
 
 # globals
 
+# electronics
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (6,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="START Tape IX",
+                tweaks=[r"- \tweak padding 22.5"],
+                column="\center-column",
+                font_name="Bodoni72 Book",
+                fontsize=5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="START Tape X",
+                tweaks=[r"- \tweak padding 17"],
+                column="\center-column",
+                font_name="Bodoni72 Book",
+                fontsize=5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
 # tempi
 
 trinton.make_music(

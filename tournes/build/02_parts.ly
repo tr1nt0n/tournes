@@ -4,6 +4,10 @@
         {
             \time 6/8
             s1 * 3/4
+              %! +SCORE
+        %%% - \tweak padding 20
+              %! +SCORE
+        %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape III }
               %! +PARTS
             ^ \markup {
               %! +PARTS
@@ -50,6 +54,8 @@
             s1 * 3/16
               %! +SCORE
         %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 14 19 14.5 2 15 18)))
               %! +SCORE
         %%% \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
             \time 18/16

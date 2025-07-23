@@ -2738,6 +2738,28 @@ trinton.make_music(
 
 # globals
 
+# electronics
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="START Tape VIII",
+                tweaks=[r"- \tweak padding 19"],
+                column="\center-column",
+                font_name="Bodoni72 Book",
+                fontsize=5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
 # tempi
 
 trinton.make_music(

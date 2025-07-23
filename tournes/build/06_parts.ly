@@ -15,7 +15,7 @@
               %! +PARTS
               \concat {
               %! +PARTS
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 84 "
+                  \abjad-metronome-mark-markup #3 #0 #2 #" 84 " 
               %! +PARTS
               }
               %! +PARTS
@@ -31,7 +31,7 @@
               %! +SCORE
           %%% \concat {
               %! +SCORE
-              %%% \abjad-metronome-mark-markup #3 #0 #2 #" 84 "
+              %%% \abjad-metronome-mark-markup #3 #0 #2 #" 84 " 
               %! +SCORE
           %%% }
               %! +SCORE
@@ -56,21 +56,17 @@
             \time 7/12
             s1 * 7/12
               %! +PARTS
+              %! +PARTS
             - \tweak padding #10
               %! +PARTS
             - \abjad-solid-line-with-arrow
               %! +PARTS
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +PARTS
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 72 "
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
               %! +PARTS
             \startTextSpan
+              %! +SCORE
               %! +SCORE
         %%% - \tweak padding #18
               %! +SCORE
@@ -78,13 +74,7 @@
               %! +SCORE
         %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +SCORE
-        %%% - \tweak bound-details.right.text \markup {
-        %%%      \raise #0 \with-dimensions-from \null
-        %%%      \override #'(font-size . 5.5)
-        %%%      \concat {
-        %%%          \abjad-metronome-mark-markup #3 #0 #2 #" 72 "
-        %%%      }
-        %%%    }
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
               %! +SCORE
         %%% \startTextSpan
               %! +SCORE
@@ -95,6 +85,10 @@
         %%% \pageBreak
             \time 5/4
             s1 * 5/4
+              %! +SCORE
+        %%% - \tweak padding 22.5
+              %! +SCORE
+        %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape IX }
               %! +SCORE
         %%% \stopTextSpan
               %! +PARTS
@@ -118,6 +112,10 @@
         %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (5 23 20.5 17.5 9.5 23 24)))
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% - \tweak padding 17
+              %! +SCORE
+        %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape X }
               %! +PARTS
             \noBreak
               %! +SCORE
@@ -140,13 +138,7 @@
             - \tweak padding #10
             - \abjad-solid-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Accel." } \hspace #0.5 }
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 84 "
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 84 "   }}
             \startTextSpan
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
@@ -341,7 +333,7 @@
                                         (
                                         - \tweak circled-tip ##t
                                         \<
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -361,7 +353,7 @@
                                         \stopTextSpanOne
                                         - \tweak circled-tip ##t
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -699,7 +691,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size 0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -981,7 +973,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size 0
                                         - \tweak padding #10
                                         - \abjad-dashed-line-with-hook
@@ -1199,7 +1191,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -1236,7 +1228,7 @@
                                         \stopTextSpanOne
                                         - \tweak circled-tip ##t
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -1322,7 +1314,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -1356,7 +1348,7 @@
                                     ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Traffic Cone OUT }
                                     aqs2
                                     \p
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size #0
                                     - \tweak padding #4
                                     - \abjad-solid-line-with-arrow
@@ -1439,7 +1431,7 @@
                                     }
                                     gqs2
                                     \f
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size #0
                                     - \tweak padding #4
                                     - \abjad-solid-line-with-arrow
@@ -1456,7 +1448,7 @@
                                     gqs2
                                     \pp
                                     \stopTextSpanOne
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size #0
                                     - \tweak padding #4
                                     - \abjad-dashed-line-with-hook
@@ -3339,7 +3331,7 @@
                                         (
                                         - \tweak circled-tip ##t
                                         \<
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -3521,7 +3513,7 @@
                                         \stopTextSpanOne
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -3618,7 +3610,7 @@
                                         (
                                         - \tweak circled-tip ##t
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -3663,7 +3655,7 @@
                                     - \tenuto
                                     \pp
                                     [
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #3.5
                                     - \abjad-dashed-line-with-hook
@@ -3815,7 +3807,7 @@
                                     bqs2
                                     - \tenuto
                                     \ff
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #3.5
                                     - \abjad-dashed-line-with-hook
@@ -3908,7 +3900,7 @@
                                     \ff
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #4.5
                                     - \abjad-dashed-line-with-hook
@@ -4306,7 +4298,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size 0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -4469,7 +4461,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4545,7 +4537,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4560,7 +4552,7 @@
                                         a'32
                                         e'32
                                         \stopTextSpanOne
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4577,7 +4569,7 @@
                                         e'32
                                         \fff
                                         \stopTextSpanOne
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4591,7 +4583,7 @@
                                         a'32
                                         \p
                                         \stopTextSpanOne
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4608,7 +4600,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -4679,7 +4671,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4756,7 +4748,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4833,7 +4825,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4910,7 +4902,7 @@
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-solid-line-with-arrow
@@ -4963,7 +4955,7 @@
                                         \pp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size 0
                                         - \tweak padding #7.5
                                         - \abjad-dashed-line-with-hook
@@ -5125,7 +5117,7 @@
                                     \f
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #4.5
                                     - \abjad-dashed-line-with-hook

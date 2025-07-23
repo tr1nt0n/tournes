@@ -2271,23 +2271,39 @@ trinton.fermata_measures(
     tag=abjad.Tag("+SCORE"),
 )
 
-for measure in [13, 15]:
-    trinton.make_music(
-        lambda _: trinton.select_target(_, (measure,)),
-        trinton.attachment_command(
-            attachments=[
-                abjad.bundle(
-                    abjad.Markup(
-                        r"""\markup \override #'(font-name . "Bodoni72 Book") { \override #'(font-size . 4) { "30\"" } }"""
-                    ),
-                    r"- \tweak padding 5.5",
-                )
-            ],
-            selector=trinton.select_leaves_by_index([0]),
-            direction=abjad.UP,
-        ),
-        voice=score["Global Context"],
-    )
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Markup(
+                    r"""\markup \override #'(font-name . "Bodoni72 Book") { \override #'(font-size . 4) { "30\"" } }"""
+                ),
+                r"- \tweak padding 4.5",
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Markup(
+                    r"""\markup \override #'(font-name . "Bodoni72 Book") { \override #'(font-size . 4) { "30\"" } }"""
+                ),
+                r"- \tweak padding 5.5",
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (14,)),
@@ -2301,6 +2317,48 @@ trinton.make_music(
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
+# electronics
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="START Tape VI",
+                tweaks=[r"- \tweak padding 22.5"],
+                column="\center-column",
+                font_name="Bodoni72 Book",
+                fontsize=5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="START Tape VII",
+                tweaks=[r"- \tweak padding 4.5"],
+                column="\center-column",
+                font_name="Bodoni72 Book",
+                fontsize=5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
         direction=abjad.UP,
     ),
     voice=score["Global Context"],
@@ -2583,6 +2641,35 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/30)",
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (12,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 17 10 2 8 9)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
     ),
     voice=score["Global Context"],
 )

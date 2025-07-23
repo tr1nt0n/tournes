@@ -17,11 +17,15 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 26 9 15 6 24 25)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 26 9 16 7 24 25)))
               %! +SCORE
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
             \time 13/16
             s1 * 13/16
+              %! +SCORE
+            - \tweak padding 17
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape IV }
               %! +SCORE
             \noBreak
               %! +SCORE
@@ -70,6 +74,8 @@
             }
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 12 9 14 3 23 23)))
               %! +SCORE
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.05 . 3.05)
             \time 13/8
@@ -185,6 +191,10 @@
             \noBreak
             \time 4/4
             s1 * 1
+              %! +SCORE
+            - \tweak padding 20
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape V }
               %! +PARTS
               %! +PARTS
         %%% - \tweak padding #10

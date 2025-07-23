@@ -56,21 +56,17 @@
             \time 7/12
             s1 * 7/12
               %! +PARTS
+              %! +PARTS
         %%% - \tweak padding #10
               %! +PARTS
         %%% - \abjad-solid-line-with-arrow
               %! +PARTS
         %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +PARTS
-        %%% - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 72 " 
-              }
-            }
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
               %! +PARTS
         %%% \startTextSpan
+              %! +SCORE
               %! +SCORE
             - \tweak padding #18
               %! +SCORE
@@ -78,13 +74,7 @@
               %! +SCORE
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
               %! +SCORE
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 72 " 
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
               %! +SCORE
             \startTextSpan
               %! +SCORE
@@ -95,6 +85,10 @@
             \pageBreak
             \time 5/4
             s1 * 5/4
+              %! +SCORE
+            - \tweak padding 22.5
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape IX }
               %! +SCORE
             \stopTextSpan
               %! +PARTS
@@ -118,6 +112,10 @@
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (5 23 20.5 17.5 9.5 23 24)))
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+            - \tweak padding 17
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape X }
               %! +PARTS
         %%% \noBreak
               %! +SCORE
@@ -140,13 +138,7 @@
             - \tweak padding #10
             - \abjad-solid-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Accel." } \hspace #0.5 }
-            - \tweak bound-details.right.text \markup {
-              \raise #0 \with-dimensions-from \null
-              \override #'(font-size . 5.5)
-              \concat {
-                  \abjad-metronome-mark-markup #3 #0 #2 #" 84 " 
-              }
-            }
+            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 84 "   }}
             \startTextSpan
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4

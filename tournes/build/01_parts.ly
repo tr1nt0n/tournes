@@ -3,9 +3,13 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 32 14 12 4 18.5 16)))
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 32 14 12 4 18.5 14)))
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% - \tweak padding 20
+              %! +SCORE
+        %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape I }
               %! +PARTS
             ^ \markup {
               %! +PARTS
@@ -17,7 +21,7 @@
               %! +PARTS
               \concat {
               %! +PARTS
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 90 "
+                  \abjad-metronome-mark-markup #2 #0 #2 #" 90 " 
               %! +PARTS
               }
               %! +PARTS
@@ -33,7 +37,7 @@
               %! +SCORE
           %%% \concat {
               %! +SCORE
-              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 90 "
+              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 90 " 
               %! +SCORE
           %%% }
               %! +SCORE
@@ -42,15 +46,17 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 12 13 12 1 20 25)))
             \once \override Score.TimeSignature.stencil = ##f
               %! +PARTS
-            \set Score.proportionalNotationDuration = #(ly:make-moment 1/30)
+            \set Score.proportionalNotationDuration = #(ly:make-moment 1/40)
             \time 6/4
             s1 * 3/2
-            %%% \noBreak
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
               %! +PARTS
-             \set Score.proportionalNotationDuration = #(ly:make-moment 1/20)
+            \set Score.proportionalNotationDuration = #(ly:make-moment 1/20)
             \time 6/4
             s1 * 3/2
               %! +SCORE
@@ -93,6 +99,8 @@
             \startTextSpan
               %! +SCORE
         %%% \pageBreak
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 25 14.5 14 1.5 18.5 23)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -123,6 +131,10 @@
             \time 8/12
             s1 * 2/3
               %! +SCORE
+        %%% - \tweak padding 16.5
+              %! +SCORE
+        %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape II }
+              %! +SCORE
         %%% \pageBreak
               %! +SCORE
         %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 23.5 15 10 3.5 14 22.5)))
@@ -151,7 +163,7 @@
               %! +PARTS
                   \hspace #1
               %! +PARTS
-                  \abjad-metronome-mark-markup #2 #0 #2 #" 90 "
+                  \abjad-metronome-mark-markup #2 #0 #2 #" 90 " 
               %! +PARTS
               }
               %! +PARTS
@@ -171,7 +183,7 @@
               %! +SCORE
               %%% \hspace #1
               %! +SCORE
-              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 90 "
+              %%% \abjad-metronome-mark-markup #2 #0 #2 #" 90 " 
               %! +SCORE
           %%% }
               %! +SCORE
@@ -228,7 +240,7 @@
                                             \mf
                                             [
                                             (
-                                            - \tweak font-name "Bodoni72 Book Italic"
+                                            - \tweak font-name "Bodoni72 Book Italic" 
                                             - \tweak font-size 0
                                             - \tweak padding #8.5
                                             - \abjad-dashed-line-with-hook
@@ -1279,7 +1291,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -1478,7 +1490,7 @@
                                         c'''64
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -3332,7 +3344,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -3573,7 +3585,7 @@
                                     gqs4
                                     - \tenuto
                                     \mf
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size #0
                                     - \tweak padding #3.5
                                     - \abjad-solid-line-with-arrow
@@ -3789,7 +3801,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -4488,7 +4500,7 @@
                                     r2
                                       %! +PARTS
                                       %! +PARTS
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                       %! +PARTS
                                       %! +PARTS
                                     - \tweak font-size #0
@@ -4503,7 +4515,7 @@
                                     \startTextSpan
                                       %! +SCORE
                                       %! +SCORE
-                                %%% - \tweak font-name "Bodoni72 Book Italic"
+                                %%% - \tweak font-name "Bodoni72 Book Italic" 
                                       %! +SCORE
                                       %! +SCORE
                                 %%% - \tweak font-size #0
@@ -4525,7 +4537,7 @@
                                     \stopTextSpan
                                       %! +PARTS
                                       %! +PARTS
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                       %! +PARTS
                                       %! +PARTS
                                     - \tweak font-size #0
@@ -4542,7 +4554,7 @@
                                     \startTextSpan
                                       %! +SCORE
                                       %! +SCORE
-                                %%% - \tweak font-name "Bodoni72 Book Italic"
+                                %%% - \tweak font-name "Bodoni72 Book Italic" 
                                       %! +SCORE
                                       %! +SCORE
                                 %%% - \tweak font-size #0
@@ -4587,7 +4599,7 @@
                                     \once \override Dots.transparent = ##t
                                     \once \override Rest.transparent = ##t
                                     r2.
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size #0
                                     - \tweak padding #5
                                     - \abjad-solid-line-with-arrow
@@ -4597,7 +4609,7 @@
                                     \once \override Rest.transparent = ##t
                                     r2
                                     \stopTextSpan
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size #0
                                     - \tweak padding #5
                                     - \abjad-solid-line-with-arrow
@@ -4871,7 +4883,7 @@
                                         ]
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -4888,7 +4900,7 @@
                                         \startTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -5111,7 +5123,7 @@
                                             )
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -5128,7 +5140,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -5284,7 +5296,7 @@
                                         ^ \bow-tip-half-up
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -5299,7 +5311,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -5365,7 +5377,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -5380,7 +5392,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -5492,7 +5504,7 @@
                                         ]
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -5507,7 +5519,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -5598,7 +5610,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -5615,7 +5627,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -5674,7 +5686,7 @@
                                     - \tweak font-size #3
                                     - \snappizzicato
                                     \ff
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #6.4
                                     - \abjad-dashed-line-with-hook
@@ -5963,7 +5975,7 @@
                                     - \tenuto
                                     \mf
                                     [
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #4
                                     - \abjad-dashed-line-with-hook
@@ -6050,7 +6062,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -6323,7 +6335,7 @@
                                         c'''64
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size #0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -6427,7 +6439,7 @@
                                     bqs4
                                     - \tenuto
                                     \f
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #4
                                     - \abjad-dashed-line-with-hook
@@ -6512,7 +6524,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -6527,7 +6539,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -6581,7 +6593,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -6596,7 +6608,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -6709,7 +6721,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -6724,7 +6736,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -6782,7 +6794,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -6799,7 +6811,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -6948,7 +6960,7 @@
                                         \<
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -6965,7 +6977,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7055,7 +7067,7 @@
                                         ]
                                         (
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                     %%% - \tweak font-size 0
                                           %! +SCORE
@@ -7069,7 +7081,7 @@
                                           %! +SCORE
                                     %%% \startTextSpan
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                         - \tweak font-size 0
                                           %! +PARTS
@@ -7196,7 +7208,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7211,7 +7223,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7303,7 +7315,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7318,7 +7330,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7400,7 +7412,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7415,7 +7427,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7466,7 +7478,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7481,7 +7493,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7542,7 +7554,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7559,7 +7571,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7702,7 +7714,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7717,7 +7729,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7808,7 +7820,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7825,7 +7837,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7895,7 +7907,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -7910,7 +7922,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -7993,7 +8005,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -8008,7 +8020,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -8075,7 +8087,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -8092,7 +8104,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -8175,7 +8187,7 @@
                                         fs,32 * 65/32
                                         (
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                     %%% - \tweak font-size 0
                                           %! +SCORE
@@ -8189,7 +8201,7 @@
                                           %! +SCORE
                                     %%% \startTextSpan
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                         - \tweak font-size 0
                                           %! +PARTS
@@ -8407,7 +8419,7 @@
                                             )
                                         [
                                         (
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size 0
                                         - \tweak padding #8.5
                                         - \abjad-dashed-line-with-hook
@@ -8687,7 +8699,7 @@
                                         \<
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -8702,7 +8714,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -8848,7 +8860,7 @@
                                         ]
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -8865,7 +8877,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -9081,7 +9093,7 @@
                                     - \tenuto
                                     \mp
                                     [
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #4
                                     - \abjad-dashed-line-with-hook
@@ -9206,7 +9218,7 @@
                                         eqs,4
                                         - \espressivo
                                         - \tenuto
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                         - \tweak font-size 0
                                         - \tweak padding #7
                                         - \abjad-dashed-line-with-hook
@@ -9272,7 +9284,7 @@
                                     - \espressivo
                                     - \tenuto
                                     \mf
-                                    - \tweak font-name "Bodoni72 Book Italic"
+                                    - \tweak font-name "Bodoni72 Book Italic" 
                                     - \tweak font-size 0
                                     - \tweak padding #4
                                     - \abjad-dashed-line-with-hook
@@ -9372,7 +9384,7 @@
                                         [
                                         (
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                     %%% - \tweak font-size #0
                                           %! +SCORE
@@ -9384,7 +9396,7 @@
                                           %! +SCORE
                                     %%% \startTextSpan
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                         - \tweak font-size #0
                                           %! +PARTS
@@ -9505,7 +9517,7 @@
                                         \stopTextSpan
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -9520,7 +9532,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -9630,7 +9642,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -9645,7 +9657,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -9837,7 +9849,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -9852,7 +9864,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -9899,7 +9911,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -9914,7 +9926,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -9967,7 +9979,7 @@
                                         \stopTextSpanTwo
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -9984,7 +9996,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -10157,7 +10169,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -10174,7 +10186,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0
@@ -10384,7 +10396,7 @@
                                         (
                                           %! +SCORE
                                           %! +SCORE
-                                    %%% - \tweak font-name "Bodoni72 Book Italic"
+                                    %%% - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +SCORE
                                           %! +SCORE
                                     %%% - \tweak font-size 0
@@ -10401,7 +10413,7 @@
                                     %%% \startTextSpanTwo
                                           %! +PARTS
                                           %! +PARTS
-                                        - \tweak font-name "Bodoni72 Book Italic"
+                                        - \tweak font-name "Bodoni72 Book Italic" 
                                           %! +PARTS
                                           %! +PARTS
                                         - \tweak font-size 0

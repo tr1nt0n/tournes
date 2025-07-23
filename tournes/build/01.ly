@@ -3,9 +3,13 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 32 14 12 4 18.5 16)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 32 14 12 4 18.5 14)))
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+            - \tweak padding 20
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape I }
               %! +PARTS
         %%% ^ \markup {
               %! +PARTS
@@ -42,6 +46,8 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 12 13 12 1 20 25)))
             \once \override Score.TimeSignature.stencil = ##f
               %! +PARTS
         %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/40)
@@ -93,6 +99,8 @@
         %%% \startTextSpan
               %! +SCORE
             \pageBreak
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 25 14.5 14 1.5 18.5 23)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/4
             s1 * 3/2
@@ -122,6 +130,10 @@
             #(ly:expect-warning "strange time signature found")
             \time 8/12
             s1 * 2/3
+              %! +SCORE
+            - \tweak padding 16.5
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape II }
               %! +SCORE
             \pageBreak
               %! +SCORE

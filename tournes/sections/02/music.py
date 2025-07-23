@@ -1321,6 +1321,30 @@ trinton.make_music(
     voice=score["cello voice"],
 )
 
+# globals
+
+# electronics
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="START Tape III",
+                tweaks=[r"- \tweak padding 20"],
+                column="\center-column",
+                font_name="Bodoni72 Book",
+                fontsize=5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+        direction=abjad.UP,
+    ),
+    voice=score["Global Context"],
+)
+
 # tempi
 
 trinton.make_music(
@@ -1358,37 +1382,6 @@ trinton.make_music(
     voice=score["Global Context"],
 )
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (7, 9)),
-#     trinton.spanner_command(
-#         strings=[
-#             r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
-#             trinton.return_metronome_markup(
-#                 note_value="eighth",
-#                 tempo=60,
-#                 padding=0,
-#                 metric_modulation=abjad.MetricModulation(
-#                     left_rhythm=abjad.Note("c'4."),
-#                     right_rhythm=abjad.Note("c'8"),
-#                 ),
-#                 site="after",
-#                 hspace=None,
-#                 string_only=True,
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0, -1]),
-#         style="solid-line-with-arrow",
-#         padding=13.5,
-#         tweaks=None,
-#         right_padding=-7.5,
-#         direction=None,
-#         full_string=True,
-#         command="",
-#         tag=None,
-#     ),
-#     voice=score["Global Context"],
-# )
-
 # breaking
 
 for measure in [6, 12]:
@@ -1401,17 +1394,7 @@ for measure in [6, 12]:
         ),
         voice=score["Global Context"],
     )
-#
-# for measure in [1, 3, 5, 8]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
-#
+
 for measure in [
     1,
     2,
@@ -1447,21 +1430,21 @@ for measure in [
     )
 
 # spacing
-#
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (10,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 18.5 14.5 14 1.5 12.5 18)))",
-#                 site="absolute_before",
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         tag=abjad.Tag("+SCORE"),
-#     ),
-#     voice=score["Global Context"],
-# )
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 14 19 14.5 2 15 18)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
 
 library.write_instrument_names(score=score)
 

@@ -52,6 +52,8 @@
             \noPageBreak
               %! +SCORE
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 12 10 2 16 24)))
+              %! +SCORE
+            \set Score.proportionalNotationDuration = #(ly:make-moment 1/30)
               %! +PARTS
         %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/40)
             \time 3/4
@@ -88,8 +90,14 @@
         %%% \noBreak
               %! +PARTS
         %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/20)
+              %! +SCORE
+            \set Score.proportionalNotationDuration = #(ly:make-moment 1/20)
             \time 4/4
             s1 * 1
+              %! +SCORE
+            - \tweak padding 22.5
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape VI }
               %! +SCORE
             \stopTextSpan
               %! +PARTS
@@ -141,6 +149,8 @@
             \break
               %! +PARTS
         %%% \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 17 10 2 8 9)))
             \time 3/4
             s1 * 3/4
               %! +SCORE
@@ -155,7 +165,11 @@
             - \tweak font-size #'10
             - \tweak padding -5
             _ \extremely-long-fermata
-            - \tweak padding 5.5
+              %! +SCORE
+            - \tweak padding 4.5
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape VII }
+            - \tweak padding 4.5
             ^ \markup \override #'(font-name . "Bodoni72 Book") { \override #'(font-size . 4) { "30\"" } }
               %! +SCORE
             \noBreak

@@ -6,6 +6,10 @@
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 16 12 17 3 14 10)))
             \time 4/4
             s1 * 1
+              %! +SCORE
+            - \tweak padding 19
+              %! +SCORE
+            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape VIII }
               %! +PARTS
         %%% ^ \markup {
               %! +PARTS

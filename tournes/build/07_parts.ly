@@ -58,6 +58,10 @@
             \time 3/4
             s1 * 3/4
               %! +SCORE
+        %%% - \tweak padding 22
+              %! +SCORE
+        %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #5 \box \line { START Tape XI }
+              %! +SCORE
         %%% ^ \markup {
               %! +SCORE
           %%% \hspace #-9
