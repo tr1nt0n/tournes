@@ -969,7 +969,7 @@ trinton.make_music(
             trinton.return_metronome_markup(
                 note_value="dotted eighth",
                 tempo=56,
-                padding=7,
+                padding=3,
                 site="after",
                 hspace=0,
                 string_only=False,

@@ -159,6 +159,8 @@
               %! +SCORE
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-3 24.5 11 7 2 14 19.5)))
             \once \override Score.TimeSignature.stencil = ##f
+              %! +PARTS
+        %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/40)
             \time 6/4
             s1 * 3/2
               %! +SCORE
@@ -166,6 +168,8 @@
               %! +SCORE
             \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3.5 21 16 9 2 10 14)))
             \once \override Score.TimeSignature.stencil = ##f
+              %! +PARTS
+        %%% \set Score.proportionalNotationDuration = #(ly:make-moment 1/20)
             \time 6/4
             s1 * 3/2
               %! +SCORE
@@ -193,7 +197,7 @@
               %! +PARTS
           %%% \hspace #-9
               %! +PARTS
-          %%% \raise #9 \with-dimensions-from \null
+          %%% \raise #12 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS

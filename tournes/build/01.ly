@@ -15,7 +15,7 @@
               %! +PARTS
         %%% \hspace #0
               %! +PARTS
-          %%% \raise #2 \with-dimensions-from \null
+          %%% \raise #3.5 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS
@@ -86,7 +86,7 @@
             \startTextSpan
               %! +PARTS
               %! +PARTS
-        %%% - \tweak padding #15
+        %%% - \tweak padding #16
               %! +PARTS
         %%% - \abjad-solid-line-with-arrow
               %! +PARTS
@@ -153,7 +153,7 @@
               %! +PARTS
           %%% \hspace #-9
               %! +PARTS
-          %%% \raise #12 \with-dimensions-from \null
+          %%% \raise #13 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS

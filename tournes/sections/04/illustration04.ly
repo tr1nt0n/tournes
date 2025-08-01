@@ -74,7 +74,7 @@
             s1 * 3/4
               %! +PARTS
               %! +PARTS
-        %%% - \tweak padding #10.5
+        %%% - \tweak padding #12
               %! +PARTS
         %%% - \abjad-solid-line-with-arrow
               %! +PARTS

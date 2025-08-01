@@ -1027,7 +1027,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
-        padding=6,
+        padding=8,
         tweaks=None,
         right_padding=-8,
         direction=None,
@@ -1064,7 +1064,7 @@ trinton.make_music(
             trinton.return_metronome_markup(
                 note_value="quarter",
                 tempo=108,
-                padding=7,
+                padding=6,
                 site="after",
                 hspace=0,
                 string_only=False,

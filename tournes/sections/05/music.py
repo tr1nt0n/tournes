@@ -2913,7 +2913,7 @@ trinton.make_music(
                     left_rhythm=abjad.Tuplet("3:2", "c'2"),
                     right_rhythm=abjad.Note("c'4"),
                 ),
-                padding=9,
+                padding=12,
                 site="after",
                 hspace=0.5,
                 string_only=False,
@@ -3191,39 +3191,24 @@ library.write_short_instrument_names(score=score)
 trinton.remove_redundant_time_signatures(score=score)
 library.clean_time_signatures(score=score)
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (8, 9)),
-#     trinton.linear_attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
-#                 site="before",
-#             ),
-#             abjad.LilyPondLiteral(
-#                 r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
-#                 site="before",
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0, -1]),
-#         tag=abjad.Tag("+PARTS"),
-#     ),
-#     voice=score["Global Context"],
-# )
-
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (9,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 r"proportionalNotationDuration = #(ly:make-moment 1 20)",
-#                 site="absolute_before"
-#             )
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         tag=abjad.Tag("+PARTS")
-#     ),
-#     voice=score["Global Context"]
-# )
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 9)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/40)",
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                r"\set Score.proportionalNotationDuration = #(ly:make-moment 1/20)",
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        tag=abjad.Tag("+PARTS"),
+    ),
+    voice=score["Global Context"],
+)
 
 # extract parts
 

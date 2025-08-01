@@ -2409,25 +2409,6 @@ trinton.make_music(
     voice=score["Global Context"],
 )
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (6,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             trinton.return_metronome_markup(
-#                 note_value="dotted quarter",
-#                 tempo=40,
-#                 padding=15,
-#                 site="after",
-#                 hspace=2,
-#                 string_only=False,
-#             )
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         direction=abjad.UP,
-#     ),
-#     voice=score["Global Context"],
-# )
-
 trinton.make_music(
     lambda _: trinton.select_target(_, (4, 5)),
     trinton.spanner_command(
@@ -2474,7 +2455,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
-        padding=10.5,
+        padding=12,
         tweaks=None,
         right_padding=-7,
         direction=None,

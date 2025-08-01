@@ -19,7 +19,7 @@
             \startTextSpan
               %! +PARTS
               %! +PARTS
-        %%% - \tweak padding #6
+        %%% - \tweak padding #8
               %! +PARTS
         %%% - \abjad-solid-line-with-arrow
               %! +PARTS
@@ -86,7 +86,7 @@
               %! +PARTS
           %%% \hspace #-9
               %! +PARTS
-          %%% \raise #7 \with-dimensions-from \null
+          %%% \raise #6 \with-dimensions-from \null
               %! +PARTS
           %%% \override #'(font-size . 5.5)
               %! +PARTS

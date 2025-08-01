@@ -4607,10 +4607,110 @@ trinton.make_music(
             trinton.return_metronome_markup(
                 note_value="quarter",
                 tempo=90,
-                padding=2,
+                padding=3.5,
                 metric_modulation=None,
                 site="after",
                 hspace=0,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 9)),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
+            trinton.return_metronome_markup(
+                note_value="eighth",
+                tempo=60,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Note("c'4."),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                hspace=None,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=13.5,
+        tweaks=None,
+        right_padding=-7.5,
+        direction=None,
+        full_string=True,
+        command="",
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
+            trinton.return_metronome_markup(
+                note_value="eighth",
+                tempo=60,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Note("c'4."),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                hspace=None,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=16,
+        tweaks=None,
+        right_padding=-7.5,
+        direction=None,
+        full_string=True,
+        command="",
+        tag=abjad.Tag("+PARTS"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=90,
+                padding=17,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'8"),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                site="after",
+                hspace=0.5,
+                string_only=False,
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.return_metronome_markup(
+                note_value="quarter",
+                tempo=90,
+                padding=13,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'8"),
+                    right_rhythm=abjad.Note("c'4"),
+                ),
+                site="after",
+                hspace=0.5,
                 string_only=False,
             )
         ],
@@ -4709,107 +4809,6 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         tag=abjad.Tag("+SCORE"),
-    ),
-    voice=score["Global Context"],
-)
-
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (7, 9)),
-    trinton.spanner_command(
-        strings=[
-            r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
-            trinton.return_metronome_markup(
-                note_value="eighth",
-                tempo=60,
-                padding=0,
-                metric_modulation=abjad.MetricModulation(
-                    left_rhythm=abjad.Note("c'4."),
-                    right_rhythm=abjad.Note("c'8"),
-                ),
-                site="after",
-                hspace=None,
-                string_only=True,
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-        style="solid-line-with-arrow",
-        padding=13.5,
-        tweaks=None,
-        right_padding=-7.5,
-        direction=None,
-        full_string=True,
-        command="",
-        tag=abjad.Tag("+SCORE"),
-    ),
-    trinton.spanner_command(
-        strings=[
-            r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } """,
-            trinton.return_metronome_markup(
-                note_value="eighth",
-                tempo=60,
-                padding=0,
-                metric_modulation=abjad.MetricModulation(
-                    left_rhythm=abjad.Note("c'4."),
-                    right_rhythm=abjad.Note("c'8"),
-                ),
-                site="after",
-                hspace=None,
-                string_only=True,
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-        style="solid-line-with-arrow",
-        padding=15,
-        tweaks=None,
-        right_padding=-7.5,
-        direction=None,
-        full_string=True,
-        command="",
-        tag=abjad.Tag("+PARTS"),
-    ),
-    voice=score["Global Context"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (15,)),
-    trinton.attachment_command(
-        attachments=[
-            trinton.return_metronome_markup(
-                note_value="quarter",
-                tempo=90,
-                padding=17,
-                metric_modulation=abjad.MetricModulation(
-                    left_rhythm=abjad.Tuplet("3:2", "c'8"),
-                    right_rhythm=abjad.Note("c'4"),
-                ),
-                site="after",
-                hspace=0.5,
-                string_only=False,
-            )
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        direction=abjad.UP,
-        tag=abjad.Tag("+SCORE"),
-    ),
-    trinton.attachment_command(
-        attachments=[
-            trinton.return_metronome_markup(
-                note_value="quarter",
-                tempo=90,
-                padding=12,
-                metric_modulation=abjad.MetricModulation(
-                    left_rhythm=abjad.Tuplet("3:2", "c'8"),
-                    right_rhythm=abjad.Note("c'4"),
-                ),
-                site="after",
-                hspace=0.5,
-                string_only=False,
-            )
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        direction=abjad.UP,
-        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )

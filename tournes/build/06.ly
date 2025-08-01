@@ -55,17 +55,6 @@
             #(ly:expect-warning "strange time signature found")
             \time 7/12
             s1 * 7/12
-              %! +PARTS
-              %! +PARTS
-        %%% - \tweak padding #10
-              %! +PARTS
-        %%% - \abjad-solid-line-with-arrow
-              %! +PARTS
-        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
-              %! +PARTS
-        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
-              %! +PARTS
-        %%% \startTextSpan
               %! +SCORE
               %! +SCORE
             - \tweak padding #18
@@ -77,6 +66,17 @@
             - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
               %! +SCORE
             \startTextSpan
+              %! +PARTS
+              %! +PARTS
+        %%% - \tweak padding #8
+              %! +PARTS
+        %%% - \abjad-solid-line-with-arrow
+              %! +PARTS
+        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") \fontsize #3 { "Rit." } \hspace #0.5 }
+              %! +PARTS
+        %%% - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 72 "   }}
+              %! +PARTS
+        %%% \startTextSpan
               %! +SCORE
             \noBreak
             \time 2/4
